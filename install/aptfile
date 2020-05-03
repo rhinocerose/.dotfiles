@@ -5,7 +5,6 @@ ditaa
 doxygen doxygen-latex
 fasd
 figlet
-fonts-powerline
 googler
 gucharmap
 htop
@@ -23,3 +22,6 @@ tree
 thefuck
 youtube-dl
 zim
+
+font-powerline
+ttf-mscorefonts-installer

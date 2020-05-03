@@ -1,0 +1,70 @@
+---
+author:		Ashar Latif
+template:       "default-md.tex"
+#abstract:      Driver overview of API for the thing
+institute:      University
+email:          bla@my.u.ca
+
+output:
+    pdf_document:
+        toc:    true
+
+documentclass:  article
+#documentation:  true
+#homework:       true
+#labreport:      true
+toc:            true
+#lof:            true
+#lot:            true
+
+paper:          letterpaper
+geometry:       margin=1in
+#language:       english
+headers:        true
+customsect:     true
+sectunderline:  true
+#numbersections: true
+secnumdepth:    2
+
+mainfont:       "Lato Light"
+mainfontoptions: 
+                Ligatures      = TeX,
+                Scale          = 1,
+#sansfont:       "texgyreadventor-regular.otf"
+#sansfont:       "DejaVu Sans"
+sansfont:       "Lato Medium"
+sansfontoptions: 
+                Ligatures      = TeX,
+                Scale          = 1,
+monofont:       "Courier New"
+monofontoptions: 
+                Scale          = 1.1,
+fontsize:       10pt
+
+grayscale:      true
+othercolorbw:   black!70
+othercolor:     cyan
+keywordcolor:   cyan
+maincolor:      black
+subtlecolor:    black!70
+highlightcolor: magenta!80
+codenumcolor:   black!40
+identicolor:    black!50
+stringcolor:    green!50!black
+
+listings:       true
+lstoptions: 		
+                basicstyle        = \ttfamily\footnotesize,
+                backgroundcolor   = \color{mygray},
+                xleftmargin       = 1cm,
+                framexleftmargin  = 0em,
+                numbers           = left,
+                stepnumber        = 1,
+                showstringspaces  = false,
+                tabsize           = 3,
+                breaklines        = true,
+                breakatwhitespace = false,
+                title			  = \lstname,
+                captionpos		  = b, 
+                belowskip         = -1.5 \baselineskip,
+#                frame             = single,
