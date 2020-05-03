@@ -31,6 +31,17 @@ frameworks: brew npm python
 apt-packages: basics
 	sudo apt install -y $(shell cat install/aptfile)
 
+link1:
+	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
+	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
+	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
+	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
+
+link2:
+	rsync --exclude ".git/" \
+		--exclude "Makefile" \
+		--exclude "lib/" \
+		--exclude "install/"
 link: basics
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then mv -v $(HOME)/$$FILE{,.bak}; fi; done
 	mkdir -p $(XDG_CONFIG_HOME)
@@ -51,6 +62,7 @@ python: basics
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python3 get-pip.py
 	python3 ~/.local/bin/pip install -U pip
+	rm get-pip.py
 	
 pip-packages: python
 	python3 -m pip install --upgrade --user $(shell cat install/pipfile) 	
