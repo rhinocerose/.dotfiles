@@ -1,5 +1,5 @@
-[user]
-	name = rhinocerose
-	email = ashar.k.latif@gmail.com
+[include]
+	path = /home/asharkl/.dotfiles/.config/git/.gitconfig.local
+
 [credential]
 	helper = cache --timeout=3600
