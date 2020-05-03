@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/asharkl/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 export EDITOR="code"
 # Set name of the theme to load --- if set to "random", it will
