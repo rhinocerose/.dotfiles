@@ -6,8 +6,7 @@ alias _="sudo"
 
 alias g="git"
 alias gp="git push origin master"
-alias gc="git commit -m"
-alias ga="git add ."
+alias gc="git add -A && git commit -m 'quick commit'"
 
 alias ll="ls -lah"
 
