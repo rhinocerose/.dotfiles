@@ -3,7 +3,11 @@
 alias ..="cd .."
 alias ...="cd ../.."
 alias _="sudo"
+
 alias g="git"
+alias gp="git push origin master"
+alias gc="git commit -m"
+
 alias ll="ls -lah"
 
 alias rr="rm -rf"
