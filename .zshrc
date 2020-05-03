@@ -75,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 for file in ~/.dotfiles/.zsh/*; do
   source $file
 done
-source ~/.dotfiles/.zsh/path.zsh
+#source ~/.dotfiles/.zsh/path.zsh
 
 # User configuration
 

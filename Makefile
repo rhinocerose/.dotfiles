@@ -24,18 +24,22 @@ basics:
 	sudo apt -y install aria2
 	sudo apt -y install zsh
 
-packages: frameworks apt-packages pip-packages node-packages gems
+packages: frameworks apt-basics pip-packages node-packages gems
 
 frameworks: brew npm python
 
-apt-packages: basics
+apt-basics: basics
 	sudo apt install -y $(shell cat install/aptfile)
+
+apt-extras:
+	sudo apt install -y $(shell cat install/aptextra)
 
 link1:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
 	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
+	ln -sfn ~/.dotfiles/.config/ ~/.config/
 
 link2:
 	rsync --exclude ".git/" \
