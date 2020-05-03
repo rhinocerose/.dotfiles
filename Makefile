@@ -17,7 +17,7 @@ ubuntu-core:
 
 repo-add:
 	sudo add-apt-repository -y ppa:aacebedo/fasd
-	sudo add-apt-repository -y ppa:twodopeshaggy/jarun
+	sudo apt update -y
 	
 basics:
 	sudo apt -y install git git-extras
@@ -26,17 +26,11 @@ basics:
 	sudo apt -y install aria2
 	sudo apt -y install zsh
 
-packages:
-	frameworks
-	apt-basics
-	pip-packages
-	node-packages
-	gems
+packages: frameworks apt-basics	pip-packages node-packages gems
 
 frameworks: brew npm python
 
-apt-basics:
-	basics
+apt-basics: basics repo-add
 	sudo apt install -y $(shell cat install/aptfile)
 
 apt-extra:
