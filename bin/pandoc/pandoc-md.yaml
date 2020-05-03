@@ -1,9 +1,8 @@
 ---
 author:		Ashar Latif
-template:       "default-md.tex"
 #abstract:      Driver overview of API for the thing
-institute:      University
-email:          bla@my.u.ca
+institute:      York University
+email:          asharkl@my.yorku.ca
 
 output:
     pdf_document:
@@ -68,3 +67,4 @@ lstoptions:
                 captionpos		  = b, 
                 belowskip         = -1.5 \baselineskip,
 #                frame             = single,
+...

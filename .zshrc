@@ -2,7 +2,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/asharkl/.oh-my-zsh"
-alias reload="source ~/.zshrc"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,10 +71,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/.dotfiles/.zsh/*; do
+for file in $HOME/.dotfiles/.zsh/*; do
   source $file
 done
-#source ~/.dotfiles/.zsh/path.zsh
+source ~/.dotfiles/.zsh/path.zsh
 
 # User configuration
 
@@ -100,5 +99,5 @@ done
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
- alias omz="cd ~/.oh-my-zsh"
+ alias omz="cd $HOME/.oh-my-zsh"
 
