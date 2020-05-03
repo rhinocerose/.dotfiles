@@ -7,6 +7,8 @@ export STOW_DIR := $(DOTFILES_DIR)
 
 all: ubuntu-core basics packages
 
+full: all apt-extra
+
 ubuntu-core: 
 	sudo apt-get update
 	sudo apt-get upgrade -y
@@ -24,14 +26,20 @@ basics:
 	sudo apt -y install aria2
 	sudo apt -y install zsh
 
-packages: frameworks apt-basics pip-packages node-packages gems
+packages:
+	frameworks
+	apt-basics
+	pip-packages
+	node-packages
+	gems
 
 frameworks: brew npm python
 
-apt-basics: basics
+apt-basics:
+	basics
 	sudo apt install -y $(shell cat install/aptfile)
 
-apt-extras:
+apt-extra:
 	sudo apt install -y $(shell cat install/aptextra)
 
 link1:
