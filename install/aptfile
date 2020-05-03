@@ -1,0 +1,25 @@
+unrar zip unzip
+ack
+cmake
+ditaa
+doxygen doxygen-latex
+fasd
+figlet
+fonts-powerline
+googler
+gucharmap
+htop
+imagemagick
+libnotify-bin
+markdown
+ninja-build
+openssh-server
+pandoc
+psmisc
+shellcheck
+silversearcher-ag
+texlive-latex-recommended texlive-xetex
+tree
+thefuck
+youtube-dl
+zim
