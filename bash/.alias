@@ -1,9 +1,0 @@
-alias ..="cd .."
-alias ...="cd ../.."
-alias _="sudo"
-alias g="git"
-
-alias rr="rm -rf"
-
-alias df = "cd ~/.dotfiles"
-
