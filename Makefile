@@ -42,7 +42,9 @@ link1:
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
 	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
 	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
-	ln -sfn ~/.dotfiles/.config/ ~/.config/
+	ln -sfn ~/.dotfiles/.config/fish/ ~/.config/fish
+	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
+	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
 
 link2:
 	rsync --exclude ".git/" \
@@ -89,7 +91,7 @@ node-packages: npm
 
 ruby: 
 	sudo apt install -y ruby-full
-	
+
 gems: ruby
 	sudo gem install $(shell cat install/gemfile)
 

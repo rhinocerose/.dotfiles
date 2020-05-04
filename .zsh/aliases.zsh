@@ -4,6 +4,7 @@ alias reload="source $HOME/.zshrc"
 alias aledit="nano $HOME/.dotfiles/.zsh/aliases.zsh"
 alias zedit="nano $HOME/.dotfiles/.zshrc"
 alias fedit="nano $HOME/.dotfiles/.config/fish/config.sh"
+alias rfish="source $HOME/config.sh"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -17,7 +18,7 @@ alias ll="ls -lah"
 
 alias rr="rm -rf"
 
-alias df="cd $HOME/.dotfiles"
+alias dot="cd $HOME/.dotfiles"
 alias omz="cd $HOME/.oh-my-zsh"
 
 alias api="sudo apt install -y"

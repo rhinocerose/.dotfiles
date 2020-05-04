@@ -1,32 +1,33 @@
+ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
+
+alias reload="source $HOME/.zshrc"
+alias rfish="source $HOME/config.sh"
+alias aledit="nano $HOME/.dotfiles/.zsh/aliases.zsh"
+alias zedit="nano $HOME/.zshrc"
+alias fedit="nano $HOME/config.sh"
+alias dot="cd $HOME/.dotfiles"
+alias ll="ls -lah"
 alias ..="cd .."
 alias ...="cd ../.."
-alias _="sudo"
-alias g="git"
+alias gp="git push origin master"
+alias gc="git add -A && git commit -m 'quick commit'"
 
-alias rr="rm -rf"
+function mkd
+        mkdir -pv "$argv"; and cd "$argv"
+end
 
-alias df = "cd ~/.dotfiles"
-
-mkd () {
-	if [ count $argv != 1 ]; then
-		echo "Usage: mkd <dir>"
-	else
-		mkdir -pv "$1" && cd "$1"
-	fi
-}
-
-cd () {
-	if [ -n "$1" ]; then
-		builtin cd "$argv" && ll
-	else
-		builtin cd ~ && ll
-	fi
-}
+function cd
+        if count $argv > /dev/null
+                builtin cd "$argv"; and ll
+        else
+                builtin cd ~; and ll
+        end
+end
 
 set PATH "/bin:$PATH"
-set PATH "~/.local/bin:$PATH"
+set PATH "$HOME/.local/bin:$PATH"
 set PATH "/usr/bin:$PATH"
 set PATH "/usr/sbin:$PATH"
 set PATH "$HOME/bin:$PATH"
 set PATH "$DOTFILES_DIR/bin:$PATH"
-set PATH "~/.npm-global/bin:$PATH"
+set PATH "$HOME/.npm-global/bin:$PATH"
