@@ -3,6 +3,7 @@ ack
 cmake
 coreutils
 ditaa
+emacs-gtk
 doxygen doxygen-latex
 fasd
 figlet

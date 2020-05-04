@@ -5,7 +5,7 @@ NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
 
-all: ubuntu-core basics packages
+all: ubuntu-core basics packages polish
 
 full: all apt-extra
 
@@ -46,6 +46,8 @@ link1:
 	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
+	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
+	regolith-look refresh
 
 link: basics
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then mv -v $(HOME)/$$FILE{,.bak}; fi; done
@@ -90,4 +92,3 @@ ruby:
 
 gems: ruby
 	sudo gem install $(shell cat install/gemfile)
-
