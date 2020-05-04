@@ -47,11 +47,6 @@ link1:
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
 
-link2:
-	rsync --exclude ".git/" \
-		--exclude "Makefile" \
-		--exclude "lib/" \
-		--exclude "install/"
 link: basics
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then mv -v $(HOME)/$$FILE{,.bak}; fi; done
 	mkdir -p $(XDG_CONFIG_HOME)
