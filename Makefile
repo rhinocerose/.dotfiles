@@ -44,6 +44,7 @@ link1:
 	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
 	ln -sfn ~/.dotfiles/.config/fish/ ~/.config/fish
 	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
+	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
 
 link2:
