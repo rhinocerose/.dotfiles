@@ -1,8 +1,9 @@
-#!/usr/bin/env zsh
+#!/usr/bin/zsh
 
 alias reload="source $HOME/.zshrc"
 alias aledit="nano $HOME/.dotfiles/.zsh/aliases.zsh"
 alias zedit="nano $HOME/.dotfiles/.zshrc"
+alias fedit="nano $HOME/.dotfiles/.config/fish/config.sh"
 
 alias ..="cd .."
 alias ...="cd ../.."
