@@ -40,6 +40,7 @@ link1:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
+	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
 	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
 	ln -sfn ~/.dotfiles/.config/ ~/.config/
 
