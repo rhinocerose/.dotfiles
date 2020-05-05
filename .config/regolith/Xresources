@@ -1,12 +1,12 @@
 
 
-gnome.terminal.font: JetBrainsMono 11
+gnome.terminal.font: DejaVu Sans Mono 10
 i3-wm.gaps.inner.size:	8
 i3-wm.gaps.outer.size:	0
 
 i3-wm.bar.position:	top
 i3-wm.bar.background.color:	#2E3440
-i3-wm.bar.font:	pango:Source Code Pro Medium 13, FontAwesome 13
+i3-wm.bar.font:	pango:DejaVu Sans Mono 10, FontAwesome 13
 i3-wm.bar.separator.color:			#81A1C1
 i3-wm.bar.statusline.color:			#E5E9F0
 i3-wm.bar.workspace.active.background.color:	#3B4252
@@ -42,4 +42,4 @@ i3-wm.client.urgent.color.child_border:		#D08770
 i3-wm.client.urgent.color.indicator:		#D08770
 i3-wm.client.urgent.color.text:			#ECEFF4
 
-rofi.font:	Source Code Pro Medium 13
+rofi.font:	DejaVu Sans Mono 10
