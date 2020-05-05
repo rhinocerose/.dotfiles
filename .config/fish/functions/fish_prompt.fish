@@ -1,1 +1,1 @@
-/home/rego/.local/share/omf/themes/spacefish/fish_prompt.fish
+/home/rego/.local/share/omf/themes/agnoster/fish_prompt.fish
