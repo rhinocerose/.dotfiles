@@ -27,4 +27,4 @@ alias apu="sudo apt update"
 alias cse="ssh asharkl@red.cse.yorku.ca"
 alias rpi="ssh pi@192.168.1.3"
 
-alias pb="zsh panbuild.sh"
+alias pb="zsh $HOME/.dotfiles/bin/pandoc/panbuild.sh"
