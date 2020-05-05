@@ -15,11 +15,12 @@ alias dot="cd $HOME/.dotfiles"
 alias ll="ls -lah"
 alias ..="cd .."
 alias ...="cd ../.."
-alias cl="clear"
+alias clr="clear"
 
 alias g="git"
 alias gp="git push origin master"
 alias gc="git add -A && git commit -m 'quick commit'"
+
 alias rr="rm -rf"
 
 alias api="sudo apt install -y"
