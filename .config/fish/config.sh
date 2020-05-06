@@ -1,5 +1,4 @@
 if status --is-interactive
-    abbr --add --global rpi 'pi@192.168.1.3'
     abbr --add --global second 'asharkl@cse.red.yorku.ca'
     # etcetera
 end
@@ -26,8 +25,11 @@ alias rr="rm -rf"
 alias api="sudo apt install -y"
 alias apu="sudo apt update"
 
-alias pb="zsh panbuild.sh"
+alias pb="zsh $HOME/.dotfiles/bin/pandoc/panbuild.sh"
 
+alias cse="ssh asharkl@red.cse.yorku.ca"
+alias rpi="ssh pi@192.168.1.3"
+alias desk="ssh asharkl@192.168.1.12"
 
 function mkd
         mkdir -pv "$argv"; and cd "$argv"
