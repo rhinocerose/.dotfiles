@@ -44,7 +44,7 @@ arch-frameworks: arch-shells shell-config
 
 arch-shells:
 	sudo pacman	-Syu --noconfirm zsh
-	sudo pacman	-Syu --noconfirm -fish
+	sudo pacman	-Syu --noconfirm fish
 
 shell-config:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -52,7 +52,7 @@ shell-config:
 	omf install spacefish
 	omf install agnoster
 	omf theme agnoster
-	
+
 ubuntu-shells:
 	sudo apt install -y zsh
 	sudo apt install -y fish
