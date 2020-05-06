@@ -5,9 +5,9 @@ NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
 
-all: ubuntu-core basics packages polish
+ubuntu: ubuntu-core ubuntu-basics ubuntu-packages
 
-full: all apt-extra
+arch: arch-core arch-basics arch-packages
 
 ubuntu-core: 
 	sudo apt-get update
@@ -15,28 +15,45 @@ ubuntu-core:
 	sudo apt-get dist-upgrade -f
 	sudo apt-get install -y build-essential
 
-repo-add:
+arch-core:
+	sudo pacman -Syyu
+
+apt-repo-add:
 	sudo add-apt-repository -y ppa:aacebedo/fasd
 	sudo apt update -y
 	
-basics:
-	sudo apt -y install git git-extras
-	sudo apt -y install curl
-	sudo apt -y install stow
-	sudo apt -y install aria2
-	sudo apt -y install zsh
+ubuntu-basics:
+	sudo apt install -y $(shell cat install/basefile)
 
-packages: frameworks apt-basics	pip-packages node-packages gems
+arch-basics:
+	sudo pacman -Syu --noconfirm $(shell cat install/basefile)
 
-frameworks: brew npm python
+ubuntu-packages: ubuntu-frameworks apt-packages pip-packages node-packages gems
 
-apt-basics: basics repo-add
+ubuntu-frameworks:
+	mkdir -pv ~/.npm-global
+	sudo apt install -y $(shell cat install/framefile)
+	npm config set prefix '~/.npm-global'
+
+arch-packages: arch-frameworks pac-packages pip-packages node-packages gems
+
+arch-frameworks:
+	mkdir -pv ~/.npm-global
+	sudo pacman -Syu --noconfirm $(shell cat install/framefile)
+	npm config set prefix '~/.npm-global'
+
+apt-packages: ubuntu-basics apt-repo-add
+	sudo apt install -y $(shell cat install/commonfile)
 	sudo apt install -y $(shell cat install/aptfile)
+
+pac-packages: arch-basics 
+	sudo pacman -Syu --noconfirm $(shell cat install/commonfile)
+	sudo pacman -Syu --noconfirm $(shell cat install/pacfile)
 
 apt-extra:
 	sudo apt install -y $(shell cat install/aptextra)
 
-link1:
+rego-link:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
@@ -60,12 +77,10 @@ unlink: basics
 	stow --delete -t $(XDG_CONFIG_HOME) config
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 
-brew: basics
+brew: 
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
 
-python: basics
-	sudo apt install -y python3
-	sudo apt install -y python3-distutils
+python: 
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 	python3 get-pip.py
 	python3 ~/.local/bin/pip install -U pip
@@ -74,21 +89,11 @@ python: basics
 pip-packages: python
 	python3 -m pip install --upgrade --user $(shell cat install/pipfile) 	
  	
-npm:
-	mkdir -pv ~/.npm-global
-	sudo apt install -y nodejs 
-	sudo apt install -y npm
-	npm config set prefix '~/.npm-global'
-
-
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
 
-node-packages: npm
+node-packages: 
 	npm install -g $(shell cat install/npmfile)
 
-ruby: 
-	sudo apt install -y ruby-full
-
-gems: ruby
+gems: 
 	sudo gem install $(shell cat install/gemfile)

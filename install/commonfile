@@ -1,0 +1,36 @@
+unrar zip unzip
+ack
+cmake
+coreutils
+ditaa
+doxygen
+fasd
+figlet
+fish
+googler
+gucharmap
+htop
+imagemagick
+libgl1-mesa-glx libegl1-mesa libxrandr2 libxss1
+libxcursor libxcomposite libasound libxi6 libxtst6
+libncurses5-dev libncursesw5-dev
+libnotify-bin
+markdown
+meson
+ninja-build
+openssh-server
+pandoc
+peco
+psmisc
+shellcheck
+silversearcher-ag
+texlive-latex-recommended texlive-xetex
+texstudio
+tree
+thefuck
+vlc
+youtube-dl
+zim
+
+font-powerline
+ttf-mscorefonts-installer
