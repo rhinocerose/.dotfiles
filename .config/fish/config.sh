@@ -25,6 +25,8 @@ alias rr="rm -rf"
 alias api="sudo apt install -y"
 alias apu="sudo apt update"
 
+alias pi="sudo pacman -Syu --noconfirm"
+
 alias pb="zsh $HOME/.dotfiles/bin/pandoc/panbuild.sh"
 
 alias cse="ssh asharkl@red.cse.yorku.ca"

@@ -103,7 +103,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 #done;
 #unset file;
-for file in ~/.dotfiles/.bash/*; do
+for file in $HOME/.dotfiles/.bash/*; do
   source $file
 done
 

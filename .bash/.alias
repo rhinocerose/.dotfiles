@@ -7,3 +7,4 @@ alias rr="rm -rf"
 
 alias df = "cd ~/.dotfiles"
 
+alias pi="sudo pacman -Syu --noconfirm"
