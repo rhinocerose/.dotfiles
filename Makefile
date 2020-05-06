@@ -52,6 +52,7 @@ shell-config:
 	omf install spacefish
 	omf install agnoster
 	omf theme agnoster
+	source .zshrc
 
 ubuntu-shells:
 	sudo apt install -y zsh
