@@ -30,17 +30,32 @@ arch-basics:
 
 ubuntu-packages: ubuntu-frameworks apt-packages pip-packages node-packages gems
 
-ubuntu-frameworks:
+ubuntu-frameworks: ubuntu-shells shell-config
 	mkdir -pv ~/.npm-global
 	sudo apt install -y $(shell cat install/framefile)
 	sudo apt install -y ruby-full
 
 arch-packages: arch-frameworks pac-packages pip-packages node-packages gems
 
-arch-frameworks:
+arch-frameworks: arch-shells shell-config
 	mkdir -pv ~/.npm-global
 	sudo pacman -Syu --noconfirm $(shell cat install/framefile)
 	sudo pacman	-Syu --noconfirm ruby
+
+arch-shells:
+	sudo pacman	-Syu --noconfirm zsh
+	sudo pacman	-Syu --noconfirm -fish
+
+shell-config:
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	curl -L https://get.oh-my.fish | fish
+	omf install spacefish
+	omf install agnoster
+	omf theme agnoster
+	
+ubuntu-shells:
+	sudo apt install -y zsh
+	sudo apt install -y fish
 
 apt-packages: ubuntu-basics apt-repo-add
 	sudo apt install -y $(shell cat install/commonfile)
