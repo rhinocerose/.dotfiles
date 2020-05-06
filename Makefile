@@ -40,7 +40,6 @@ arch-packages: arch-frameworks pac-packages pip-packages node-packages gems
 arch-frameworks:
 	mkdir -pv ~/.npm-global
 	sudo pacman -Syu --noconfirm $(shell cat install/framefile)
-	npm config set prefix '~/.npm-global'
 
 apt-packages: ubuntu-basics apt-repo-add
 	sudo apt install -y $(shell cat install/commonfile)
@@ -93,6 +92,7 @@ brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
 
 node-packages: 
+	npm config set prefix '~/.npm-global'
 	npm install -g $(shell cat install/npmfile)
 
 gems: 
