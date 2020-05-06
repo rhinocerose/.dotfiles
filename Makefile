@@ -45,6 +45,7 @@ rego-link:
 	ln -sfn ~/.dotfiles/.config/fish/ ~/.config/fish
 	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
+	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
 	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
 	regolith-look refresh
