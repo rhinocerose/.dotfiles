@@ -82,6 +82,16 @@ rego-link:
 	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
 	regolith-look refresh
 
+arch-link:
+	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
+	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
+	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
+	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
+	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
+	ln -sfn ~/.dotfiles/.config/fish/ ~/.config/fish
+	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
+	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
+
 link: basics
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then mv -v $(HOME)/$$FILE{,.bak}; fi; done
 	mkdir -p $(XDG_CONFIG_HOME)
