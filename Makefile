@@ -33,13 +33,14 @@ ubuntu-packages: ubuntu-frameworks apt-packages pip-packages node-packages gems
 ubuntu-frameworks:
 	mkdir -pv ~/.npm-global
 	sudo apt install -y $(shell cat install/framefile)
-	npm config set prefix '~/.npm-global'
+	sudo apt install -y ruby-full
 
 arch-packages: arch-frameworks pac-packages pip-packages node-packages gems
 
 arch-frameworks:
 	mkdir -pv ~/.npm-global
 	sudo pacman -Syu --noconfirm $(shell cat install/framefile)
+	sudo pacman	-Syu --noconfirm ruby
 
 apt-packages: ubuntu-basics apt-repo-add
 	sudo apt install -y $(shell cat install/commonfile)
@@ -77,7 +78,7 @@ unlink: basics
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE.bak ]; then mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; fi; done
 
 brew: 
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 
 python: 
 	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
