@@ -25,6 +25,7 @@ alias api="sudo apt install -y"
 alias apu="sudo apt update"
 
 alias pi="sudo pacman -Syu --noconfirm"
+alias pr="sudo pacman -R"
 
 alias cse="ssh asharkl@red.cse.yorku.ca"
 alias rpi="ssh pi@192.168.1.3"

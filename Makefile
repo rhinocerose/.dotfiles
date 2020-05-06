@@ -78,6 +78,10 @@ shell-config:
 pac-packages: arch-basics 
 	sudo pacman -Syu --noconfirm $(shell cat install/commonfile)
 	sudo pacman -Syu --noconfirm $(shell cat install/pacfile)
+	git clone https://aur.archlinux.org/ttf-ms-fonts.git
+	cd ~/ttf-ms-fonts
+	makepkg -sri
+
 
 arch-link:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc

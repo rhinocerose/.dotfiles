@@ -26,6 +26,7 @@ alias api="sudo apt install -y"
 alias apu="sudo apt update"
 
 alias pi="sudo pacman -Syu --noconfirm"
+alias pr="sudo pacman -R"
 
 alias pb="zsh $HOME/.dotfiles/bin/pandoc/panbuild.sh"
 
