@@ -3,6 +3,7 @@ if status --is-interactive
     # etcetera
 end
 
+echo -ne '\e]11;#000000\a'
 
 alias reload="source $HOME/.zshrc"
 alias rfish="source $HOME/config.sh"
