@@ -1,5 +1,6 @@
 unrar zip unzip
 ack
+autojump
 cmake
 coreutils
 ditaa

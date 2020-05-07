@@ -4,6 +4,7 @@ Host rpi
     IdentityFile ~/.ssh/id_rsa.pub
     ServerAliveInterval 120
     ServerAliveCountMax 30
+    
 Host cse
     User asharkl
     HostName red.cse.yorku.ca

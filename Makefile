@@ -5,6 +5,11 @@ NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
 
+help:
+	echo "Available options"
+	echo "   ubuntu            - build all ubuntu options"
+	echo "   ubuntu-core       - update repositories and packages"
+
 ubuntu: ubuntu-core ubuntu-basics ubuntu-packages
 
 ubuntu-core: 
