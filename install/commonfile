@@ -4,6 +4,8 @@ autojump
 cmake
 coreutils
 ditaa
+docker
+docker.io
 doxygen
 fasd
 figlet
