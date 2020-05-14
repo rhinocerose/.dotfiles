@@ -5,32 +5,32 @@ NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
 
-all: ubuntu-core ubuntu-basics ubuntu-packages rego-link
+all: core basics packages rego-link
 
-ubuntu-core: 
+core: 
 	sudo apt-get update
 	sudo apt-get upgrade -y
 	sudo apt-get dist-upgrade -f
 	sudo apt-get install -y build-essential
 	
-ubuntu-basics:
+basics:
 	sudo apt install -y $(shell cat install/basefile)
 	sudo apt install -y zsh
 	sudo apt install -y fish
 
-apt-repo-add:
+repo-add:
 	sudo add-apt-repository -y ppa:aacebedo/fasd
 	sudo add-apt-repository -y ppa:kgilmer/speed-ricer
 	sudo apt update -y
 
-ubuntu-packages: ubuntu-frameworks apt-packages pip-packages node-packages gems
+packages: frameworks packages pip-packages node-packages gems
 
-ubuntu-frameworks: shell-config
+frameworks: shell-config
 	mkdir -pv ~/.npm-global
 	sudo apt install -y $(shell cat install/framefile)
 	sudo apt install -y ruby-full
 
-apt-packages: ubuntu-basics apt-repo-add
+packages: basics apt-repo-add
 	sudo apt install -y $(shell cat install/aptfile)
 
 apt-extra:
