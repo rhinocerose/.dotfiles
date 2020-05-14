@@ -5,7 +5,7 @@ NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
 
-all: ubuntu-core ubuntu-basics ubuntu-packages
+all: ubuntu-core ubuntu-basics ubuntu-packages rego-link
 
 ubuntu-core: 
 	sudo apt-get update
@@ -20,7 +20,6 @@ ubuntu-basics:
 
 apt-repo-add:
 	sudo add-apt-repository -y ppa:aacebedo/fasd
-	sudo add-apt-repository -y pps:kgilmer/speed-ricer
 	sudo apt update -y
 
 ubuntu-packages: ubuntu-frameworks apt-packages pip-packages node-packages gems
@@ -32,7 +31,6 @@ ubuntu-frameworks: shell-config
 
 apt-packages: ubuntu-basics apt-repo-add
 	sudo apt install -y $(shell cat install/aptfile)
-	sudo apt install -y i3-gaps-wm
 
 apt-extra:
 	sudo apt install -y $(shell cat install/aptextra)
