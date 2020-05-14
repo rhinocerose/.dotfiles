@@ -47,8 +47,7 @@ rego-link:
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
 	ln -sfn ~/.dotfiles/.config/i3/ ~/.config/i3
-	mkdir ~/.ssh
-	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
+	ln -sfn ~/.dotfiles/.config/ssh/config -p ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
