@@ -37,6 +37,7 @@ apt-extra:
 	sudo apt install -y $(shell cat install/aptextra)
 
 rego-link:
+	sudo apt install -y regolith-look-nord
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
@@ -47,7 +48,8 @@ rego-link:
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
 	ln -sfn ~/.dotfiles/.config/i3/ ~/.config/i3
-	ln -sfn ~/.dotfiles/.config/ssh/config -p ~/.ssh/
+	mkdir -p ~/.ssh
+	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
