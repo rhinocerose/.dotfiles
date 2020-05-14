@@ -1,14 +1,42 @@
+unrar zip unzip
+ack
+autojump
+cmake
+coreutils
+ditaa
+docker
+docker.io
+doxygen
 emacs-gtk
+fasd
+figlet
+fish
 git-extras
 googler
+gucharmap
+htop
+imagemagick
 libgl1-mesa-glx libegl1-mesa libxrandr2 libxss1
 libxcursor libxcomposite 
 libnotify-bin
 libasound libxi6 libxtst6
 libncurses5-dev libncursesw5-dev
+markdown
+meson
 ninja-build
 openssh-server
+pandoc
 peco
+psmisc
+shellcheck
+texstudio
+tree
+thefuck
+vlc
+xcb
+youtube-dl
+zim
+
 silversearcher-ag
 texlive-latex-recommended texlive-xetex
 font-powerline

@@ -18,3 +18,10 @@ Host desk
     IdentityFile ~/.ssh/id_rsa.pub
     ServerAliveInterval 120
     ServerAliveCountMax 30
+
+Host cloud
+    User root
+    HostName 34.95.61.139
+    IdentityFile ~/.ssh/id_rsa.pub
+    ServerAliveInterval 120
+    ServerAliveCountMax 30

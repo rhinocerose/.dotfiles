@@ -5,12 +5,7 @@ NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
 
-help:
-	echo "Available options"
-	echo "   ubuntu            - build all ubuntu options"
-	echo "   ubuntu-core       - update repositories and packages"
-
-ubuntu: ubuntu-core ubuntu-basics ubuntu-packages
+all: ubuntu-core ubuntu-basics ubuntu-packages
 
 ubuntu-core: 
 	sudo apt-get update
@@ -25,6 +20,7 @@ ubuntu-basics:
 
 apt-repo-add:
 	sudo add-apt-repository -y ppa:aacebedo/fasd
+	sudo add-apt-repository -y pps:kgilmer/speed-ricer
 	sudo apt update -y
 
 ubuntu-packages: ubuntu-frameworks apt-packages pip-packages node-packages gems
@@ -35,8 +31,8 @@ ubuntu-frameworks: shell-config
 	sudo apt install -y ruby-full
 
 apt-packages: ubuntu-basics apt-repo-add
-	sudo apt install -y $(shell cat install/commonfile)
 	sudo apt install -y $(shell cat install/aptfile)
+	sudo apt install -y i3-gaps-wm
 
 apt-extra:
 	sudo apt install -y $(shell cat install/aptextra)
@@ -52,25 +48,9 @@ rego-link:
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
+	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
 	regolith-look refresh
-
-arch: arch-core arch-basics arch-packages
-
-arch-core:
-	sudo pacman -Syyu
-
-arch-basics:
-	sudo pacman -Syu --noconfirm $(shell cat install/basefile)
-	sudo pacman	-Syu --noconfirm zsh
-	sudo pacman	-Syu --noconfirm fish
-
-arch-packages: arch-frameworks pac-packages pip-packages node-packages gems
-
-arch-frameworks: shell-config
-	mkdir -pv ~/.npm-global
-	sudo pacman -Syu --noconfirm $(shell cat install/framefile)
-	sudo pacman	-Syu --noconfirm ruby
 
 shell-config:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -79,24 +59,6 @@ shell-config:
 	omf install agnoster
 	omf theme agnoster
 	source .zshrc
-
-pac-packages: arch-basics 
-	sudo pacman -Syu --noconfirm $(shell cat install/commonfile)
-	sudo pacman -Syu --noconfirm $(shell cat install/pacfile)
-	git clone https://aur.archlinux.org/ttf-ms-fonts.git
-	cd ~/ttf-ms-fonts
-	makepkg -sri
-
-
-arch-link:
-	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
-	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
-	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
-	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
-	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
-	ln -sfn ~/.dotfiles/.config/fish/ ~/.config/fish
-	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
-	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 
 link: basics
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then mv -v $(HOME)/$$FILE{,.bak}; fi; done
