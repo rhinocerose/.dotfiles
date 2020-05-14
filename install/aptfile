@@ -11,6 +11,7 @@ emacs-gtk
 fasd
 figlet
 fish
+font-powerline
 git-extras
 googler
 gucharmap
@@ -27,17 +28,16 @@ ninja-build
 openssh-server
 pandoc
 peco
+polybar
 psmisc
 shellcheck
+silversearcher-ag
+texlive-latex-recommended texlive-xetex
 texstudio
 tree
+ttf-mscorefonts-installer
 thefuck
 vlc
 xcb
 youtube-dl
 zim
-
-silversearcher-ag
-texlive-latex-recommended texlive-xetex
-font-powerline
-ttf-mscorefonts-installer

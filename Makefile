@@ -20,6 +20,7 @@ ubuntu-basics:
 
 apt-repo-add:
 	sudo add-apt-repository -y ppa:aacebedo/fasd
+	sudo add-apt-repository -y ppa:kgilmer/speed-ricer
 	sudo apt update -y
 
 ubuntu-packages: ubuntu-frameworks apt-packages pip-packages node-packages gems
@@ -44,6 +45,8 @@ rego-link:
 	ln -sfn ~/.dotfiles/.config/fish/ ~/.config/fish
 	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
+	ln -sfn ~/.dotfiles/.config/i3/ ~/.config/i3
+	mkdir ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
