@@ -1,5 +1,5 @@
 if status --is-interactive
-    abbr --add --global second 'asharkl@cse.red.yorku.ca'
+    #abbr --add --global second 'asharkl@cse.red.yorku.ca'
     # etcetera
 end
 
@@ -19,21 +19,14 @@ alias clr="clear"
 
 alias g="git"
 alias gp="git push origin master"
-alias gc="git add -A && git commit -m 'quick commit'"
+alias gc="git add -A; and git commit -m 'quick commit'"
 
 alias rr="rm -rf"
 
 alias api="sudo apt install -y"
 alias apu="sudo apt update"
 
-alias pi="sudo pacman -Syu --noconfirm"
-alias pr="sudo pacman -R"
-
 alias pb="zsh $HOME/.dotfiles/bin/pandoc/panbuild.sh"
-
-alias cse="ssh asharkl@red.cse.yorku.ca"
-alias rpi="ssh pi@192.168.1.3"
-alias desk="ssh asharkl@192.168.1.12"
 
 function mkd
         mkdir -pv "$argv"; and cd "$argv"

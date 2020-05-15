@@ -55,7 +55,7 @@ rego-link:
 	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
 	regolith-look refresh
 
-shell-config:
+shell:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	curl -L https://get.oh-my.fish | fish
 	omf install spacefish
