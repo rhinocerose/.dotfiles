@@ -1,7 +1,3 @@
-if status --is-interactive
-    #abbr --add --global second 'asharkl@cse.red.yorku.ca'
-    # etcetera
-end
 
 echo -ne '\e]11;#000000\a'
 
@@ -19,7 +15,7 @@ alias clr="clear"
 
 alias g="git"
 alias gp="git push origin master"
-alias gc="git add -A; and git commit -m 'quick commit'"
+alias gc="git add -A; and git commit -m 'quick commit'; git push origin master"
 
 alias rr="rm -rf"
 
