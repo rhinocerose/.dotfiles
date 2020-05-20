@@ -20,12 +20,11 @@ basics:
 
 apt-repo-add:
 	sudo add-apt-repository -y ppa:aacebedo/fasd
-	sudo add-apt-repository -y ppa:kgilmer/speed-ricer
 	sudo apt update -y
 
 packages: frameworks packages pip-packages node-packages gems
 
-frameworks: shell
+frameworks: 
 	mkdir -pv ~/.npm-global
 	sudo apt install -y $(shell cat install/framefile)
 	sudo apt install -y ruby-full
