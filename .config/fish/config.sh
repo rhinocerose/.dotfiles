@@ -26,7 +26,7 @@ alias rr="rm -rf"
 alias api="sudo apt install -y"
 alias apu="sudo apt update"
 
-alias pb="zsh $HOME/.dotfiles/bin/pandoc/panbuild.sh"
+alias pb="bash $HOME/.dotfiles/bin/pandoc/panbuild.sh"
 
 function mkd
         mkdir -pv "$argv"; and cd "$argv"
