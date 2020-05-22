@@ -27,7 +27,8 @@ packages: frameworks packages pip-packages node-packages gems
 frameworks: 
 	mkdir -pv ~/.npm-global
 	sudo apt install -y $(shell cat install/framefile)
-	sudo apt install -y ruby-full
+	sudo snap install --classic code
+
 
 apt-packages: basics apt-repo-add
 	sudo apt install -y $(shell cat install/aptfile)
