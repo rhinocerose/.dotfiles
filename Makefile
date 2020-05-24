@@ -46,7 +46,7 @@ link:
 	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
-	ln -sfn ~/.dotfiles/.config/i3/ ~/.config/i3
+	ln -sfn ~/.dotfiles/.config/regolith/i3/ ~/.config/i3
 	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
 	mkdir -p ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
