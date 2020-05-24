@@ -5,7 +5,7 @@ NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
 
-all: core basics packages rego-link
+all: core basics packages link
 
 core: 
 	sudo apt-get update
@@ -18,7 +18,7 @@ basics:
 	sudo apt install -y zsh
 	sudo apt install -y fish
 
-apt-repo-add:
+repo-add:
 	sudo add-apt-repository -y ppa:aacebedo/fasd
 	sudo apt update -y
 
@@ -30,14 +30,13 @@ frameworks:
 	sudo snap install --classic code
 
 
-apt-packages: basics apt-repo-add
+apt-packages: basics repo-add
 	sudo apt install -y $(shell cat install/aptfile)
 
 apt-extra:
 	sudo apt install -y $(shell cat install/aptextra)
 
-rego-link:
-	sudo apt install -y regolith-look-nord
+link:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
@@ -48,12 +47,12 @@ rego-link:
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
 	ln -sfn ~/.dotfiles/.config/i3/ ~/.config/i3
+	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
 	mkdir -p ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
-	regolith-look refresh
 
 shell:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
