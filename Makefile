@@ -29,14 +29,17 @@ frameworks:
 	sudo apt install -y $(shell cat install/framefile)
 	sudo snap install --classic code
 
-
 apt-packages: basics repo-add
 	sudo apt install -y $(shell cat install/aptfile)
 
 apt-extra:
 	sudo apt install -y $(shell cat install/aptextra)
+	git clone https://github.com/ryanoasis/nerd-fonts ~/.nerd-fonts
+	cd ~/.nerd-fonts
+	./install.sh
+	cd ~/.dotfiles
 
-link:
+rego-link:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
@@ -47,11 +50,11 @@ link:
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
 	chmod +x $HOME/.config/polybar/launch.sh
-	ln -sfn ~/.dotfiles/.config/regolith/i3/ ~/.config/i3
+	ln -sfn ~/.dotfiles/.config/regolith/i3/ ~/.config
 	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
 	mkdir -p ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
-	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config/regolith
+	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
 
