@@ -11,6 +11,7 @@ emacs-gtk
 fasd
 figlet
 fish
+fonts-font-awesome
 fonts-powerline
 git-extras
 googler
@@ -41,3 +42,4 @@ vlc
 xcb
 youtube-dl
 zim
+zsh
