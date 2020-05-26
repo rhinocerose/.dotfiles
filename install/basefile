@@ -1,4 +1,5 @@
-curl
-stow
 aria2
+curl
+make
+stow
 zsh
