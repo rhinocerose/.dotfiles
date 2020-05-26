@@ -1,6 +1,6 @@
 python3
-python3-distutils
+python-pip
 nodejs
 npm
-ruby-full
-snapd
+ruby
+code
