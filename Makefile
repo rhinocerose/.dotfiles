@@ -47,7 +47,6 @@ link:
 	chmod +x ~/.config/polybar/launch.sh
 #	ln -sfn ~/.dotfiles/.config/regolith/i3/ ~/.config
 #	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
-	mkdir -p ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	source ~/config.sh
