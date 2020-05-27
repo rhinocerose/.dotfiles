@@ -5,32 +5,27 @@ NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
 export STOW_DIR := $(DOTFILES_DIR)
 
-all: core basics packages link
+all: basics packages link
 
-core: 
-	sudo apt-get update
-	sudo apt-get upgrade -y
-	sudo apt-get dist-upgrade -f
-	sudo apt-get install -y build-essential
-	
 basics:
-	sudo apt install -y $(shell cat install/basefile)
-	sudo apt install -y zsh
-	sudo apt install -y fish
-
-repo-add:
-	sudo add-apt-repository -y ppa:aacebedo/fasd
-	sudo apt update -y
-
-packages: frameworks packages pip-packages node-packages gems
-
-frameworks: 
+	sudo pacman -Syu 
+	sudo pacman -S --needed base-devel
+	yes | sudo pacman -S $(shell cat install/basefile)
 	mkdir -pv ~/.npm-global
-	sudo apt install -y $(shell cat install/framefile)
-	sudo snap install --classic code
+	yes | sudo pacman -S $(shell cat install/framefile)
+	git clone https://aur.archlinux.org/yay.git ~/yay
+	cd ~/yay
+	makepkg -si
+	
+packages: pacman-packages pip-packages node-packages gems
 
-apt-packages: basics repo-add
-	sudo apt install -y $(shell cat install/aptfile)
+pacman-packages:
+	yes | sudo pacman -S $(shell cat install/pacfile)
+	git clone https://aur.archlinux.org/polybar.git ~/polybar
+	cd ~/polybar
+	makepkg -si
+	cd ~
+	sudo yay -S polybar
 
 apt-extra:
 	sudo apt install -y $(shell cat install/aptextra)
@@ -80,13 +75,7 @@ stowunlink: basics
 brew: 
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 
-python: 
-	curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-	python3 get-pip.py
-	python3 ~/.local/bin/pip install -U pip
-	rm get-pip.py
-	
-pip-packages: python
+pip-packages: 
 	python3 -m pip install --upgrade --user $(shell cat install/pipfile) 	
  	
 brew-packages: brew
