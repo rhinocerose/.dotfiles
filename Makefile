@@ -14,8 +14,7 @@ basics:
 	mkdir -pv ~/.npm-global
 	yes | sudo pacman -S - < install/framefile
 	git clone https://aur.archlinux.org/yay.git ~/yay
-	cd ~/yay
-	makepkg -si
+	cd ~/yay && makepkg -si
 	
 packages: pacman-packages pip-packages node-packages gems
 
