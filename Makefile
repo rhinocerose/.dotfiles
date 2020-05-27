@@ -10,7 +10,7 @@ all: basics packages link
 basics:
 	sudo pacman -Syu 
 	sudo pacman -S --needed base-devel
-	yes | sudo pacman -S $(shell cat install/basefile)
+	yes | pacman -S - < install/basefile
 	mkdir -pv ~/.npm-global
 	yes | sudo pacman -S $(shell cat install/framefile)
 	git clone https://aur.archlinux.org/yay.git ~/yay
