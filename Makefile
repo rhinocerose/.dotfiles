@@ -10,11 +10,12 @@ all: basics packages link
 basics:
 	sudo pacman -Syu 
 	sudo pacman -S --needed base-devel
-	sudo pacman -S - < install/basefile
+	sudo pacman -S aria2 curl make stow zsh
 	mkdir -pv ~/.npm-global
-	sudo pacman -S - < install/framefile
+	sudo pacman -S python3 python-pip nodejs npm ruby code
 	git clone https://aur.archlinux.org/yay.git ~/yay
 	cd ~/yay && makepkg -si
+	chsh --shell /bin/fish
 	
 packages: pacman-packages pip-packages node-packages gems
 
