@@ -20,7 +20,7 @@ packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
 	sudo pacman -S - < install/pacfile
-	sudo yay -S polybar
+	yay -S polybar
 
 extra:
 	yes | sudo pacman -S - < install/aptextra
