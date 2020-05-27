@@ -10,23 +10,19 @@ all: basics packages link
 basics:
 	sudo pacman -Syu 
 	sudo pacman -S --needed base-devel
-	yes | sudo pacman -S - < install/basefile
+	sudo pacman -S - < install/basefile
 	mkdir -pv ~/.npm-global
-	yes | sudo pacman -S - < install/framefile
+	sudo pacman -S - < install/framefile
 	git clone https://aur.archlinux.org/yay.git ~/yay
 	cd ~/yay && makepkg -si
 	
 packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
-	yes | sudo pacman -S - < install/pacfile
-	git clone https://aur.archlinux.org/polybar.git ~/polybar
-	cd ~/polybar
-	makepkg -si
-	cd ~
+	sudo pacman -S - < install/pacfile
 	sudo yay -S polybar
 
-apt-extra:
+extra:
 	yes | sudo pacman -S - < install/aptextra
 	git clone https://github.com/ryanoasis/nerd-fonts ~/.nerd-fonts
 	cd ~/.nerd-fonts
