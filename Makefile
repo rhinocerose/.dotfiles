@@ -15,7 +15,7 @@ basics:
 	sudo pacman -S python3 python-pip nodejs npm ruby code
 	git clone https://aur.archlinux.org/yay.git ~/yay
 	cd ~/yay && makepkg -si
-	chsh --shell /bin/fish
+	
 	
 packages: pacman-packages pip-packages node-packages gems
 
@@ -24,7 +24,7 @@ pacman-packages:
 	sudo pacman -S doxygen emacs falkon fasd figlet
 	sudo pacman -S fish gucharmap htop i3-gaps imagemagick markdown
 	sudo pacman -S meson neofetch ninja openssh otf-font-awesome pandoc
-	sudo pacman -S powerline-fonts shellcheck texlive-core the_silver_searcher thefuck tree zsh
+	sudo pacman -S powerline-fonts shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree zsh
 	yay -S polybar
 
 extra:
@@ -44,12 +44,13 @@ link:
 #	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
+	ln -sfn ~/.dotfiles/.config/alacritty/ ~/.config/alacritty
 	chmod +x ~/.config/polybar/launch.sh
 #	ln -sfn ~/.dotfiles/.config/regolith/i3/ ~/.config
 #	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
-	source ~/config.sh
+	chsh --shell /bin/fish
 	
 shell:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
