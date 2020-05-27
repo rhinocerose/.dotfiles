@@ -63,7 +63,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1	= /home
+;mount-1	= /home
 
 label-mounted =  %percentage_used%%
 label-unmounted =  not mounted
