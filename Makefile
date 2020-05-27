@@ -19,7 +19,11 @@ basics:
 packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
-	sudo pacman -S - < install/pacfile
+	sudo pacman -S ack alacritty cmake coreutils
+	sudo pacman -S doxygen emacs falkon fasd figlet
+	sudo pacman -S fish gucharmap htop i3-gaps imagemagick markdown
+	sudo pacman -S meson neofetch ninja openssh otf-font-awesome pandoc
+	sudo pacman -S powerline-fonts shellcheck texlive-core the_silver_searcher thefuck tree zsh
 	yay -S polybar
 
 extra:
