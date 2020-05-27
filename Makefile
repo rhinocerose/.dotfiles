@@ -41,18 +41,17 @@ link:
 	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
 	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
 	ln -sfn ~/.dotfiles/.config/fish/ ~/.config/fish
-	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
+#	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
 	chmod +x ~/.config/polybar/launch.sh
-	ln -sfn ~/.dotfiles/.config/regolith/i3/ ~/.config
-	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
+#	ln -sfn ~/.dotfiles/.config/regolith/i3/ ~/.config
+#	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
 	mkdir -p ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
-	ln -sfn ~/.dotfiles/.config/regolith/ ~/.config
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
-	ln -sfn ~/.dotfiles/.Xresources-regolith ~/.Xresources-regolith
-
+	source ~/config.sh
+	
 shell:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	curl -L https://get.oh-my.fish | fish
