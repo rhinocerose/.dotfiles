@@ -9,6 +9,7 @@ fasd
 figlet
 fish
 gucharmap
+gunzip
 htop
 i3-gaps
 imagemagick
@@ -25,4 +26,5 @@ texlive-core
 the_silver_searcher
 thefuck
 tree
+unzip
 zsh
