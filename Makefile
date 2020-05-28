@@ -21,11 +21,12 @@ packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
 	sudo pacman -S ack alacritty cmake coreutils
-	sudo pacman -S doxygen emacs falkon fasd figlet
+	sudo pacman -S dmenu doxygen drun emacs falkon fasd figlet
 	sudo pacman -S fish gucharmap htop i3-gaps imagemagick markdown
-	sudo pacman -S meson neofetch ninja openssh otf-font-awesome pandoc
-	sudo pacman -S powerline-fonts shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree zsh
+	sudo pacman -S meson neofetch ninja openssh otf-font-awesome pandoc powerline-fonts rofi 
+	sudo pacman -S shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree zsh
 	yay -S polybar
+	yay -S ttf-font-awesome-4
 
 extra:
 	yes | sudo pacman -S - < install/aptextra
