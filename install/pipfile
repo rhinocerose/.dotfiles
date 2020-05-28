@@ -6,6 +6,7 @@ matplotlib
 nose
 numpy
 pandas
-virtualenv
+pywal
 scipy
 sympy
+virtualenv
