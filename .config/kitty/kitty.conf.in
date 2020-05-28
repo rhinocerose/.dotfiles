@@ -1,57 +1,61 @@
-! SPECIAL
-#define  FOREGROUND   #A9D5CB
-#define  BACKGROUND   #0A0F0E
-#define  CURSORCOLOR  #A9D5CB
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+# include color.conf
 
-! BLACK
-#define  COLOR0       #121917
-#define  COLOR8       #F63589
+font_family      DejaVuSansMono Nerd Font Book
+italic_font      DejaVuSansMono Nerd Font Oblique
+bold_font        DejaVuSansMono Nerd Font Bold
+bold_italic_font DejaVuSansMono Nerd Font Bold Oblique
 
-! RED
-#define  COLOR1       #192220
-#define  COLOR9       #FC619B
+font_size 9.0
+font_size_delta 9.0
 
-! GREEN
-#define  COLOR2       #273431
-#define  COLOR10      #EF9FB7
+adjust_line_height  5
+adjust_column_width 0
 
-! YELLOW
-#define  COLOR3       #3B4D49
-#define  COLOR11      #658C42
+scrollback_lines 4096
+enable_audio_bell no
 
-! BLUE
-#define  COLOR4       #546B66
-#define  COLOR12      #FC1487
+background_opacity 1.0
+window_padding_width 4
 
-! MAGENTA
-#define  COLOR5       #71908A
-#define  COLOR13      #0BAE9A
+cursor_stop_blinking_after 0.0
 
-! CYAN
-#define  COLOR6       #94BBB3
-#define  COLOR14      #FA83AA
+strip_trailing_spaces smart
 
-! WHITE
-#define  COLOR7       #BCECE2
-#define  COLOR15      #6F9E3E
+#: The foreground and background colors
+background %clbg%
+foreground %clfg%
 
+# BLACK
+color0       %cl0%
+color8       %cl8%
 
-*.foreground:  FOREGROUND
-*.background:  BACKGROUND
-*.cursorColor: FOREGROUND
-*.color0:      COLOR0
-*.color8:      COLOR8
-*.color1:      COLOR1
-*.color9:      COLOR9
-*.color2:      COLOR2
-*.color10:     COLOR10
-*.color3:      COLOR3
-*.color11:     COLOR11
-*.color4:      COLOR4
-*.color12:     COLOR12
-*.color5:      COLOR5
-*.color13:     COLOR13
-*.color6:      COLOR6
-*.color14:     COLOR14
-*.color7:      COLOR7
-*.color15:     COLOR15
+# RED
+color1       %cl1%
+color9       %cl9%
+
+# GREEN
+color2       %cl2%
+color10      %cl10%
+
+# YELLOW
+color3       %cl3%
+color11      %cl11%
+
+# BLUE
+color4       %cl4%
+color12      %cl12%
+
+# MAGENTA
+color5       %cl5%
+color13      %cl13%
+
+# CYAN
+color6       %cl6%
+color14      %cl14%
+
+# WHITE
+color7       %cl7%
+color15      %cl15%
+
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
