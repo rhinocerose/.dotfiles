@@ -46,6 +46,7 @@ link:
 #	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
 	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
+	ln -sfn ~/.dotfiles/.config/gtk-3.0/ ~/.config/gtk-3.0
 	ln -sfn ~/.dotfiles/.config/alacritty/ ~/.config/alacritty
 	ln -sfn ~/.dotfiles/.config/kitty/ ~/.config/kitty
 	ln -sfn ~/.dotfiles/.config/i3/ ~/.config/i3
