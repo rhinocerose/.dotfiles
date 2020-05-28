@@ -1,0 +1,61 @@
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+# include color.conf
+
+font_family      DejaVuSansMono Nerd Font Book
+italic_font      DejaVuSansMono Nerd Font Oblique
+bold_font        DejaVuSansMono Nerd Font Bold
+bold_italic_font DejaVuSansMono Nerd Font Bold Oblique
+
+font_size 9.0
+font_size_delta 9.0
+
+adjust_line_height  5
+adjust_column_width 0
+
+scrollback_lines 4096
+enable_audio_bell no
+
+background_opacity 1.0
+window_padding_width 4
+
+cursor_stop_blinking_after 0.0
+
+strip_trailing_spaces smart
+
+#: The foreground and background colors
+background %clbg%
+foreground %clfg%
+
+# BLACK
+color0       %cl0%
+color8       %cl8%
+
+# RED
+color1       %cl1%
+color9       %cl9%
+
+# GREEN
+color2       %cl2%
+color10      %cl10%
+
+# YELLOW
+color3       %cl3%
+color11      %cl11%
+
+# BLUE
+color4       %cl4%
+color12      %cl12%
+
+# MAGENTA
+color5       %cl5%
+color13      %cl13%
+
+# CYAN
+color6       %cl6%
+color14      %cl14%
+
+# WHITE
+color7       %cl7%
+color15      %cl15%
+
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
