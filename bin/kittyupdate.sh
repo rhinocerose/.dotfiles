@@ -17,14 +17,14 @@ for i in {0..15}
 do
     v=`xrdb -query | awk '/*.color'"$i":'/ { print substr($2,2) }'`
     #echo $v
-    eval "sed -i 's/%cl${i}%/\x270x${v}\x27/g' $target_file.tmp";
+    eval "sed -i 's/%cl${i}%/#${v}/g' $target_file.tmp";
 done
 
 # Named colors
 foreground=`xrdb -query | awk '/*.foreground/ { print substr($2,2) }'`
 background=`xrdb -query | awk '/*.background/ { print substr($2,2) }'`
-sed -i "s/%clfg%/\x270x${foreground}\x27/g" $target_file.tmp
-sed -i "s/%clbg%/\x270x${background}\x27/g" $target_file.tmp
+sed -i "s/%clfg%/#${foreground}/g" $target_file.tmp
+sed -i "s/%clbg%/#${background}/g" $target_file.tmp
 
 # Finally, replace target file with our updated one
 rm $target_file
