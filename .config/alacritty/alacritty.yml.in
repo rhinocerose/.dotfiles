@@ -86,7 +86,7 @@ font:
     # style: "Medium Italic"
 
   # Point size of the font
-  size: 14.0
+  size: 10.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -126,79 +126,37 @@ draw_bold_text_with_bright_colors: false
 
 # Colors
 colors:
-  # Default colours
+  # Default colors
   primary:
-    background: '0xffffff'
-    foreground: '0x2e2e2d'
+    background: %clbg%
+    foreground: %clfg%
 
-  # Colors that should be used to draw the terminal cursor. If these are unset,
-  # the cursor colour will be the inverse of the cell colour.
-  # cursor:
-  #   text: '0x2e2e2d'
-  #   # text: '0x000000'
-  #   cursor: '0xffffff'
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xffffff'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xc62828'
-    green:   '0x558b2f'
-    yellow:  '0xf9a825'
-    blue:    '0x1565c0'
-    magenta: '0x6a1e9a'
-    cyan:    '0x00838f'
-    white:   '0xf2f2f2'
+    black:   %cl0%
+    red:     %cl1%
+    green:   %cl2%
+    yellow:  %cl3%
+    blue:    %cl4%
+    magenta: %cl5%
+    cyan:    %cl6%
+    white:   %cl7%
 
   # Bright colors
   bright:
-    black:   '0x545454'
-    red:     '0xef5350'
-    green:   '0x8bc34a'
-    yellow:  '0xffeb3b'
-    blue:    '0x64b5f6'
-    magenta: '0xba68c8'
-    cyan:    '0x26c6da'
-    white:   '0xe0e0e0'
-
-  # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
-
-  # Tomorrow Night Bright
-  # primary:
-  #   background: '0x000000'
-  #   foreground: '0xeaeaea'
-  #
-  # cursor:
-  #   text: '0x000000'
-  #   cursor: '0xffffff'
-  #
-  # normal:
-  #   black:   '0x000000'
-  #   red:     '0xd54e53'
-  #   green:   '0xb9ca4a'
-  #   yellow:  '0xe6c547'
-  #   blue:    '0x7aa6da'
-  #   magenta: '0xc397d8'
-  #   cyan:    '0x70c0ba'
-  #   white:   '0xffffff'
-  #
-  # bright:
-  #   black:   '0x666666'
-  #   red:     '0xff3334'
-  #   green:   '0x9ec400'
-  #   yellow:  '0xe7c547'
-  #   blue:    '0x7aa6da'
-  #   magenta: '0xb77ee0'
-  #   cyan:    '0x54ced6'
-  #   white:   '0xffffff'
+    black:   %cl8%
+    red:     %cl9%
+    green:   %cl10%
+    yellow:  %cl11%
+    blue:    %cl12%
+    magenta: %cl13%
+    cyan:    %cl14%
+    white:   %cl15%
 
   # Indexed Colors
   #
