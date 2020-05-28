@@ -42,15 +42,15 @@ link:
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
 	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
 	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
-	ln -sfn ~/.dotfiles/.config/fish/ ~/.config/fish
-#	ln -sfn ~/.dotfiles/.config/omf/ ~/.config/omf
-	ln -sfn ~/.dotfiles/.config/npm/ ~/.config/npm
-	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
-	ln -sfn ~/.dotfiles/.config/gtk-3.0/ ~/.config/gtk-3.0
-	ln -sfn ~/.dotfiles/.config/alacritty/ ~/.config/alacritty
-	ln -sfn ~/.dotfiles/.config/kitty/ ~/.config/kitty
-	ln -sfn ~/.dotfiles/.config/i3/ ~/.config/i3
-	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
+	ln -sfn ~/.dotfiles/.config/fish ~/.config/fish
+#	ln -sfn ~/.dotfiles/.config/omf ~/.config/omf
+	ln -sfn ~/.dotfiles/.config/npm ~/.config/npm
+	ln -sfn ~/.dotfiles/.config/polybar ~/.config/polybar
+	ln -sfn ~/.dotfiles/.config/gtk-3.0 ~/.config/gtk-3.0
+	ln -sfn ~/.dotfiles/.config/alacritty ~/.config/alacritty
+	ln -sfn ~/.dotfiles/.config/kitty ~/.config/kitty
+	ln -sfn ~/.dotfiles/.config/i3 ~/.config/i3
+	ln -sfn ~/.dotfiles/.config/i3status ~/.config/i3status
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	chmod +x ~/.config/polybar/polybar.sh
