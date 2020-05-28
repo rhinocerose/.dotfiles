@@ -1,5 +1,4 @@
-
-echo -ne '\e]11;#000000\a'
+bash ~/.dotfiles/bin/kittyupdate.sh
 
 alias reload="source $HOME/.zshrc"
 alias rfish="source $HOME/config.sh"
@@ -16,10 +15,11 @@ alias clr="clear"
 alias g="git"
 alias gp="git push origin master"
 alias gc="git add -A; and git commit -m 'quick commit'; git push origin master"
+alias kd="kitty +kitten diff"
 
 alias rr="rm -rf"
 
-alias api="sudo apt install -y"
+alias api="sudo pacman -S"
 alias apu="sudo apt update"
 
 alias pb="bash $HOME/.dotfiles/bin/pandoc/panbuild.sh"
