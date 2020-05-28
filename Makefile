@@ -48,12 +48,12 @@ link:
 	ln -sfn ~/.dotfiles/.config/polybar/ ~/.config/polybar
 	ln -sfn ~/.dotfiles/.config/alacritty/ ~/.config/alacritty
 	ln -sfn ~/.dotfiles/.config/kitty/ ~/.config/kitty
-	chmod +x ~/.config/polybar/polybar.sh
 	ln -sfn ~/.dotfiles/.config/i3/ ~/.config/i3
 	ln -sfn ~/.dotfiles/.config/i3status/ ~/.config/i3status
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
-	chsh --shell /bin/fish
+	chmod +x ~/.config/polybar/polybar.sh
+	
 	
 shell:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -61,7 +61,8 @@ shell:
 	omf install spacefish
 	omf install agnoster
 	omf theme agnoster
-	source .zshrc
+	chsh --shell /bin/fish
+	source ~/config.sh
 
 stowlink: basics
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then mv -v $(HOME)/$$FILE{,.bak}; fi; done
