@@ -1,0 +1,35 @@
+#: The foreground and background colors
+background %clbg%
+foreground %clfg%
+
+# BLACK
+color0       %cl0%
+color8       %cl8%
+
+# RED
+color1       %cl1%
+color9       %cl9%
+
+# GREEN
+color2       %cl2%
+color10      %cl10%
+
+# YELLOW
+color3       %cl3%
+color11      %cl11%
+
+# BLUE
+color4       %cl4%
+color12      %cl12%
+
+# MAGENTA
+color5       %cl5%
+color13      %cl13%
+
+# CYAN
+color6       %cl6%
+color14      %cl14%
+
+# WHITE
+color7       %cl7%
+color15      %cl15%
