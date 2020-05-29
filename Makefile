@@ -20,10 +20,10 @@ basics:
 packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
-	sudo pacman -S ack alacritty cmake coreutils
-	sudo pacman -S dmenu doxygen drun emacs falkon fasd figlet
-	sudo pacman -S fish gucharmap htop i3-gaps imagemagick markdown
-	sudo pacman -S meson neofetch ninja openssh otf-font-awesome pandoc powerline-fonts rofi 
+	sudo pacman -S ack alacritty awesome-terminal-fonts cmake coreutils dmenu doxygen drun emacs falkon
+	sudo pacman -S  fasd figlet fish gucharmap htop i3-gaps imagemagick markdown
+	sudo pacman -S  meson neofetch ninja openssh otf-font-awesome otf-powerline-symbols
+	sudo pacman -S  pandoc powerline-fonts qutebrowser rofi 
 	sudo pacman -S shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree zsh
 	yay -S polybar
 	yay -S ttf-font-awesome-4
