@@ -9,8 +9,8 @@
 
 [colors]
 background = ${xrdb:background}
-foreground = ${xrdb:color10}
-highlight  = ${xrdb:color12}
+foreground = ${xrdb:color13}
+highlight  = ${xrdb:color8}
 grey	   = ${xrdb:color4}
 
 alert = #bd2c40
