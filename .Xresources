@@ -5,8 +5,8 @@ gnome.terminal.font: DejaVu Sans Mono 8
 i3-wm.gaps.inner.size: 8
 i3-wm.gaps.outer.size: 2
 i3-wm.program.launcher.app:	rofi -show drun -theme $rofiTheme
-rofi.color-window: BACKGROUND, BACKGROUND, BACKGROUND
-rofi.color-normal: BACKGROUND, BACKGROUND, BACKGROUND, BACKGROUND, COLOR10
-rofi.color-active: BACKGROUND, BACKGROUND, BACKGROUND, BACKGROUND, COLOR10
-rofi.color-urgent: BACKGROUND, BACKGROUND, BACKGROUND, BACKGROUND, COLOR10
+rofi.color-window: BACKGROUND, FOREGROUND, BACKGROUND
+rofi.color-normal: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, COLOR10
+rofi.color-active: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, COLOR10
+rofi.color-urgent: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, COLOR10
 rofi.font: DejaVu Sans Mono 8
