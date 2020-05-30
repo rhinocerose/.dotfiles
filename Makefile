@@ -10,7 +10,7 @@ all: basics packages link
 basics:
 	sudo pacman -Syu 
 	sudo pacman -S --needed base-devel
-	sudo pacman -S aria2 curl make stow zsh
+	sudo pacman -S aria2 curl make stow cmake
 	mkdir -pv ~/.npm-global
 	sudo pacman -S python3 python-pip nodejs npm ruby code
 	git clone https://aur.archlinux.org/yay.git ~/yay
