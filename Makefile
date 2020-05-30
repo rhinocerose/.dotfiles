@@ -20,7 +20,7 @@ basics:
 packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
-	sudo pacman -S ack alacritty awesome-terminal-fonts cmake coreutils dmenu doxygen drun emacs falkon
+	sudo pacman -S ack alacritty awesome-terminal-fonts cmake coreutils dmenu doxygen emacs
 	sudo pacman -S  fasd figlet fish gucharmap htop i3-gaps imagemagick markdown
 	sudo pacman -S  meson neofetch ninja openssh otf-font-awesome otf-powerline-symbols
 	sudo pacman -S  pandoc powerline-fonts qutebrowser rofi 
