@@ -1,4 +1,3 @@
-bash ~/.dotfiles/bin/kittyupdate.sh
 source ~/.xinitrc
 
 alias reload="source $HOME/.zshrc"
