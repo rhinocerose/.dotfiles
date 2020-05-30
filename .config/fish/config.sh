@@ -1,4 +1,5 @@
 bash ~/.dotfiles/bin/kittyupdate.sh
+source ~/.xinitrc
 
 alias reload="source $HOME/.zshrc"
 alias rfish="source $HOME/config.sh"
