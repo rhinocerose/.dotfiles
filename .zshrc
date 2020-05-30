@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
 
 export EDITOR="code"
 # Set name of the theme to load --- if set to "random", it will
@@ -70,7 +69,6 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
 
 for file in $HOME/.dotfiles/.zsh/*; do
   source $file
