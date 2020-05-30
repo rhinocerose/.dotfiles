@@ -38,6 +38,7 @@ extra:
 link:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
+	ln -sfn ~/.dotfiles/.Xresources ~/.Xcolors
 	ln -sfn ~/.dotfiles/.Xresources ~/.Xresources
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
 	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
