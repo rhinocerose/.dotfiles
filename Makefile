@@ -22,9 +22,9 @@ packages: pacman-packages pip-packages node-packages gems
 pacman-packages:
 	sudo pacman -S ack alacritty awesome-terminal-fonts cmake coreutils dmenu doxygen emacs \
 	fasd figlet fish gucharmap htop i3-gaps imagemagick markdown \
-	meson neofetch ninja openssh otf-font-awesome otf-powerline-symbols \
+	meson nano neofetch ninja openssh otf-font-awesome otf-powerline-symbols \
 	pandoc powerline-fonts qutebrowser rofi \
-	shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree zsh
+	shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree vim zsh
 	yay -S polybar
 	yay -S ttf-font-awesome-4
 
