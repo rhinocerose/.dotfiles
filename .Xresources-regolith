@@ -1,4 +1,0 @@
-#include "/etc/regolith/styles/nord/root"
-
-#include "/etc/regolith/styles/nord/typeface"
-!#include "/etc/regolith/styles/typeface-sourcecodepro-materialdesign" 
