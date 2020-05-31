@@ -8,10 +8,11 @@
 ;=====================================================
 
 [colors]
-background = #e5000000
-foreground = #ffffff
+background = ${xrdb:background}
+foreground = ${xrdb:color13}
+highlight  = ${xrdb:color8}
+grey	   = ${xrdb:color4}
 
-primary = #00ffff
 alert = #bd2c40
 
 [bar/top]
@@ -25,7 +26,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 1
-line-color = ${colors.primary}
+line-color = ${colors.highlight}
 
 border-size = 0
 border-color = ${colors.background}
@@ -55,7 +56,7 @@ modules-right = cpu memory filesystem wlan battery volume date
 pin-output = false
 type = internal/xwindow
 format-underline = #00000000
-format-foreground = ${colors.primary}
+format-foreground = ${colors.highlight}
 label = %title:0:75:...%
 
 [module/filesystem]
@@ -63,11 +64,11 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1	= /home
+;mount-1	= /home
 
 label-mounted =  %percentage_used%%
 label-unmounted =  not mounted
-label-mounted-underline = ${colors.primary}
+label-mounted-underline = ${colors.highlight}
 
 [module/i3]
 type = internal/i3
@@ -78,28 +79,28 @@ fuzzy-match = false
 pin-workspaces = true
 enable-scroll = false
 
-ws-icon-0 = 1:term;
-ws-icon-1 = 2:code;
-ws-icon-2 = 3:www;
-ws-icon-3 = 4:ssh;
-ws-icon-4 = 5:chat;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;ﱘ
+ws-icon-4 = 5;
 ws-icon-5 = 6;
-ws-icon-6 = 
-ws-icon-7 = 7; 
-ws-icon-8 = 
-ws-icon-9 = 10:game;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
 
 ws-icon-default = 
 
 label-mode-padding = 1
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.highlight}
 
 ; focused = Active workspace on focused monitor
 label-focused = %{T3}%index% %icon%
-label-focused-background = ${colors.primary}
+label-focused-background = ${colors.highlight}
 label-focused-foreground = #000000
-label-focused-underline = ${colors.primary}
+label-focused-underline = ${colors.highlight}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -164,14 +165,14 @@ label-dimmed-padding = 1
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-underline = ${colors.primary}
+format-underline = ${colors.highlight}
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-underline = ${colors.primary}
+format-underline = ${colors.highlight}
 format = <label>
 label = "%percentage_used%%"
 
@@ -182,7 +183,7 @@ interval = 3.0
 
 format-connected = <label-connected>
 format-connected-alt = <label-connected-alt>
-format-connected-underline = ${colors.primary}
+format-connected-underline = ${colors.highlight}
 label-connected =  %essid:0:3:% %signal%%
 label-connected-alt =  %essid% %signal%% %local_ip%
 
@@ -199,7 +200,7 @@ date-alt = " %a, %b %d %Y"
 
 time =  %l:%M %p
 
-format-underline = ${colors.primary}
+format-underline = ${colors.highlight}
 
 label = %date% %time%
 
@@ -208,9 +209,9 @@ type = internal/alsa
 
 label-volume = " %percentage%%"
 label-volume-foreground = ${root.foreground}
-label-volume-underline = ${colors.primary}
+label-volume-underline = ${colors.highlight}
 label-muted =  0%
-label-muted-underline = ${colors.primary}
+label-muted-underline = ${colors.highlight}
 
 [module/battery]
 poll-interval = 2
@@ -219,15 +220,15 @@ battery = BAT0
 adapter = AC
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.primary}
+format-charging-underline = ${colors.highlight}
 label-charging = %percentage%% %consumption%W ~%time%
 
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${colors.primary}
+format-discharging-underline = ${colors.highlight}
 label-discharging =  %percentage%% %consumption%W %time%
 
 format-full-prefix = " "
-format-full-underline = ${colors.primary}
+format-full-underline = ${colors.highlight}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -252,7 +253,7 @@ warn-temperature = 60
 
 format = <label>
 format-prefix = " "
-format-underline = ${colors.primary}
+format-underline = ${colors.highlight}
 format-warn = <label-warn>
 format-warn-underline = ${colors.alert}
 
@@ -270,7 +271,7 @@ type = custom/script
 interval = 5
 exec = python ~/.config/polybar/gmusic.py	
 label = "%output:0:75:...%"
-format-underline = ${colors.primary}
+format-underline = ${colors.highlight}
 
 [global/wm]
 margin-top = 0

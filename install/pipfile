@@ -1,11 +1,15 @@
 autorandr
 chardet
 conan
+gcalcli
 jupyter
 matplotlib
+mps-youtube
 nose
 numpy
 pandas
-virtualenv
+pywal
 scipy
 sympy
+virtualenv
+youtube-dl

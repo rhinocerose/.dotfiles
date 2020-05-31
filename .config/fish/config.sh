@@ -1,5 +1,4 @@
-
-echo -ne '\e]11;#000000\a'
+source ~/.xinitrc
 
 alias reload="source $HOME/.zshrc"
 alias rfish="source $HOME/config.sh"
@@ -7,6 +6,9 @@ alias aledit="nano $HOME/.dotfiles/.zsh/aliases.zsh"
 alias zedit="nano $HOME/.zshrc"
 alias fedit="nano $HOME/config.sh"
 alias dot="cd $HOME/.dotfiles"
+alias con="cd ~/.config"
+alias poly="nano ~/.config/polybar/config"
+alias ii="nano ~/.config/i3/config"
 
 alias ll="ls -lah"
 alias ..="cd .."
@@ -16,10 +18,11 @@ alias clr="clear"
 alias g="git"
 alias gp="git push origin master"
 alias gc="git add -A; and git commit -m 'quick commit'; git push origin master"
+alias kd="kitty +kitten diff"
 
 alias rr="rm -rf"
 
-alias api="sudo apt install -y"
+alias api="sudo pacman -S"
 alias apu="sudo apt update"
 
 alias pb="bash $HOME/.dotfiles/bin/pandoc/panbuild.sh"

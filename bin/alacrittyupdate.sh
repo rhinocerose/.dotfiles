@@ -1,9 +1,8 @@
 #!/bin/bash
-# Update kitty config to apply Xresources color scheme
+# Update alacritty config to apply Xresources color scheme
 
 # Target file
-target_file="$HOME/.config/kitty/kitty.conf"
-
+target_file="$HOME/.config/alacritty/alacritty.yml"
 
 # copy input file to temporary file for black magic fuckery
 # (alacritty applies colors when the config file is written, so we want to do it
@@ -11,21 +10,21 @@ target_file="$HOME/.config/kitty/kitty.conf"
 cp $target_file.in $target_file.tmp
 
 # Grab colors from Xresources
-xrdb ~/.Xresources
+xrdb ~/.config/Xresources
 
 # Numbered colors
 for i in {0..15}
 do
     v=`xrdb -query | awk '/*.color'"$i":'/ { print substr($2,2) }'`
     #echo $v
-    eval "sed -i 's/%cl${i}%/#${v}/g' $target_file.tmp";
+    eval "sed -i 's/%cl${i}%/\x270x${v}\x27/g' $target_file.tmp";
 done
 
 # Named colors
 foreground=`xrdb -query | awk '/*.foreground/ { print substr($2,2) }'`
 background=`xrdb -query | awk '/*.background/ { print substr($2,2) }'`
-sed -i "s/%clfg%/#${foreground}/g" $target_file.tmp
-sed -i "s/%clbg%/#${background}/g" $target_file.tmp
+sed -i "s/%clfg%/\x270x${foreground}\x27/g" $target_file.tmp
+sed -i "s/%clbg%/\x270x${background}\x27/g" $target_file.tmp
 
 # Finally, replace target file with our updated one
 rm $target_file
