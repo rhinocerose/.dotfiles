@@ -4,6 +4,7 @@
 # Target file
 target_file="$HOME/.config/kitty/kitty.conf"
 
+
 # copy input file to temporary file for black magic fuckery
 # (alacritty applies colors when the config file is written, so we want to do it
 # all in one write)
