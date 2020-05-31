@@ -22,40 +22,36 @@ cursor_stop_blinking_after 0.0
 
 strip_trailing_spaces smart
 
-#: The foreground and background colors
-background %clbg%
-foreground %clfg%
+background %cl0%
+foreground %cl10%
+selection_background %cl10%
+selection_foreground %cl0%
+url_color %cl12%
+cursor %cl10%
+active_border_color %cl8%
+inactive_border_color %cl10%
+active_tab_background %cl0%
+active_tab_foreground %cl7%
+inactive_tab_background %cl10%
+inactive_tab_foreground %cl12%
+tab_bar_background %cl10%
 
-# BLACK
-color0       %cl0%
-color8       %cl8%
+# normal
+color0 %cl0%
+color1 %cl1%
+color2 %cl2%
+color3 %cl3%
+color4 %cl4%
+color5 %cl5%
+color6 %cl6%
+color7 %cl7%
 
-# RED
-color1       %cl1%
-color9       %cl9%
-
-# GREEN
-color2       %cl2%
-color10      %cl10%
-
-# YELLOW
-color3       %cl3%
-color11      %cl11%
-
-# BLUE
-color4       %cl4%
-color12      %cl12%
-
-# MAGENTA
-color5       %cl5%
-color13      %cl13%
-
-# CYAN
-color6       %cl6%
-color14      %cl14%
-
-# WHITE
-color7       %cl7%
-color15      %cl15%
-
-# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+# bright
+color8 %cl8%
+color9 %cl9%
+color10 %cl10%
+color11 %cl11%
+color12 %cl12%
+color13 %cl13%
+color14 %cl14%
+color15 %cl15%
