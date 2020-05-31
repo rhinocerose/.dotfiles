@@ -1,10 +1,9 @@
-source ~/.xinitrc
-
 alias reload="source $HOME/.zshrc"
 alias rfish="source $HOME/config.sh"
 alias aledit="nano $HOME/.dotfiles/.zsh/aliases.zsh"
 alias zedit="nano $HOME/.zshrc"
 alias fedit="nano $HOME/config.sh"
+
 alias dot="cd $HOME/.dotfiles"
 alias con="cd ~/.config"
 alias poly="nano ~/.config/polybar/config"
@@ -17,7 +16,7 @@ alias clr="clear"
 
 alias g="git"
 alias gp="git push origin master"
-alias gc="git add -A; and git commit -m 'quick commit'; git push origin master"
+alias gc="git add -A; and git commit -m 'quick commit'; and git push origin master"
 alias kd="kitty +kitten diff"
 
 alias rr="rm -rf"
