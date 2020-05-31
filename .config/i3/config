@@ -9,8 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set_from_resource $mod  i3-wm.mod Mod4
-set_from_resource $alt  i3-wm.alt Mod1
+set $mod Mod4
+
 
 ###############################################################################
 # i3 Appearance and Behavior
@@ -38,15 +38,15 @@ popup_during_fullscreen $i3-wm.gaps.popup_during_fullscreen
 
 # window focus follows your mouse movements as the mouse crosses window borders
 set_from_resource $i3-wm.gaps.focus_follows_mouse i3-wm.gaps.focus_follows_mouse no
-focus_follows_mouse no
+focus_follows_mouse no 
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+#font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -78,8 +78,6 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun 
 bindsym $mod+space exec $i3-wm.program.launcher.app
-
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -238,15 +236,10 @@ client.focused_inactive $focused_inactive.color.border     $focused_inactive.col
 client.unfocused        $unfocused.color.border            $unfocused.color.background        $unfocused.color.text              $unfocused.color.indicator         $unfocused.color.child_border
 client.urgent           $urgent.color.border               $urgent.color.background           $urgent.color.text                 $urgent.color.indicator            $urgent.color.child_border
 
-# Sets i3 font for dialogs
-set_from_resource $i3-wm.font i3-wm.font pango:Source Code Pro Medium 10
-font $i3-wm.font
-
-
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
 #        status_command i3status
 #}
 
-exec_always --no-startup-id ~/.config/polybar/polybar.sh &
+exec_always --no-startup-id ~/.dotfiles/.config/polybar/polybar.sh &
