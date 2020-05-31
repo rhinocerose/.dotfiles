@@ -1,5 +1,5 @@
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
-# Base16 qutebrowser template by theova and Daniel Mulford
+# Base16 qutebrowser template by theova and Daniel Mulford (https://github.com/theova/base16-qutebrowser)
 # Loudpastel scheme by Ashar Latif (http://github.com/rhinocerose)
 
 # set qutebrowser colors
