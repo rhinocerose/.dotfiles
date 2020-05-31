@@ -2,6 +2,23 @@
 # Base16 qutebrowser template by theova and Daniel Mulford (https://github.com/theova/base16-qutebrowser)
 # Loudpastel scheme by Ashar Latif (http://github.com/rhinocerose)
 
+base00  = "#121917"
+base01  = "#192220"
+base02  = "#273431"
+base03  = "#3B4D49"
+base04  = "#546B66"
+base05  = "#71908A"
+base06  = "#94BBB3"
+base07  = "#BCECE2"
+base08  = "#F63589"
+base09  = "#FC619B"
+base0A  = "#EF9FB7"
+base0B  = "#658C42"
+base0C  = "#FC1487"
+base0D  = "#0BAE9A"
+base0E  = "#FA83AA"
+base0F  = "#6F9E3E"
+
 # set qutebrowser colors
 
 # Text color of the completion widget. May be a single color to use for
