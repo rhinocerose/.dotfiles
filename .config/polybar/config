@@ -9,8 +9,8 @@
 
 [colors]
 background = ${xrdb:background}
-foreground = ${xrdb:color13}
-highlight  = ${xrdb:color8}
+foreground = ${xrdb:color12}
+highlight  = ${xrdb:color9}
 grey	   = ${xrdb:color4}
 
 alert = #bd2c40
@@ -99,7 +99,7 @@ label-mode-background = ${colors.highlight}
 ; focused = Active workspace on focused monitor
 label-focused = %{T3}%index% %icon%
 label-focused-background = ${colors.highlight}
-label-focused-foreground = #000000
+label-focused-foreground = ${colors.background}
 label-focused-underline = ${colors.highlight}
 label-focused-padding = 1
 
@@ -112,7 +112,7 @@ label-unfocused-padding = 1
 ; visible = Active workspace on unfocused monitor
 label-visible = %{T3}%index% %icon%
 label-visible-background = #ffffff
-label-visible-foreground = #000000
+label-visible-foreground = ${colors.background}
 label-visible-underline = #ffffff
 label-visible-padding = 1
 
@@ -149,10 +149,10 @@ label-urgent-padding = 1
 ;label-focused-padding = 1
 
 ; unfocused
-label-dimmed = ${module/i3.label-unfocused}
-label-dimmed-background = ${module/i3.label-unfocused-background}
-label-dimmed-underline = ${module/i3.label-unfocused-underline}
-label-dimmed-padding = 1
+;label-dimmed = ${module/i3.label-unfocused}
+;label-dimmed-background = ${module/i3.label-unfocused-background}
+;label-dimmed-underline = ${module/i3.label-unfocused-underline}
+;label-dimmed-padding = 1
 
 ; occupied
 ;label-occupied = ${module/i3.label-unfocused}
@@ -184,7 +184,7 @@ interval = 3.0
 format-connected = <label-connected>
 format-connected-alt = <label-connected-alt>
 format-connected-underline = ${colors.highlight}
-label-connected =  %essid:0:3:% %signal%%
+label-connected =  %essid:0:3:% %signal%% %local_ip%
 label-connected-alt =  %essid% %signal%% %local_ip%
 
 format-disconnected = <label-disconnected>
