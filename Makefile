@@ -25,8 +25,11 @@ pacman-packages:
 	meson nano neofetch ninja openssh otf-font-awesome otf-powerline-symbols \
 	pandoc powerline-fonts qutebrowser rofi \
 	shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree vim zsh
-	yay -S polybar
-	yay -S ttf-font-awesome-4
+	yay -S polybar ttf-font-awesome-4
+	git clone https://github.com/rhinocerose/just-colors ~/.config/just-colors/
+	cd ~/.config/just-colors
+	make install
+
 
 extra:
 	yes | sudo pacman -S - < install/aptextra
@@ -38,8 +41,6 @@ extra:
 link:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
-	ln -sfn ~/.dotfiles/.Xresources ~/.Xcolors
-	ln -sfn ~/.dotfiles/.xinitrc ~/.xinitrc
 	ln -sfn ~/.dotfiles/.Xresources ~/.Xresources
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
 	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
@@ -48,22 +49,19 @@ link:
 	ln -sfn ~/.dotfiles/.config/fish ~/.config/fish
 #	ln -sfn ~/.dotfiles/.config/omf ~/.config/omf
 	ln -sfn ~/.dotfiles/.config/npm ~/.config/npm
-#	rm -rf ~/.config/polybar
-#	ln -sfn ~/.dotfiles/.config/polybar ~/.config/polybar
+	rm -rf ~/.config/polybar
+	ln -sfn ~/.dotfiles/.config/polybar ~/.config/polybar
 	ln -sfn ~/.dotfiles/.config/gtk-3.0 ~/.config/gtk-3.0
-#	rm -rf ~/.config/alacritty
 #	ln -sfn ~/.dotfiles/.config/alacritty ~/.config/alacritty
-#	rm -rf ~/.config/kitty
-#	ln -sfn ~/.dotfiles/.config/kitty ~/.config/kitty
-#	rm -rf ~/.config/i3
-#	ln -sfn ~/.dotfiles/.config/i3 ~/.config/i3
+	rm -rf ~/.config/kitty
+	ln -sfn ~/.dotfiles/.config/kitty ~/.config/kitty
 	ln -sfn ~/.dotfiles/.config/i3status ~/.config/i3status
 	mkdir -pv ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	chmod +x ~/.config/polybar/polybar.sh
-	
-	
+	bash ~/.dotfiles/appearance.sh
+
 shell:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	curl -L https://get.oh-my.fish | fish
