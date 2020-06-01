@@ -1,68 +1,13 @@
-! SPECIAL
-#define  FOREGROUND   #A9D5CB
-#define  BACKGROUND   #0A0F0E
-#define  CURSORCOLOR  #A9D5CB
-
-! BLACK
-#define  COLOR0       #121917
-#define  COLOR8       #F63589
-
-! RED
-#define  COLOR1       #192220
-#define  COLOR9       #FC619B
-
-! GREEN
-#define  COLOR2       #273431
-#define  COLOR10      #EF9FB7
-
-! YELLOW
-#define  COLOR3       #3B4D49
-#define  COLOR11      #658C42
-
-! BLUE
-#define  COLOR4       #546B66
-#define  COLOR12      #FC1487
-
-! MAGENTA
-#define  COLOR5       #71908A
-#define  COLOR13      #0BAE9A
-
-! CYAN
-#define  COLOR6       #94BBB3
-#define  COLOR14      #FA83AA
-
-! WHITE
-#define  COLOR7       #BCECE2
-#define  COLOR15      #6F9E3E
-
-
-*.foreground:  FOREGROUND
-*.background:  BACKGROUND
-*.cursorColor: FOREGROUND
-*.color0:      COLOR0
-*.color8:      COLOR8
-*.color1:      COLOR1
-*.color9:      COLOR9
-*.color2:      COLOR2
-*.color10:     COLOR10
-*.color3:      COLOR3
-*.color11:     COLOR11
-*.color4:      COLOR4
-*.color12:     COLOR12
-*.color5:      COLOR5
-*.color13:     COLOR13
-*.color6:      COLOR6
-*.color14:     COLOR14
-*.color7:      COLOR7
-*.color15:     COLOR15
+ #include "colors.Xresources"
 
 
 gnome.terminal.font: DejaVu Sans Mono 8
-i3-wm.gaps.inner.size: 8
-i3-wm.gaps.outer.size: 2
+
+i3-wm.gaps.inner.size: 10
+i3-wm.gaps.outer.size: 5
 i3-wm.program.launcher.app:	rofi -show drun -theme $rofiTheme
-rofi.color-window: BACKGROUND, FOREGROUND, BACKGROUND, COLOR12, BACKGROUND
-rofi.color-normal: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, COLOR10
-rofi.color-active: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, COLOR10
-rofi.color-urgent: BACKGROUND, FOREGROUND, BACKGROUND, BACKGROUND, COLOR10
+i3-wm.window.border.size: 1
+i3-wm.floatingwindow.border.size: 1
+i3-wm.gaps.focus_follows_mouse: no
+
 rofi.font: DejaVu Sans Mono 8
