@@ -8,6 +8,7 @@ alias dot="cd $HOME/.dotfiles"
 alias con="cd ~/.config"
 alias poly="nano ~/.config/polybar/config"
 alias ii="nano ~/.config/i3/config"
+alias look="bash ~/.dotfiles/appearances.sh"
 
 alias ll="ls -lah"
 alias ..="cd .."
