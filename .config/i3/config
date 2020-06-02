@@ -207,7 +207,7 @@ exec_always --no-startup-id ~/.dotfiles/.config/polybar/polybar.sh &
 #
 # You can use these variables anywhere in the i3 configuration file.
 
-set $base00 #121917
+set $base00 #0A0F0E
 set $base01 #192220
 set $base02 #273431
 set $base03 #3B4D49
