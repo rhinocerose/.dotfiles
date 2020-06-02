@@ -1,6 +1,6 @@
 #!/bin/bash
 
-just-colors --theme loudpastel --no-apply
+just-colors --theme $1 --no-apply
 cat $HOME/.config/i3/config.base \
     $HOME/.config/just-colors/cache/colors.local > $HOME/.dotfiles/.config/i3/config
 
