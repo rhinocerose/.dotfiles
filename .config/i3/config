@@ -79,6 +79,9 @@ bindsym $mod+Shift+q kill
 set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -show drun 
 bindsym $mod+space exec $i3-wm.program.launcher.app
 
+# start browser
+bindsym $mod+Shift+Return exec qutebrowser
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
