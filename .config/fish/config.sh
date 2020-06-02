@@ -18,7 +18,6 @@ alias clr="clear"
 alias g="git"
 alias gp="git push origin master"
 alias gc="git add -A; and git commit -m 'quick commit'; and git push origin master"
-alias gn="git config --global user.name rhinocerose; and git config --global user.email ashar.k.latif@gmail.com"
 alias kd="kitty +kitten diff"
 
 alias rr="rm -rf"
