@@ -1,7 +1,7 @@
 #!/bin/bash
 
 just-colors --theme $1 --no-apply
-cat $HOME/.config/i3/config.base $HOME/.config/just-colors/cache/colors.local > $HOME/.dotfiles/.config/i3/config
+cat $HOME/.dotfiles/.config/i3/config.base $HOME/.config/just-colors/cache/colors.local > $HOME/.dotfiles/.config/i3/config
 
 ln -sfn ~/.config/just-colors/cache/colors.conf ~/.config/kitty/colors.conf	
 ln -sfn ~/.config/just-colors/cache/colors.Xresources ~/colors.Xresources
