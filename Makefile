@@ -59,7 +59,7 @@ link:
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim/ ~/
 	chmod +x ~/.config/polybar/polybar.sh
-	bash ~/.dotfiles/appearance.sh
+	bash ~/.dotfiles/appearance.sh loudpastel
 
 shell:
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
