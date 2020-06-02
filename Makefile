@@ -27,8 +27,7 @@ pacman-packages:
 	shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree vim zsh
 	yay -S polybar ttf-font-awesome-4
 	git clone https://github.com/rhinocerose/just-colors ~/.config/just-colors/
-	cd ~/.config/just-colors
-	make install
+	cd ~/.config/just-colors && make install
 
 
 extra:
