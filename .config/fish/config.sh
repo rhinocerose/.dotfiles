@@ -23,7 +23,6 @@ alias kd="kitty +kitten diff"
 alias rr="rm -rf"
 
 alias api="sudo pacman -S"
-alias apu="sudo apt update"
 
 alias pb="bash $HOME/.dotfiles/bin/pandoc/panbuild.sh"
 
