@@ -43,6 +43,9 @@ module-margin-right = 1
 font-0 = DejaVu Sans:fontformat=truetype:size=8;2
 ; subscript icons T2
 font-1 = FontAwesome:pixelsize=10;2
+;font-1 = Material Icons:style=Regular;2
+;font-1 = Material Design Icons:style=Regular;2
+
 ; small superscript for ws index - T3 
 font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
 
@@ -175,7 +178,7 @@ interval = 3.0
 format-connected = <label-connected>
 format-connected-alt = <label-connected-alt>
 format-connected-underline = ${colors.highlight}
-label-connected =  %local_ip%
+label-connected =   %local_ip%
 ;label-connected-alt =  %essid% %signal%% %local_ip%
 
 format-disconnected = <label-disconnected>

@@ -21,7 +21,7 @@ packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
 	sudo pacman -S ack alacritty awesome-terminal-fonts cmake coreutils dmenu doxygen emacs \
-	fasd figlet fish gucharmap htop i3-gaps imagemagick kitty markdown \
+	fasd feh figlet fish gucharmap htop i3-gaps imagemagick kitty markdown \
 	meson nano neofetch ninja openssh otf-font-awesome otf-powerline-symbols \
 	pandoc powerline-fonts qutebrowser rofi \
 	shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree vim zsh
@@ -54,6 +54,8 @@ link:
 #	ln -sfn ~/.dotfiles/.config/alacritty ~/.config/alacritty
 	rm -rf ~/.config/kitty
 	ln -sfn ~/.dotfiles/.config/kitty ~/.config/kitty
+	rm -rf ~/.config/neofetch
+	ln -sfn ~/.dotfiles/.config/neofetch ~/.config/neofetch
 	ln -sfn ~/.dotfiles/.config/i3status ~/.config/i3status
 	mkdir -pv ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
