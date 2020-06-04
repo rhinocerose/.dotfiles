@@ -7,16 +7,14 @@ Host cse
 
 Host rpi
     user pi
-    HostName 192.168.1.3
-    KexAlgorithms +diffie-hellman-group1-sha1
-    HostKeyAlgorithms +ssh-dss 
+    HostName 192.168.1.8
     ServerAliveInterval 120
     ServerAliveCountMax 30
    
 
 Host desk
     User arch
-    HostName 192.168.1.10
+    HostName 192.168.1.100
     ServerAliveInterval 120
     ServerAliveCountMax 30
 
