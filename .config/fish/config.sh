@@ -11,7 +11,6 @@ alias dot="cd $HOME/.dotfiles"
 alias con="cd ~/.config"
 alias poly="nano ~/.config/polybar/config"
 alias ii="nano ~/.config/i3/config"
-alias look="bash ~/.dotfiles/bin/appearance.sh"
 
 alias ll="ls -lah"
 alias ..="cd .."
@@ -37,6 +36,18 @@ function mkd
         mkdir -pv "$argv"; and cd "$argv"
 end
 
+function topi
+	scp "$argv" rpi:~/Downloads
+end
+
+function todesk
+	scp "$argv" desk:~/Downloads
+end
+
+function look
+	bash ~/.dotfiles/bin/appearance.sh "$argv"
+end
+
 function cd
         if count $argv > /dev/null
                 builtin cd "$argv"; and ll
@@ -44,6 +55,7 @@ function cd
                 builtin cd ~; and ll
         end
 end
+
 
 set PATH "/bin:$PATH"
 set PATH "$HOME/.local/bin:$PATH"
