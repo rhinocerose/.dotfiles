@@ -37,6 +37,9 @@ extra:
 	./install.sh
 	cd ~/.dotfiles
 
+server:
+	sudo pacman -S apache php
+
 link:
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
