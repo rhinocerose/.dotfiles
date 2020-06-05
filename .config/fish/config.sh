@@ -25,6 +25,7 @@ alias gc="git add -A; and git commit -m 'quick commit'; and git push origin mast
 
 alias kd="kitty +kitten diff"
 
+alias tele="/mnt/TV/tv/"
 alias yt="tizonia --youtube-audio-search"
 alias sc="tizonia --soundcloud-tracks"
 alias cal="gcalcli --cal ashar.k.latif@gmail.com  quick"
@@ -33,11 +34,11 @@ alias api="sudo pacman -S"
 alias pb="bash $HOME/.dotfiles/bin/pandoc/panbuild.sh"
 
 function mkd
-        mkdir -pv "$argv"; and cd "$argv"
+        sudo mkdir -pv "$argv"; and cd "$argv"
 end
 
 function topi
-	scp "$argv" rpi:~/Downloads
+	scp "$argv" rpi:~/Downloads/
 end
 
 function todesk
@@ -56,6 +57,15 @@ function cd
         end
 end
 
+function rename
+        filebot -rename $argv -r --db TheTVDB -non-strict
+end
+
+function botclean
+        filebot -script fn:cleaner .
+	rm -rf ./*/*.txt
+	rm -rf ./*/*.nfo
+end
 
 set PATH "/bin:$PATH"
 set PATH "$HOME/.local/bin:$PATH"
