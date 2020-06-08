@@ -24,7 +24,7 @@ alias gp="git push origin master"
 alias gc="git add -A; and git commit -m 'quick commit'; and git push origin master"
 
 alias kd="kitty +kitten diff"
-
+alias rename="bash ~/.dotfiles/bin/rename.sh"
 alias tele="/mnt/TV/tv/"
 alias yt="tizonia --youtube-audio-search"
 alias sc="tizonia --soundcloud-tracks"
@@ -55,16 +55,6 @@ function cd
         else
                 builtin cd ~; and ll
         end
-end
-
-function rename
-        filebot -rename $argv -r --db TheTVDB -non-strict
-end
-
-function botclean
-        filebot -script fn:cleaner .
-	rm -rf ./*/*.txt
-	rm -rf ./*/*.nfo
 end
 
 set PATH "/bin:$PATH"
