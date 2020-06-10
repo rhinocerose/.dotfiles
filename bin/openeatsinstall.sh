@@ -9,4 +9,4 @@ cd ~/OpenEats
 cp docs/samples/sample_docker_prod_override.yml docker-prod.override.yml
 cp docs/samples/sample_env_file.list env_prod.list
 sudo ./quick-start.py
-docker-compose -f docker-prod.yml run --rm --entrypoint 'python manage.py createsuperuser' api
+sudo docker-compose -f docker-prod.yml run --rm --entrypoint 'python manage.py createsuperuser' api
