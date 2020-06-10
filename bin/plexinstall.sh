@@ -5,7 +5,7 @@ mkdir -pv /mnt/Movies
 mkdir -pv /mnt/TV
 mkdir -pv /mnt/plexconfig
 
-docker create \
+sudo docker create \
   --name=plex \
   --net=host \
   -e PUID=1000 \
