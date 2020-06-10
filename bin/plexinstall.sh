@@ -16,3 +16,5 @@ sudo docker create \
   -v /mnt/Movies:/movies \
   --restart unless-stopped \
   linuxserver/plex
+
+sudo docker start plex
