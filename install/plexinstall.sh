@@ -1,6 +1,4 @@
 #!/bin/bash
-
-sudo apt install mpv
 mkdir -pv /mnt/Movies
 mkdir -pv /mnt/TV
 mkdir -pv /mnt/plexconfig

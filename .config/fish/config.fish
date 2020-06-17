@@ -1,10 +1,10 @@
 alias xr="xrandr --output VGA1 --primary --mode 1920x1080 --output LVDS1 --off"
 
 alias reload="source $HOME/.zshrc"
-alias rfish="source $HOME/config.sh"
-alias aledit="nano $HOME/.dotfiles/.zsh/aliases.zsh"
-alias zedit="nano $HOME/.zshrc"
-alias fedit="nano $HOME/config.sh"
+alias rfish="source $HOME/config.fish"
+alias aledit="vim $HOME/.dotfiles/.zsh/aliases.zsh"
+alias zedit="vim $HOME/.zshrc"
+alias fedit="vim $HOME/config.fish"
 
 alias dl="cd ~/Downloads"
 alias dot="cd $HOME/.dotfiles"
@@ -19,22 +19,20 @@ alias clr="clear"
 alias rr="sudo rm -rf"
 alias ssh="env TERM=xterm-256color ssh"
 
-alias g="git"
 alias gp="git push origin master"
 alias gc="git add -A; and git commit -m 'quick commit'; and git push origin master"
 
 alias kd="kitty +kitten diff"
 alias rename="bash ~/.dotfiles/bin/rename.sh"
-alias tele="/mnt/TV/tv/"
 alias yt="tizonia --youtube-audio-search"
 alias sc="tizonia --soundcloud-tracks"
 alias cal="gcalcli --cal ashar.k.latif@gmail.com  quick"
-alias api="sudo pacman -S"
+alias api="sudo pacman -S --noconfirm"
 
 alias pb="bash $HOME/.dotfiles/bin/pandoc/panbuild.sh"
 
 function mkd
-        sudo mkdir -pv "$argv"; and cd "$argv"
+        mkdir -pv "$argv"; and cd "$argv"
 end
 
 function topi
@@ -65,3 +63,4 @@ set PATH "$HOME/bin:$PATH"
 set PATH "$DOTFILES_DIR/bin:$PATH"
 set PATH "$HOME/.npm-global/bin:$PATH"
 set PATH "/opt/gcc-arm/bin:$PATH"
+set -gx EDITOR vim

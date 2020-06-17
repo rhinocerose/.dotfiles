@@ -66,8 +66,6 @@ $endif$
 	\rule{\linewidth}{#1}
 } % Create horizontal rule command with 1 argument of height
 
-
-
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
@@ -75,38 +73,35 @@ $endif$
 	\usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
 	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 	}{}
+%\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+%$if(verbatim-in-note)$ \usepackage{fancyvrb} $endif$
+%\usepackage{hyperref}
+$if(colorlinks)$ \PassOptionsToPackage{usenames,dvipsnames}{xcolor} $endif$
+% \hypersetup{
+%   	unicode=true,
+% 	$if(title-meta)$
+% 		pdftitle={$title-meta$},
+% 	$endif$
+% 	$if(author-meta)$
+% 		pdfauthor={$author-meta$},
+% 	$endif$
+% 	$if(keywords)$ 
+% 		pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
+% 	$endif$
+% 	$if(colorlinks)$
+% 		colorlinks=true,
+% 		linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
+% 		citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
+% 		urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
+% 	$else$ 
+% 		pdfborder={0 0 0},
+% 	$endif$
+% 	breaklinks=true,
+% }
 
-\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-$if(verbatim-in-note)$ \usepackage{fancyvrb}
-$endif$
-\usepackage[unicode=true]{hyperref}
-$if(colorlinks)$ \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
-$endif$
-
-\hypersetup{
-	$if(title-meta)$
-		pdftitle={$title-meta$},
-	$endif$
-	$if(author-meta)$
-		pdfauthor={$author-meta$},
-	$endif$
-	$if(keywords)$ 
-		pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
-	$endif$
-	$if(colorlinks)$
-		colorlinks=true,
-		linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
-		citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
-		urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
-	$else$ 
-		pdfborder={0 0 0},
-	$endif$
-	breaklinks=true
-}
-
-\urlstyle{same}  % don't use monospace font for urls
-$if(verbatim-in-note)$ \VerbatimFootnotes % allows verbatim text in footnotes
-$endif$
+% \urlstyle{same}  % don't use monospace font for urls
+% $if(verbatim-in-note)$ \VerbatimFootnotes % allows verbatim text in footnotes
+% $endif$
 
 $if(geometry)$ \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
@@ -168,7 +163,8 @@ $if(tables)$
 $endif$
 
 $if(graphics)$
-	\usepackage{graphicx,grffile}
+	\usepackage[dvips]{graphicx}{
+	\usepackage{grffile}
 	\makeatletter
 	\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 	\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -485,8 +481,7 @@ $endif$
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
-%%	TITLE MATTER INVOCATION
-%%
+%%	TITLE MATTER INVOCATION %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 $if(title)$
 	$if(labreport)$	

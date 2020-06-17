@@ -9,65 +9,44 @@ all: basics packages link
 
 basics:
 	sudo pacman -Syu 
-	sudo pacman -S --needed base-devel
-	sudo pacman -S aria2 curl make stow cmake
 	mkdir -pv ~/.npm-global
-	sudo pacman -S python3 python-pip nodejs npm ruby code
+	bash install/pac.sh install/basefile
 	git clone https://aur.archlinux.org/yay.git ~/yay
-	cd ~/yay && makepkg -si
-	
+	cd ~/yay && makepkg -si	
 	
 packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
-	sudo pacman -S ack alacritty awesome-terminal-fonts cmake coreutils dmenu doxygen emacs \
-	fasd feh figlet fish gucharmap htop i3-gaps imagemagick kitty markdown \
-	meson nano neofetch ninja openssh otf-font-awesome otf-powerline-symbols \
-	pandoc powerline-fonts qutebrowser rofi \
-	shellcheck texlive-core the_silver_searcher thefuck ttf-font-awesome tree vim zsh
-	yay -S polybar ttf-font-awesome-4
+	bash install/pac.sh install/pacfile
+	bash install/pac.sh install/fontfile
+	bash install/pac.sh install/docufile
+	bash install/pac.sh install/buildfile
+	bash install/yay.sh install/yayfile
 	git clone https://github.com/rhinocerose/just-colors ~/.config/just-colors/
 	cd ~/.config/just-colors && make install
 
 
 extra:
-	yes | sudo pacman -S - < install/aptextra
+	bash install/pac.sh install/aptextra
 	git clone https://github.com/ryanoasis/nerd-fonts ~/.nerd-fonts
 	cd ~/.nerd-fonts
 	./install.sh
 	cd ~/.dotfiles
 
 server:
-	sudo pacman -S apache php
+	bash install/pac.sh install/serverfile
+	bash install/openeatsinstall.sh
+	bash install/plexinstall.sh
+	sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+	sudo systemctl enable mysqld
+	sudo systemctl start mysqld
+	sudo mysql_secure_installation
 
 link:
-	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
-	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
-	ln -sfn ~/.dotfiles/.Xresources ~/.Xresources
-	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
-	ln -sfn ~/.dotfiles/.config/fish/config.sh ~/config.sh
-	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
-	rm -rf ~/.config/fish
-	ln -sfn ~/.dotfiles/.config/fish ~/.config/fish
-#	ln -sfn ~/.dotfiles/.config/omf ~/.config/omf
-	ln -sfn ~/.dotfiles/.config/npm ~/.config/npm
-	rm -rf ~/.config/polybar
-	ln -sfn ~/.dotfiles/.config/polybar ~/.config/polybar
-	ln -sfn ~/.dotfiles/.config/gtk-3.0 ~/.config/gtk-3.0
-#	ln -sfn ~/.dotfiles/.config/alacritty ~/.config/alacritty
-	rm -rf ~/.config/kitty
-	ln -sfn ~/.dotfiles/.config/kitty ~/.config/kitty
-	rm -rf ~/.config/neofetch
-	ln -sfn ~/.dotfiles/.config/neofetch ~/.config/neofetch
-	ln -sfn ~/.dotfiles/.config/i3status ~/.config/i3status
-	mkdir -pv ~/.ssh
-	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
-	ln -sfn ~/.dotfiles/.config/vim/ ~/
-	chmod +x ~/.config/polybar/polybar.sh
-	bash ~/.dotfiles/bin/appearance.sh loudpastel
+	bash install/link.sh
 
 shell:
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	sh -c $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)
 	curl -L https://get.oh-my.fish | fish
 	omf install spacefish
 	omf install agnoster
@@ -90,7 +69,7 @@ brew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 
 pip-packages: 
-	python3 -m pip install --upgrade --user $(shell cat install/pipfile) 	
+	bash install/pip.sh install/pipfile	
  	
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile

@@ -1,0 +1,13 @@
+--needed base-devel
+aria2 
+cmake
+curl 
+make 
+nano 
+stow
+python3 
+python-pip 
+nodejs 
+npm 
+ruby
+vim

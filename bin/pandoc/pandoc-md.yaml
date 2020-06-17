@@ -1,8 +1,8 @@
 ---
-author:		Ashar Latif
+#author:		    Ashar Latif
 #abstract:      Driver overview of API for the thing
-institute:      York University
-email:          asharkl@my.yorku.ca
+#institute:      York University
+#email:          asharkl@my.yorku.ca
 
 output:
     pdf_document:
@@ -35,12 +35,12 @@ sansfont:       "Lato Medium"
 sansfontoptions: 
                 Ligatures      = TeX,
                 Scale          = 1,
-monofont:       "Courier New"
+monofont:       "DejaVu Sans Mono"
 monofontoptions: 
                 Scale          = 1.1,
 fontsize:       10pt
 
-grayscale:      true
+#grayscale:      true
 othercolorbw:   black!70
 othercolor:     cyan
 keywordcolor:   cyan

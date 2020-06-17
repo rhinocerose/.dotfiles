@@ -1,0 +1,13 @@
+# Fdb version 3
+["pdflatex"] 1592343232 "/home/arch/.dotfiles/bin/pandoc/default-md.tex" "/home/arch/.dotfiles/bin/pandoc/default-md.pdf" "default-md" 1592343232
+  "$documentclass$.cls" 0 -1 0 ""
+  "/home/arch/.dotfiles/bin/pandoc/$documentclass$.cls" 0 -1 0 ""
+  "/home/arch/.dotfiles/bin/pandoc/default-md.aux" 1592343232 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/home/arch/.dotfiles/bin/pandoc/default-md.tex" 1592343231 17389 9f2cc289e3d5e4e57bb48944969753c1 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1572595918 33301 a3134070eacafb10b1f371612ce2650d ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1592338381 8044939 3c67209c7f3587b31eca409d3593f9bb ""
+  "default-md.tex" 1592343231 17389 9f2cc289e3d5e4e57bb48944969753c1 ""
+  (generated)
+  "/home/arch/.dotfiles/bin/pandoc/default-md.pdf"
+  "default-md.log"
+  "/home/arch/.dotfiles/bin/pandoc/default-md.log"
