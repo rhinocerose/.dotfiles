@@ -4,6 +4,7 @@ if status --is-interactive
     source "$BASE16_SHELL/profile_helper.fish"
 end
 
+source ~/.dotfiles/.config/fish/functions/alias.fish
 
 function mkd
         mkdir -pv "$argv"; and cd "$argv"
