@@ -1,4 +1,3 @@
-config.set('content.notification', False, '*://reddit.com')
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
 # Base16 qutebrowser template by theova
 # loudpastel scheme by loudpastel

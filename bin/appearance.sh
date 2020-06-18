@@ -16,8 +16,9 @@ mkdir -pv ~/.dotfiles/.config/vimthemes/"$1"/autoload/lightline/colorscheme
 mkdir -pv ~/.dotfiles/.config/vimthemes/"$1"/colors
 
 mv ~/.config/just-colors/cache/colors.vim ~/.dotfiles/.config/vimthemes/"$1"/colors/"$1".vim
-ln -sfn ~/.dotfiles/.config/vimthemes/"$1"/colors/"$1".vim ~/.config/nvim/colors/"$1".vim
+ln -sfn ~/.dotfiles/.config/vimthemes/"$1"/colors/"$1".vim ~/.config/nvim/colors/base16-"$1".vim
 
+ln -sfn ~/.dotfiles/.config/vimthemes/"$1"/colors/"$1".vim ~/.config/nvim/colors/base16-"$1"
 mv ~/.config/just-colors/cache/colors.airline ~/.dotfiles/.config/vimthemes/"$1"/autoload/airline/themes/"$1".vim
 
 

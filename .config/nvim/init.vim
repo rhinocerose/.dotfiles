@@ -1,5 +1,5 @@
 source ~/.config/nvim/vim-plug.vim
-colorscheme loudpastel
+colorscheme base16-loudpastel
 syntax on
 
 " Ultisnips
