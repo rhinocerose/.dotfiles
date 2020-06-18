@@ -8,6 +8,7 @@ mps-youtube
 nose
 numpy
 pandas
+pynvim
 pywal
 scipy
 sympy

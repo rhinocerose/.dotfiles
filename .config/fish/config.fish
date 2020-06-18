@@ -1,3 +1,9 @@
+# Base16 Shell
+if status --is-interactive
+    set BASE16_SHELL "$HOME/.config/base16-shell/"
+    source "$BASE16_SHELL/profile_helper.fish"
+end
+
 
 function mkd
         mkdir -pv "$argv"; and cd "$argv"
@@ -31,4 +37,4 @@ set PATH "$HOME/bin:$PATH"
 set PATH "$DOTFILES_DIR/bin:$PATH"
 set PATH "$HOME/.npm-global/bin:$PATH"
 set PATH "/opt/gcc-arm/bin:$PATH"
-set -gx EDITOR vim
+set -gx EDITOR nvim

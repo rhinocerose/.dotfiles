@@ -1,7 +1,7 @@
 config.set('content.notification', False, '*://reddit.com')
 # base16-qutebrowser (https://github.com/theova/base16-qutebrowser)
 # Base16 qutebrowser template by theova
-# Loudpastel scheme by Loudpastel
+# loudpastel scheme by loudpastel
 
 base00 = "#0A0F0E"
 base01 = "#192220"

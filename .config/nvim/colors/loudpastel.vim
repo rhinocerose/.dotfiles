@@ -1,0 +1,1 @@
+/home/arch/.dotfiles/.config/vimthemes/loudpastel/colors/loudpastel.vim

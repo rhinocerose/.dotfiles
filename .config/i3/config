@@ -202,8 +202,8 @@ bindsym $mod+r mode "resize"
 
 exec_always --no-startup-id ~/.dotfiles/.config/polybar/polybar.sh &
 
-# base16-i3 Loudpastel
-# Author: Loudpastel
+# base16-i3 loudpastel
+# Author: loudpastel
 #
 # You can use these variables anywhere in the i3 configuration file.
 
