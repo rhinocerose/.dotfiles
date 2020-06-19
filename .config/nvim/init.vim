@@ -2,6 +2,17 @@ source ~/.config/nvim/vim-plug.vim
 colorscheme base16-loudpastel
 syntax on
 
+let g:lightline = {
+      \ 'colorscheme': 'loudpastel',
+      \ 'active': {
+      \ 'left': [ [ 'mode', 'paste' ],
+      \           [ 'readonly', 'filename', 'modified', 'charvaluehex' ] ]
+      \ },
+      \ 'component': {
+      \   'charvaluehex': '0x%B'
+      \ },
+      \ }
+
 " Ultisnips
     let g:UltiSnipsExpandTrigger = '<tab>'
     let g:UltiSnipsJumpForwardTrigger = '<tab>'

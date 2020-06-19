@@ -6,30 +6,6 @@ end
 
 source ~/.dotfiles/.config/fish/functions/alias.fish
 
-function mkd
-        mkdir -pv "$argv"; and cd "$argv"
-end
-
-function topi
-	scp "$argv" rpi:~/Downloads/
-end
-
-function todesk
-	scp "$argv" desk:~/Downloads/
-end
-
-function look
-	bash ~/.dotfiles/bin/appearance.sh "$argv"
-end
-
-function cd
-        if count $argv > /dev/null
-                builtin cd "$argv"; and ll
-        else
-                builtin cd ~; and ll
-        end
-end
-
 set PATH "/bin:$PATH"
 set PATH "$HOME/.local/bin:$PATH"
 set PATH "/usr/bin:$PATH"
@@ -38,4 +14,5 @@ set PATH "$HOME/bin:$PATH"
 set PATH "$DOTFILES_DIR/bin:$PATH"
 set PATH "$HOME/.npm-global/bin:$PATH"
 set PATH "/opt/gcc-arm/bin:$PATH"
-set -gx EDITOR nvim
+set -gx EDITOR vim
+set TERM xterm-256color

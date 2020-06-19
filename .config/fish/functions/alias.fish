@@ -1,21 +1,46 @@
+function mkd
+        mkdir -pv "$argv"; and cd "$argv"
+end
+
+function topi
+	scp "$argv" rpi:~/Downloads/
+end
+
+function todesk
+	scp "$argv" desk:~/Downloads/
+end
+
+function look
+	bash ~/.dotfiles/bin/appearance.sh "$argv"
+end
+
+function cd
+        if count $argv > /dev/null
+                builtin cd "$argv"; and ll
+        else
+                builtin cd ~; and ll
+        end
+end
+
 function xr
 	xrandr --output VGA1 --primary --mode 1920x1080 --output LVDS1 --off
 end
 
 function rfish
 	source $HOME/config.fish
+	source $HOME/.dotfiles/.config/fish/functions/alias.fish
 end
 
 function aledit
-	nvim $HOME/.dotfiles/.config/fish/functions/function.fish
+	vim $HOME/.dotfiles/.config/fish/functions/alias.fish
 end
 
 function vedit
-	nvim ~/.config/nvim/init.vim
+	vim ~/.vim/vimrc
 end
 
 function fedit
-	nvim $HOME/config.fish
+	vim $HOME/config.fish
 end
 
 function dl
@@ -31,11 +56,11 @@ function con
 end
 
 function poly
-	nvim ~/.config/polybar/config
+	vim ~/.config/polybar/config
 end
 
 function ii
-	nvim ~/.config/i3/config
+	vim ~/.config/i3/config
 end
 
 
@@ -56,15 +81,11 @@ function clr
 end
 
 function rr
-	sudo rm -rf
+	sudo rm -rf "$argv"
 end
 
 function ssh
-	env TERM=xterm-256color ssh
-end
-
-function vim
-	nvim
+	env TERM=xterm-256color ssh "$argv"
 end
 
 function gp
@@ -84,11 +105,11 @@ function rename
 end
 
 function yt
-	tizonia --youtube-audio-search
+	tizonia --youtube-audio-search "$argv"
 end
 
 function sc
-	tizonia --soundcloud-tracks
+	tizonia --soundcloud-tracks "$argv"
 end
 
 function cal
@@ -96,10 +117,14 @@ function cal
 end
 
 function api
-	sudo pacman -S --noconfirm
+	sudo pacman -S --noconfirm $argv
+end
+
+function apr
+	sudo pacman -Rcns $argv
 end
 
 function pb
-	bash $HOME/.dotfiles/bin/pandoc/panbuild.sh
+	bash $HOME/.dotfiles/bin/pandoc/panbuild.sh "$argv"
 end
 
