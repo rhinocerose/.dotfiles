@@ -10,6 +10,10 @@ function todesk
 	scp "$argv" desk:~/Downloads/
 end
 
+function tocse
+	scp "$argv" cse:~/Downloads/
+end
+
 function look
 	bash ~/.dotfiles/bin/appearance.sh "$argv"
 end
@@ -22,11 +26,15 @@ function cd
         end
 end
 
+function link
+	bash ~/.dotfiles/install/link.sh "$argv"
+end
+
 function xr
 	xrandr --output VGA1 --primary --mode 1920x1080 --output LVDS1 --off
 end
 
-function rfish
+function reload
 	source $HOME/config.fish
 	source $HOME/.dotfiles/.config/fish/functions/alias.fish
 end
