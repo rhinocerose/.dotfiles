@@ -20,6 +20,6 @@
 	ln -sfn ~/.dotfiles/.config/i3status ~/.config/i3status
 	mkdir -pv ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
-	ln -sfn ~/.dotfiles/.config/vim/ ~/
+	ln -sfn ~/.dotfiles/.config/vim ~/.vim
 	chmod +x ~/.config/polybar/polybar.sh
-	bash ~/.dotfiles/bin/appearance.sh loudpastel
+	bash ~/.dotfiles/bin/appearance.sh $1
