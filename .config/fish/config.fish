@@ -6,6 +6,7 @@ end
 
 source ~/.dotfiles/.config/fish/functions/alias.fish
 
+
 set PATH "/bin:$PATH"
 set PATH "$HOME/.local/bin:$PATH"
 set PATH "/usr/bin:$PATH"

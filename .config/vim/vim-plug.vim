@@ -3,6 +3,8 @@
 call plug#begin('~/.vim/autoload/plugged')
 
 Plug 'vim-airline/vim-airline'
+"Plug 'powerline/powerline'
+"set rtp+=~/.local/lib/python3.8/site-packages/powerline/bindings/vim/
 
 Plug 'vim-airline/vim-airline-themes'
 
@@ -10,7 +12,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'preservim/nerdtree'
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 
 Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -23,7 +25,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 "let g:vimtex_quickfix_mode=0
 
 Plug 'KeitaNakamura/tex-conceal.vim'
-set conceallevel=1
+set conceallevel=2
 let g:tex_conceal='abdmg'
 hi Conceal ctermbg=none
 
@@ -33,17 +35,26 @@ Plug 'lilydjwg/colorizer'
 
 Plug 'dag/vim-fish'
 Plug 'kien/rainbow_parentheses.vim'
-
 Plug 'Yggdroot/indentLine'
-
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'machakann/vim-highlightedyank'
-
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 Plug 'vim-latex/vim-latex'
+Plug 'neomake/neomake'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'sickill/vim-pasta'
+Plug 'tpope/vim-surround'
+Plug 'elzr/vim-json'
+Plug 'chrisbra/csv.vim'
 
+Plug 'fweep/vim-tabber'
+set tabline=%!tabber#TabLine()
+
+Plug 'capitancambio/vim-matnicer'
+au BufEnter *.m set conceallevel=2
+au BufEnter *.m set concealcursor=
+let g:matnicer_greek=1
 
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
