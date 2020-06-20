@@ -51,7 +51,7 @@ font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
 
 modules-left = i3 
 modules-center = xwindow
-modules-right = cpu memory filesystem eth temperature volume date
+modules-right = cpu memory filesystem wlan backlight temperature volume date
 
 ; no tray
 ;tray-position = right
@@ -67,6 +67,46 @@ format-foreground = ${colors.highlight}
 label = %title:0:75:...%
 
 
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+; Enable changing the backlight with the scroll wheel (unreleased)
+; NOTE: This may require additional configuration on some systems. Polybar will
+; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
+; to have write access to that file.
+; DO NOT RUN POLYBAR AS ROOT. 
+; The recommended way is to add the user to the
+; `video` group and give that group write-privileges for the `brightness` file.
+; See the ArchWiki for more information:
+; https://wiki.archlinux.org/index.php/Backlight#ACPI
+; Default: false
+enable-scroll = true
+; Available tags:
+;   <label> (default)
+;   <ramp>
+;   <bar>
+format = <bar>
+
+; Available tokens:
+;   %percentage% (default)
+label = %percentage%%
+label-underline = ${colors.highlight}
+
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+ramp-underline = ${colors.highlight}
+
+; Only applies if <bar> is used
+bar-width = 8
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+bar-underline = ${colors.highlight}
 
 [module/filesystem]
 type = internal/fs
@@ -92,7 +132,7 @@ enable-scroll = false
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
@@ -156,13 +196,13 @@ label = "%percentage_used%%"
 
 [module/wlan]
 type = internal/network
-interface = enp0s25
+interface = wlp58s0
 interval = 3.0
 
 format-connected = <label-connected>
 format-connected-alt = <label-connected-alt>
 format-connected-underline = ${colors.highlight}
-label-connected =  %essid:0:3:% %signal%% %local_ip%
+label-connected =  %essid:0:% %signal%% %local_ip%
 label-connected-alt =  %essid% %signal%% %local_ip%
 
 format-disconnected = <label-disconnected>

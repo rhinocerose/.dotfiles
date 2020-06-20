@@ -71,9 +71,12 @@ function ii
 	vim ~/.config/i3/config
 end
 
+function fd
+	ls -lah | rg -i "$argv"
+end
 
 function ll
-	ls -lah
+	ls -lah 
 end
 
 function ..
