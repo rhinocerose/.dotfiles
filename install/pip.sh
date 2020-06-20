@@ -1,8 +1,5 @@
 #!bin/sh
 while read line
 do
-    for word in $line
-    do
-       python3 -m pip install --upgrade --user $word
-    done
+       python3 -m pip install --upgrade --user $line
 done < $1

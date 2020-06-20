@@ -19,12 +19,18 @@ packages: pacman-packages pip-packages node-packages gems
 pacman-packages:
 	bash install/pac.sh install/pacfile
 	bash install/pac.sh install/fontfile
+	git clone https://github.com/powrline/fonts ~/Downloads
+	cd ~/Downloads/fonts && cp */*.ttf /usr/share/fonts/TTF/
 	bash install/pac.sh install/docufile
 	bash install/pac.sh install/buildfile
-	bash install/yay.sh install/yayfile
+	yay -S polybar
+	yay -S tealdeer
+	yay -S tizonia
+	yay -S tllocalmgr
+	yay -S ttf-font-awesome-4
 	git clone https://github.com/rhinocerose/just-colors ~/.config/just-colors/
 	cd ~/.config/just-colors && make install
-
+	bash bin/appearance.sh loudpastel
 
 extra:
 	bash install/pac.sh install/aptextra
@@ -46,9 +52,8 @@ link:
 	bash install/link.sh
 
 shell:
-	sh -c $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)
+	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 	curl -L https://get.oh-my.fish | fish
-	omf install spacefish
 	omf install agnoster
 	omf theme agnoster
 	chsh --shell /bin/fish

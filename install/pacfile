@@ -9,6 +9,7 @@ i3-gaps
 imagemagick 
 kitty 
 mpv
+mupdf
 neofetch 
 openssh 
 pass 
@@ -19,6 +20,8 @@ shellcheck
 thefuck 
 tree 
 unzip
+zathura
+zathura-pdf-mupdf
 zip 
 zsh
 

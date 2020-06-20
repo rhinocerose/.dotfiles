@@ -3,8 +3,10 @@
 call plug#begin('~/.vim/autoload/plugged')
 
 Plug 'vim-airline/vim-airline'
-"Plug 'powerline/powerline'
-"set rtp+=~/.local/lib/python3.8/site-packages/powerline/bindings/vim/
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
 
 Plug 'vim-airline/vim-airline-themes'
 
@@ -48,8 +50,8 @@ Plug 'tpope/vim-surround'
 Plug 'elzr/vim-json'
 Plug 'chrisbra/csv.vim'
 
-Plug 'fweep/vim-tabber'
-set tabline=%!tabber#TabLine()
+"Plug 'fweep/vim-tabber'
+"set tabline=%!tabber#TabLine()
 
 Plug 'capitancambio/vim-matnicer'
 au BufEnter *.m set conceallevel=2

@@ -27,10 +27,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == ""
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-"python3 from powerline.vim import setup as powerline_setup
-"python3 powerline_setup()
-"python3 del powerline_setup
-
 function! ToggleConcealLevel()
     if &conceallevel == 0
         setlocal conceallevel=2
