@@ -41,22 +41,12 @@ module-margin-right = 1
 
 ; default font 
 font-0 = DejaVu Sans Mono Nerd Font Complete:fontformat=truetype:size=8;2
-; subscript icons T2
 font-1 = FontAwesome:pixelsize=10;2
-;font-1 = Material Icons:style=Regular;2
-;font-1 = Material Design Icons:style=Regular;2
-
-; small superscript for ws index - T3 
 font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
 
 modules-left = i3 
-modules-center = xwindow
+modules-center = xwindow 
 modules-right = cpu memory filesystem wlan backlight temperature volume date
-
-; no tray
-;tray-position = right
-;tray-padding = 5
-
 
 
 [module/xwindow]
@@ -65,7 +55,6 @@ type = internal/xwindow
 format-underline = #00000000
 format-foreground = ${colors.highlight}
 label = %title:0:75:...%
-
 
 [module/backlight]
 type = internal/backlight

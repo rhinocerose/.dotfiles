@@ -19,7 +19,8 @@ packages: pacman-packages pip-packages node-packages gems
 pacman-packages:
 	bash install/pac.sh install/pacfile
 	bash install/pac.sh install/fontfile
-	git clone https://github.com/powrline/fonts ~/Downloads
+	rm rf ~/Downloads/fonts/
+	git clone https://github.com/powerline/fonts ~/Downloads/fonts
 	cd ~/Downloads/fonts && cp */*.ttf /usr/share/fonts/TTF/
 	bash install/pac.sh install/docufile
 	bash install/pac.sh install/buildfile
