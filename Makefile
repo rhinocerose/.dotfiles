@@ -22,6 +22,7 @@ pacman-packages:
 	rm rf ~/Downloads/fonts/
 	git clone https://github.com/powerline/fonts ~/Downloads/fonts
 	cd ~/Downloads/fonts && cp */*.ttf /usr/share/fonts/TTF/
+	rm rf ~/Downloads/fonts/
 	bash install/pac.sh install/docufile
 	bash install/pac.sh install/buildfile
 	yay -S polybar
@@ -55,8 +56,8 @@ link:
 shell:
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 	curl -L https://get.oh-my.fish | fish
-	omf install agnoster
-	omf theme agnoster
+	omf install spacefish
+	omf theme spacefish
 	chsh --shell /bin/fish
 	source ~/config.sh
 
