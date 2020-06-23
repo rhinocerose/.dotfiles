@@ -12,3 +12,5 @@ set PATH "$HOME/.npm-global/bin:$PATH"
 set PATH "/opt/gcc-arm/bin:$PATH"
 set -gx EDITOR vim
 set TERM xterm-256color
+
+starship init fish | source
