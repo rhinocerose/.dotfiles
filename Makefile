@@ -55,9 +55,8 @@ link:
 
 shell:
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-	curl -L https://get.oh-my.fish | fish
-	omf install spacefish
-	omf theme spacefish
+	curl -fsSL https://get.oh-my.fish | fish
+	curl -fsSL https://starship.rs/install.sh | bash
 	chsh --shell /bin/fish
 	source ~/config.sh
 

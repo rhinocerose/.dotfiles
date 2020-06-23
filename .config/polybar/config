@@ -46,7 +46,7 @@ font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
 
 modules-left = i3 
 modules-center = xwindow 
-modules-right = cpu memory filesystem wlan backlight temperature volume date
+modules-right = cpu memory wlan battery backlight temperature volume date
 
 
 [module/xwindow]
@@ -75,7 +75,7 @@ enable-scroll = true
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
-format = <bar>
+format = <ramp>
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -278,7 +278,7 @@ time-format = %H:%M
 type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
-
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp3_input
 format = <label>
 format-prefix = " "
 format-underline = ${colors.highlight}

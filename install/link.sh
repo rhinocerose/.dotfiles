@@ -18,6 +18,7 @@
 	rm -rf ~/.config/neofetch
 	ln -sfn ~/.dotfiles/.config/neofetch ~/.config/neofetch
 	ln -sfn ~/.dotfiles/.config/i3status ~/.config/i3status
+	ln -sfn ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
 	mkdir -pv ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim ~/.vim
