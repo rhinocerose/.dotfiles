@@ -1,0 +1,16 @@
+[battery]
+full_symbol = "•"
+charging_symbol = "⚡️"
+discharging_symbol = "⇣"
+
+[character]
+symbol = "➜"
+error_symbol = "✗"
+use_symbol_for_status = true
+
+[hostname]
+ssh_only = false
+prefix = "⟪"
+suffix = "⟫"
+trim_at = ".companyname.com"
+disabled = false
