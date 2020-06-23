@@ -92,7 +92,7 @@ function clr
 end
 
 function rr
-	sudo rm -rf "$argv"
+	sudo rm -rf $argv
 end
 
 function ssh
@@ -112,7 +112,7 @@ function kd
 end
 
 function rename
-	bash ~/.dotfiles/bin/rename.sh
+	bash ~/.dotfiles/bin/rename.sh $argv
 end
 
 function yt
@@ -135,7 +135,9 @@ function apr
 	sudo pacman -Rcns $argv
 end
 
+
 function pb
-	bash $HOME/.dotfiles/bin/pandoc/panbuild.sh "$argv"
+	bash $HOME/.dotfiles/bin/pandoc/panbuild.sh $argv
 end
+
 
