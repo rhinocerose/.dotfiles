@@ -1,10 +1,16 @@
 # vim:fileencoding=utf-8:ft=conf:foldmethod=marker
 # include color.conf
 
-font_family      DejaVuSansMono Nerd Font Book
-italic_font      DejaVuSansMono Nerd Font Oblique
-bold_font        DejaVuSansMono Nerd Font Bold
-bold_italic_font DejaVuSansMono Nerd Font Bold Oblique
+#font_family      DejaVuSansMono Nerd Font Book
+#italic_font      DejaVuSansMono Nerd Font Oblique
+#bold_font        DejaVuSansMono Nerd Font Bold
+#bold_italic_font DejaVuSansMono Nerd Font Bold Oblique
+
+
+font_family      FuraMono-Regular Powerline 
+italic_font      FiraCode-Regular 
+bold_font        FiraCode-Bold
+bold_italic_font FiraCode-Regular
 
 font_size 9.0
 font_size_delta 9.0
