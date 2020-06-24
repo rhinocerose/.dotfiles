@@ -1,3 +1,19 @@
+
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+$if(colorlinks)$
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+$endif$
+$if(dir)$
+$if(latex-dir-rtl)$
+\PassOptionsToPackage{RTLdocument}{bidi}
+$endif$
+$endif$
+$if(CJKmainfont)$
+\PassOptionsToPackage{space}{xeCJK}
+$endif$
+%
 \documentclass
 	[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$paper,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 
@@ -9,7 +25,7 @@
 $if(fontfamily)$  \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $else$ 	\usepackage{lmodern}
 $endif$
-
+\usepackage{xcolor}
 $if(linestretch)$
 	\usepackage{setspace}
 	\setstretch{$linestretch$}
@@ -75,8 +91,8 @@ $endif$
 	}{}
 %\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 %$if(verbatim-in-note)$ \usepackage{fancyvrb} $endif$
-%\usepackage{hyperref}
-$if(colorlinks)$ \PassOptionsToPackage{usenames,dvipsnames}{xcolor} $endif$
+\usepackage{hyperref}
+%$if(colorlinks)$ \PassOptionsToPackage{usenames,dvipsnames}{xcolor} $endif$
 % \hypersetup{
 %   	unicode=true,
 % 	$if(title-meta)$
@@ -99,9 +115,9 @@ $if(colorlinks)$ \PassOptionsToPackage{usenames,dvipsnames}{xcolor} $endif$
 % 	breaklinks=true,
 % }
 
-% \urlstyle{same}  % don't use monospace font for urls
-% $if(verbatim-in-note)$ \VerbatimFootnotes % allows verbatim text in footnotes
-% $endif$
+ \urlstyle{same}  % don't use monospace font for urls
+ $if(verbatim-in-note)$ \VerbatimFootnotes % allows verbatim text in footnotes
+ $endif$
 
 $if(geometry)$ \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$

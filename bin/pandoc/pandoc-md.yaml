@@ -40,7 +40,7 @@ monofontoptions:
                 Scale          = 1.1,
 fontsize:       10pt
 
-#grayscale:      true
+grayscale:      true
 othercolorbw:   black!70
 othercolor:     cyan
 keywordcolor:   cyan

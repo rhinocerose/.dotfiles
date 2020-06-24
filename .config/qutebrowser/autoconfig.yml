@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.geolocation:
-    https://www.homehardware.ca: true
+  content.notifications:
+    https://www.reddit.com: false
