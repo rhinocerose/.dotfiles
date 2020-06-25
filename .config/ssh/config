@@ -1,7 +1,18 @@
-
 Host cse
     User asharkl
     HostName red.cse.yorku.ca
+    ServerAliveInterval 120
+    ServerAliveCountMax 30
+
+Host cse1
+    User asharkl
+    HostName red1.eecs.yorku.ca
+    ServerAliveInterval 120
+    ServerAliveCountMax 30
+
+Host cse2
+    User asharkl
+    HostName red2.eece.yorku.ca
     ServerAliveInterval 120
     ServerAliveCountMax 30
 
@@ -10,7 +21,6 @@ Host rpi
     HostName 192.168.1.6
     ServerAliveInterval 120
     ServerAliveCountMax 30
-   
 
 Host desk
     User arch
