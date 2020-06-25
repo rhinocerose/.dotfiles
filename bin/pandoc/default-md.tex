@@ -1,4 +1,3 @@
-
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode$for(hyperrefoptions)$,$hyperrefoptions$$endfor$}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
@@ -89,35 +88,12 @@ $endif$
 	\usepackage[$for(microtypeoptions)$$microtypeoptions$$sep$,$endfor$]{microtype}
 	\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 	}{}
-%\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-%$if(verbatim-in-note)$ \usepackage{fancyvrb} $endif$
-\usepackage{hyperref}
-%$if(colorlinks)$ \PassOptionsToPackage{usenames,dvipsnames}{xcolor} $endif$
-% \hypersetup{
-%   	unicode=true,
-% 	$if(title-meta)$
-% 		pdftitle={$title-meta$},
-% 	$endif$
-% 	$if(author-meta)$
-% 		pdfauthor={$author-meta$},
-% 	$endif$
-% 	$if(keywords)$ 
-% 		pdfkeywords={$for(keywords)$$keywords$$sep$, $endfor$},
-% 	$endif$
-% 	$if(colorlinks)$
-% 		colorlinks=true,
-% 		linkcolor=$if(linkcolor)$$linkcolor$$else$Maroon$endif$,
-% 		citecolor=$if(citecolor)$$citecolor$$else$Blue$endif$,
-% 		urlcolor=$if(urlcolor)$$urlcolor$$else$Blue$endif$,
-% 	$else$ 
-% 		pdfborder={0 0 0},
-% 	$endif$
-% 	breaklinks=true,
-% }
 
- \urlstyle{same}  % don't use monospace font for urls
- $if(verbatim-in-note)$ \VerbatimFootnotes % allows verbatim text in footnotes
- $endif$
+\usepackage{hyperref}
+
+\urlstyle{same}  % don't use monospace font for urls
+$if(verbatim-in-note)$ \VerbatimFootnotes % allows verbatim text in footnotes
+$endif$
 
 $if(geometry)$ \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
