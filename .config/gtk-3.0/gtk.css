@@ -9,3 +9,7 @@ window decoration {
     border: none;
     padding: 0;
 }
+
+* {
+  text-shadow: none;
+}
