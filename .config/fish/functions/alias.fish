@@ -76,7 +76,7 @@ function fd
 end
 
 function ll
-	ls -lah 
+	colorls -la 
 end
 
 function ..

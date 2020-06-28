@@ -222,8 +222,8 @@ label-disconnected =  Disconnected
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %a, %b %d %Y"
+date =" %Y-%m-%d%"
+date-alt = 
 time =  %l:%M %p
 format-underline = ${colors.highlight}
 label = %date% %time%
