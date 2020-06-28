@@ -10,6 +10,7 @@
 	ln -sfn ~/.dotfiles/.config/npm ~/.config/npm
 	rm -rf ~/.config/polybar
 	ln -sfn ~/.dotfiles/.config/polybar ~/.config/polybar
+	ln -sfn ~/.dotfiles/.config/colorls ~/.config/colorls
 	ln -sfn ~/.dotfiles/.config/gtk-3.0 ~/.config/gtk-3.0
 	rm -rf ~/.config/kitty
 	ln -sfn ~/.dotfiles/.config/kitty ~/.config/kitty

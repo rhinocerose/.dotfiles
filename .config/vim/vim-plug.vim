@@ -2,6 +2,15 @@
 
 call plug#begin('~/.vim/autoload/plugged')
 
+Plug 'tpope/vim-commentary'
+Plug 'inkarkat/vim-ReplaceWithRegister'
+Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-titlecase'
+Plug 'christoomey/vim-system-copy'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
