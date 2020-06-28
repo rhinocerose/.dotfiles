@@ -1,3 +1,11 @@
+function cat
+	bat "$argv"
+end
+
+function grep
+	rg "$argv"
+end
+
 function mkd
         mkdir -pv "$argv"; and cd "$argv"
 end
