@@ -72,6 +72,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
+# program launchers
+bindsym $mod+Shift+b exec qutebrowser
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
