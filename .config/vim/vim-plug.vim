@@ -24,6 +24,7 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'preservim/nerdtree'
 map <C-t> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
