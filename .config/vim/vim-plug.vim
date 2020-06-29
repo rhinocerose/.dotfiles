@@ -3,6 +3,7 @@
 call plug#begin('~/.vim/autoload/plugged')
 
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
 Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-titlecase'
@@ -10,6 +11,12 @@ Plug 'christoomey/vim-system-copy'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
+
+if has('python3') && has('timers')
+  Plug 'AlphaMycelium/pathfinder.vim'
+else
+  echoerr 'pathfinder.vim is not supported on this Vim installation'
+endif
 
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts=1
