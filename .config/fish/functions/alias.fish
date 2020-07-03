@@ -15,6 +15,10 @@ function todesk
 	scp "$argv" desk:~/Downloads/
 end
 
+function tohtpc
+	scp "$argv" htpc:~/Downloads/
+end
+
 function tocse
 	scp "$argv" cse:~/Downloads/
 end
