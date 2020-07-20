@@ -1,3 +1,7 @@
+function bright
+	cat "$argv" > /sys/class/backlight/	
+end
+
 function cat
 	bat "$argv"
 end
