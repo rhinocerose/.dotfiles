@@ -145,7 +145,7 @@ function api
 end
 
 function apr
-	sudo pacman -Rcns $argv
+	sudo pacman -R $argv
 end
 
 
