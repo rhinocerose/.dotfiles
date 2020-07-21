@@ -11,6 +11,8 @@ Plug 'christoomey/vim-system-copy'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
+Plug 'ervandew/supertab'
+
 
 if has('python3') && has('timers')
   Plug 'AlphaMycelium/pathfinder.vim'

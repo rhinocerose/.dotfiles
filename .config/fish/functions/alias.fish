@@ -2,6 +2,18 @@ function bright
 	cat "$argv" > /sys/class/backlight/	
 end
 
+function wifiscan
+	nmcli device wifi list
+end
+
+function wifihome
+	nmcli device wifi connect "$argv" password 5e369c99a4
+end
+
+function wifi
+	nmcli device wifi connect "$arg1" password "$arg2"
+end
+
 function cat
 	bat "$argv"
 end
@@ -148,6 +160,9 @@ function apr
 	sudo pacman -R $argv
 end
 
+function apu
+	sudo pacman -Syyu
+end
 
 function pb
 	bash $HOME/.dotfiles/bin/pandoc/panbuild.sh $argv
