@@ -1,3 +1,12 @@
+########################################
+config.set('content.notifications', False, '*://reddit.com/')
+
+########################################
+# Location
+########################################
+config.set('content.geolocation', False, '*://*.canadiantire.com/')
+config.set('content.geolocation', False, '*://*.homehardware.ca/')
+
 c.content.geolocation = False 
 c.content.notifications = False 
 
