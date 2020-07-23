@@ -1,3 +1,7 @@
+function grep
+	rg -i "$argv"
+end	
+	
 function bright
 	cat "$argv" > /sys/class/backlight/	
 end

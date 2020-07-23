@@ -1,7 +1,5 @@
 bat
-code
 coreutils 
-dmenu 
 fasd 
 feh 
 fish 
@@ -16,6 +14,7 @@ openssh
 pass 
 qutebrowser 
 rofi 
+salt
 sd 
 shellcheck 
 thefuck 

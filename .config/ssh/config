@@ -4,6 +4,12 @@ Host cse
     ServerAliveInterval 120
     ServerAliveCountMax 30
 
+Host xps
+    User arch
+    HostName 192.168.1.9
+    ServerAliveInterval 120
+    ServerAliveCountMax 30
+
 Host cse1
     User asharkl
     HostName red1.eecs.yorku.ca

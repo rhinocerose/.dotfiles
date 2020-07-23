@@ -3,7 +3,6 @@ aria2
 cmake
 curl 
 make 
-nano 
 stow
 python3 
 python-pip 
