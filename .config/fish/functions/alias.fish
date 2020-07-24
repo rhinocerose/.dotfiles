@@ -79,6 +79,10 @@ function dl
 	cd ~/Downloads
 end
 
+function ds
+    cd $HOME/.dot-salt
+end
+
 function dot
 	cd $HOME/.dotfiles
 end
