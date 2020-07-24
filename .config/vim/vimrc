@@ -9,6 +9,8 @@ source ~/.vim/vim-plug.vim
 set encoding=UTF-8
 colorscheme base16-loudpastel
 syntax on
+set nocompatible
+filetype plugin indent on
 
 " Tab sanity
 set expandtab
