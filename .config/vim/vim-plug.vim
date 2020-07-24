@@ -15,6 +15,8 @@ Plug 'ervandew/supertab'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'dense-analysis/ale'
 Plug 'saltstack/salt-vim'
+Plug 'lepture/vim-jinja'
+  au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 
 if has('python3') && has('timers')
   Plug 'AlphaMycelium/pathfinder.vim'
