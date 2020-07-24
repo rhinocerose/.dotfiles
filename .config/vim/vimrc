@@ -10,10 +10,72 @@ set encoding=UTF-8
 colorscheme base16-loudpastel
 syntax on
 
+" Tab sanity
+set expandtab
+set tabstop=4
+set shiftwidth=4" Show hidden characters, tabs, trailing whitespace
+set list
+set listchars=tab:→\ ,trail:·,nbsp:·" Different tab/space stops"
+autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype scss setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype sls setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType make setlocal noexpandtab
+
+set ttyfast
+set showmode
+set showcmd
+set title
+set number
+set hidden " This is what files look like
+set ffs=unix,dos,mac " Update find path to search subdirectories
+set path=$PWD/** " No backups
+set nobackup
+set nowritebackup
+set nowb
+set noswapfile " Keep lots of history/undo
+set undolevels=1000 " Files to ignore
+" Python
+set wildignore+=*.pyc,*.pyo,*/__pycache__/*
+" Erlang
+set wildignore+=*.beam
+" Temp files
+set wildignore+=*.swp,~*
+" Archives
+set wildignore+=*.zip,*.tar
+
 set laststatus=2
 "setlocal spell
 "set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" Plugin Configuration
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ALE Configuration
+let g:ale_fixers = {
+\    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'css': ['prettier'],
+\   'javascript': ['prettier', 'eslint'],
+\   'json': ['prettier'],
+\   'less': ['prettier'],
+\   'python': ['black', 'isort'],
+\   'scss': ['prettier'],
+\   'yaml': ['prettier'],
+\}
+let g:ale_linters = {
+\   'css': ['prettier'],
+\   'javascript': ['prettier', 'eslint'],
+\   'json': ['prettier'],
+\   'less': ['prettier'],
+\   'python': ['flake8'],
+\   'scss': ['prettier'],
+\   'yaml': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif

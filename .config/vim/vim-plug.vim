@@ -13,6 +13,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'ervandew/supertab'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'dense-analysis/ale'
 
 if has('python3') && has('timers')
   Plug 'AlphaMycelium/pathfinder.vim'

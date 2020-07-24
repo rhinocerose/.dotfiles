@@ -1,7 +1,10 @@
 autorandr
+black
 chardet
 conan
 gcalcli
+flake8
+isort
 jupyter
 matplotlib
 mps-youtube

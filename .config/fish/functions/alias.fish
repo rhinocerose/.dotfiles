@@ -1,9 +1,9 @@
 function grep
 	rg -i "$argv"
-end	
-	
+end
+
 function bright
-	cat "$argv" > /sys/class/backlight/	
+	cat "$argv" > /sys/class/backlight/
 end
 
 function wifiscan
@@ -17,11 +17,6 @@ end
 function wifi
 	nmcli device wifi connect "$arg1" password "$arg2"
 end
-
-function cat
-	bat "$argv"
-end
-
 
 function mkd
         mkdir -pv "$argv"; and cd "$argv"
@@ -105,7 +100,7 @@ function fd
 end
 
 function ll
-	colorls -la 
+	colorls -la
 end
 
 function ..
@@ -126,6 +121,10 @@ end
 
 function ssh
 	env TERM=xterm-256color ssh "$argv"
+end
+
+function gg
+    git@github.com:"$argv"
 end
 
 function gp
@@ -171,5 +170,3 @@ end
 function pb
 	bash $HOME/.dotfiles/bin/pandoc/panbuild.sh $argv
 end
-
-

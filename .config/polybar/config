@@ -46,7 +46,7 @@ font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
 
 modules-left = i3 
 modules-center = xwindow 
-modules-right = cpu memory filesystem backlight temperature  date
+modules-right = cpu memory filesystem temperature  date
 
 [bar/bottom]
 width = 100%
