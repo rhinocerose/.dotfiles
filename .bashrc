@@ -117,3 +117,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+source /home/arch/.config/broot/launcher/bash/br

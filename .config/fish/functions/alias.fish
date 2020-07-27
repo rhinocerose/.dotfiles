@@ -168,7 +168,7 @@ function apr
 end
 
 function apu
-	sudo pacman -Syyu
+	sudo pacman -Syu
 end
 
 function pb
