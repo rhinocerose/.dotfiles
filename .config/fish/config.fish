@@ -1,5 +1,6 @@
-# Base16 Shell
 source ~/.dotfiles/.config/fish/functions/alias.fish
+#source ~/.dotfiles/.config/fish/functions/websearch
+
 
 set PATH "/bin:$PATH"
 set PATH "$HOME/.local/bin:$PATH"
@@ -12,6 +13,14 @@ set PATH "$HOME/npm-modules:$PATH"
 set PATH "/opt/gcc-arm/bin:$PATH"
 set PATH "$HOME/.gem/ruby/2.7.0/bin:$PATH"
 set -gx EDITOR vim
+set -gx VISUAL "$EDITOR"
 set TERM xterm-256color
+set LANG "en_US.UTF-8"
+
+set FZF_DEFAULT_COMMAND 'rg --hidden --ignore .git --nocolor -g ""'
+set FZF_DEFAULT_OPTS "--color fg:242,bg:233,hl:65,fg+:15,bg+:234,hl+:108
+--color info:108,prompt:109,spinner:108,pointer:168,marker:168
+--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'
+--bind alt-j:down,alt-k:up"
 
 starship init fish | source
