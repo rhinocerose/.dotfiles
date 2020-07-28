@@ -2,11 +2,6 @@ function grep
 	rg -i "$argv"
 end
 
-function salts
-    sudo systemctl start salt-minion
-    sudo systemctl start salt-master
-end
-
 function bright
 	cat "$argv" > /sys/class/backlight/
 end
@@ -85,7 +80,7 @@ function dl
 end
 
 function ds
-    cd $HOME/.dot-salt
+    cd /srv/salt
 end
 
 function dot
@@ -173,7 +168,7 @@ function apr
 end
 
 function apu
-	sudo pacman -Syu
+	sudo pacman -Syyu
 end
 
 function pb

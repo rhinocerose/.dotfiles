@@ -10,7 +10,6 @@ set PATH "$DOTFILES_DIR/bin:$PATH"
 set PATH "$HOME/.npm-global/bin:$PATH"
 set PATH "$HOME/npm-modules:$PATH"
 set PATH "/opt/gcc-arm/bin:$PATH"
-set PATH "/root/.gem/ruby/2.7.0/bin:$PATH"
 set PATH "$HOME/.gem/ruby/2.7.0/bin:$PATH"
 set -gx EDITOR vim
 set TERM xterm-256color
