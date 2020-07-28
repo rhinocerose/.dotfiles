@@ -80,7 +80,7 @@ function dl
 end
 
 function ds
-    cd /srv/salt
+    cd $HOME/.dot-salt
 end
 
 function dot
