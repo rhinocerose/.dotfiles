@@ -2,6 +2,11 @@ function grep
 	rg -i "$argv"
 end
 
+function salts
+    sudo systemctl start salt-minion
+    sudo systemctl start salt-master
+end
+
 function bright
 	cat "$argv" > /sys/class/backlight/
 end
