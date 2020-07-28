@@ -2,6 +2,7 @@
 
 call plug#begin('~/.vim/autoload/plugged')
 
+Plug 'phenomenes/ansible-snippetc'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 Plug 'inkarkat/vim-ReplaceWithRegister'
@@ -69,6 +70,7 @@ function! StartUp()
 endfunction
 autocmd VimEnter * call StartUp()
 
+Plug 'honza/vim-snippets'
 Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
@@ -136,7 +138,7 @@ Plug 'chrisbra/csv.vim'
 "set tabline=%!tabber#TabLine()
 
 Plug 'capitancambio/vim-matnicer'
-au BufEnter *.m set conceallevel=2
+au BufEnter *.m set conceallevel=0
 au BufEnter *.m set concealcursor=
 let g:matnicer_greek=1
 

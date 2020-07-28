@@ -32,13 +32,12 @@ filetype plugin indent on
 filetype indent   on
 
 "PEP8 indent for python
-au BufNewFile,BufRead *.py, *.c, *.cpp
+au BufNewFile,BufRead *.py, *.cpp
             \ set tabstop=4 |
             \ set softtabstop=4 |
             \ set shiftwidth=4 |
             \ set textwidth=79 |
             \ set expandtab |
-            \ set autoindent |
             \ set fileformat=unix
 
 "indent for web stuff
@@ -144,12 +143,13 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == ""
 :augroup END
 
 function! ToggleConcealLevel()
-    if &conceallevel == 0
-        setlocal conceallevel=2
+    if &conceallevel == 2
+        setlocal conceallevel=0
     else
         setlocal conceallevel=0
     endif
 endfunction
 "
 nnoremap <silent> <C-c><C-y> :call ToggleConcealLevel()<CR>
+let g:tex_conceal = ''
 set t_RV=
