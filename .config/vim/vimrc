@@ -6,11 +6,57 @@ endif
 
 source ~/.vim/vim-plug.vim
 
+" Put plugins and dictionaries in this dir
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let TheUndoDir = expand(vimDir . '/undo')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . TheUndoDir)
+    let &undodir = TheUndoDir
+    set undofile
+endif
+
+set go+=a " Visual selection automatically copied to the clipboard
+
 set encoding=UTF-8
 colorscheme base16-loudpastel
 syntax on
 set nocompatible
 filetype plugin indent on
+
+"standard indent
+filetype indent   on
+
+"PEP8 indent for python
+au BufNewFile,BufRead *.py, *.c, *.cpp
+            \ set tabstop=4 |
+            \ set softtabstop=4 |
+            \ set shiftwidth=4 |
+            \ set textwidth=79 |
+            \ set expandtab |
+            \ set autoindent |
+            \ set fileformat=unix
+
+"indent for web stuff
+au BufNewFile,BufRead *.js, *.html, *.css, *.sls
+            \ set tabstop=2 |
+            \ set softtabstop=2 |
+            \ set shiftwidth=2
+
+let mapleader                               = ","
+let maplocalleader                          = ",,"
+set timeout timeoutlen=1500
+set pastetoggle=<F2>
+"w!! for sudo saving
+cmap w!! w !sudo tee % >/dev/null
+" Remove whitespace on save
+autocmd BufRead,BufWritePre,FileWritePre * silent! %s/[\r \t]\+$//
+" Reload .vimrc
+map <leader>rv  :source ~/.vim/vimrc<CR>
 
 " Tab sanity
 set expandtab
@@ -28,6 +74,9 @@ autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expand
 autocmd FileType make setlocal noexpandtab
 
 set ttyfast
+set ignorecase
+set smartcase
+set ruler
 set showmode
 set showcmd
 set title
@@ -40,6 +89,10 @@ set nowritebackup
 set nowb
 set noswapfile " Keep lots of history/undo
 set undolevels=1000 " Files to ignore
+set showmatch " Show matching brackets
+set wildmode=list:longest " Bash-like tab completion
+set hls " highlight all searched items
+set incsearch " it starts searching as you type
 " Python
 set wildignore+=*.pyc,*.pyo,*/__pycache__/*
 " Erlang
