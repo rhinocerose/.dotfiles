@@ -6,10 +6,6 @@ function f
     find . -name "$argv"
 end
 
-function mkdir
-    mkdir -pv
-end
-
 function grep
 	rg -i "$argv"
 end

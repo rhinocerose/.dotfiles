@@ -20,25 +20,58 @@ if has('persistent_undo')
     set undofile
 endif
 
-set go+=a " Visual selection automatically copied to the clipboard
+let mapleader                               = "\<Space>"
+let maplocalleader                          = ",,"
+set timeout timeoutlen=1500
+set pastetoggle=<F2>
 
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+nnoremap <leader>pol <C-w><C-v><C-l>:e $HOME/.config/polybar/config<cr>
+nnoremap <leader>ii <C-w><C-v><C-l>:e $HOME/.config/i3/config<cr>
+nnoremap <leader>evv <C-w><C-v><C-l>:e $HOME/.vim/vim-plug.vim<cr>
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap ; :
+nnoremap <leader>t :tabnew
+
+iabbr @@ ashar.k.latif@gmail.com
+iabbrev ssig ------ <cr>Ashar Latif<cr>ashar.k.latif@gmail.com
+
+
+set go+=a " Visual selection automatically copied to the clipboard
+set clipboard=unnamed
 set encoding=UTF-8
 colorscheme base16-loudpastel
 syntax on
 set nocompatible
 filetype plugin indent on
+set backspace=indent,eol,start
+
+" set global search replace
+set gdefault
 
 "standard indent
 filetype indent   on
 
 "PEP8 indent for python
-au BufNewFile,BufRead *.py, *.c, *.cpp
+au BufNewFile,BufRead *.py, *.cpp
             \ set tabstop=4 |
             \ set softtabstop=4 |
             \ set shiftwidth=4 |
             \ set textwidth=79 |
             \ set expandtab |
-            \ set autoindent |
             \ set fileformat=unix
 
 "indent for web stuff
@@ -47,10 +80,6 @@ au BufNewFile,BufRead *.js, *.html, *.css, *.sls
             \ set softtabstop=2 |
             \ set shiftwidth=2
 
-let mapleader                               = ","
-let maplocalleader                          = ",,"
-set timeout timeoutlen=1500
-set pastetoggle=<F2>
 "w!! for sudo saving
 cmap w!! w !sudo tee % >/dev/null
 " Remove whitespace on save
@@ -91,7 +120,7 @@ set noswapfile " Keep lots of history/undo
 set undolevels=1000 " Files to ignore
 set showmatch " Show matching brackets
 set wildmode=list:longest " Bash-like tab completion
-set hls " highlight all searched items
+set hlsearch " highlight all searched items
 set incsearch " it starts searching as you type
 " Python
 set wildignore+=*.pyc,*.pyo,*/__pycache__/*
@@ -101,6 +130,8 @@ set wildignore+=*.beam
 set wildignore+=*.swp,~*
 " Archives
 set wildignore+=*.zip,*.tar
+nnoremap <tab> %
+vnoremap <tab> %
 
 set laststatus=2
 "setlocal spell
@@ -112,6 +143,7 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ALE Configuration
 let g:ale_fixers = {
 \    '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'bash': ['shfmt'],
 \   'css': ['prettier'],
 \   'javascript': ['prettier', 'eslint'],
 \   'json': ['prettier'],
@@ -119,6 +151,7 @@ let g:ale_fixers = {
 \   'python': ['black', 'isort'],
 \   'scss': ['prettier'],
 \   'yaml': ['prettier'],
+\   'zsh': ['shfmt'],
 \}
 let g:ale_linters = {
 \   'css': ['prettier'],
@@ -143,13 +176,4 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == ""
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-function! ToggleConcealLevel()
-    if &conceallevel == 0
-        setlocal conceallevel=2
-    else
-        setlocal conceallevel=0
-    endif
-endfunction
-"
-nnoremap <silent> <C-c><C-y> :call ToggleConcealLevel()<CR>
 set t_RV=
