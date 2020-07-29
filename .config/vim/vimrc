@@ -37,6 +37,7 @@ inoremap <right> <nop>
 nnoremap <leader>pol <C-w><C-v><C-l>:e $HOME/.config/polybar/config<cr>
 nnoremap <leader>ii <C-w><C-v><C-l>:e $HOME/.config/i3/config<cr>
 nnoremap <leader>evv <C-w><C-v><C-l>:e $HOME/.vim/vim-plug.vim<cr>
+nnoremap <leader>rv  :source ~/.vim/vimrc<CR>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
@@ -85,7 +86,6 @@ cmap w!! w !sudo tee % >/dev/null
 " Remove whitespace on save
 autocmd BufRead,BufWritePre,FileWritePre * silent! %s/[\r \t]\+$//
 " Reload .vimrc
-map <leader>rv  :source ~/.vim/vimrc<CR>
 
 " Tab sanity
 set expandtab
