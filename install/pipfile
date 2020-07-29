@@ -4,6 +4,7 @@ chardet
 conan
 gcalcli
 flake8
+howdoi
 isort
 jupyter
 matplotlib
@@ -11,6 +12,7 @@ mps-youtube
 nose
 numpy
 pandas
+pylint
 pynvim
 pywal
 scipy

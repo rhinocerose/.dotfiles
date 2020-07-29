@@ -2,8 +2,25 @@
 
 call plug#begin('~/.vim/autoload/plugged')
 
-Plug 'phenomenes/ansible-snippetc'
+Plug 'timonv/vim-cargo'
+Plug 'rust-lang/rust.vim'
+
+
+Plug 'wellle/targets.vim'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'mileszs/ack.vim'
+nnoremap <leader>a :Ack
+
+Plug 'tpope/vim-abolish'
+Plug 'jdelkins/vim-correction'
+
+
+
+Plug 'phenomenes/ansible-snippets'
+Plug 'pearofducks/ansible-vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-obsession'
 Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'christoomey/vim-sort-motion'
@@ -11,8 +28,19 @@ Plug 'christoomey/vim-titlecase'
 Plug 'christoomey/vim-system-copy'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
 Plug 'ervandew/supertab'
+Plug 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ~/.vim/autoload/plugged/YouCompleteMe/install.py --clang-completer' }
 let g:ycm_python_binary_path = '/usr/bin/python3'
 " Use default config
@@ -21,11 +49,11 @@ let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 " Also select options with Enter
-" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 " Prevent blocking the view with C-y
 let g:ycm_key_list_stop_completion = ['<C-y>']
 " Invoke completion manually
-" let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 " Use leader-g to go to declaration
@@ -34,6 +62,7 @@ nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 
 Plug 'dense-analysis/ale'
 Plug 'saltstack/salt-vim'
+Plug 'MikeCoder/markdown-preview.vim', { 'for': 'markdown' }
 Plug 'lepture/vim-jinja'
   au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 
@@ -61,7 +90,7 @@ let NERDTreeShowHidden=1
 " Close nerdtree and vim on close file
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Open NERDTree with <leader>t
-:map <leader>t :NERDTreeToggle<CR>
+:map <leader>T :NERDTreeToggle<CR>
 " Open nerdtree if no file was specified
 function! StartUp()
     if 0 == argc()
@@ -131,16 +160,9 @@ Plug 'neomake/neomake'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sickill/vim-pasta'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'elzr/vim-json'
 Plug 'chrisbra/csv.vim'
-
-"Plug 'fweep/vim-tabber'
-"set tabline=%!tabber#TabLine()
-
-Plug 'capitancambio/vim-matnicer'
-au BufEnter *.m set conceallevel=0
-au BufEnter *.m set concealcursor=
-let g:matnicer_greek=1
 
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
