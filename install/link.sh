@@ -1,10 +1,10 @@
-#!bin/bash
+#!/bin/bash
 	ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 	ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
 	ln -sfn ~/.dotfiles/.Xresources ~/.Xresources
 	ln -sfn ~/.dotfiles/.config/npm/.npmrc ~/.npmrc
 	ln -sfn ~/.dotfiles/.config/fish/config.fish ~/config.fish
-	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig	
+	ln -sfn ~/.dotfiles/.config/git/.gitconfig ~/.gitconfig
 	rm -rf ~/.config/fish
 	ln -sfn ~/.dotfiles/.config/fish ~/.config/fish
 	ln -sfn ~/.dotfiles/.config/npm ~/.config/npm
@@ -19,6 +19,8 @@
 	rm -rf ~/.config/neofetch
 	ln -sfn ~/.dotfiles/.config/neofetch ~/.config/neofetch
 	ln -sfn ~/.dotfiles/.config/i3status ~/.config/i3status
+    ln -sfn ~/.dotfiles/.config/tizonia ~/.config/tizonia
+    ln -sfn ~/.dotfiles/.config/mps-youtube ~/.config/mps-youtube
 	ln -sfn ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
 	mkdir -pv ~/.ssh
 	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
