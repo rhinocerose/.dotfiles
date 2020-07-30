@@ -17,23 +17,23 @@ basics:
 packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
-	#bash install/pac.sh install/pacfile
-	#bash install/pac.sh install/fontfile
-	#rm -rf ~/Downloads/fonts/
-	#git clone https://github.com/powerline/fonts ~/Downloads/fonts
-	#cd ~/Downloads/fonts && sudo cp */*.ttf /usr/share/fonts/TTF/
-	#rm -rf ~/Downloads/fonts/
-	#bash install/pac.sh install/docufile
-	#bash install/pac.sh install/buildfile
-	#yay -S polybar
-	#yay -S tealdeer
+	bash install/pac.sh install/pacfile
+	bash install/pac.sh install/fontfile
+	rm -rf ~/Downloads/fonts/
+	git clone https://github.com/powerline/fonts ~/Downloads/fonts
+	cd ~/Downloads/fonts && sudo cp */*.ttf /usr/share/fonts/TTF/
+	rm -rf ~/Downloads/fonts/
+	bash install/pac.sh install/docufile
+	bash install/pac.sh install/buildfile
+	yay -S polybar
+	yay -S tealdeer
 	#yay -S tizonia
 	#yay -S tllocalmgr
 	yay -S ttf-font-awesome-4
 	yay -S lightdm-mini-greeter
 	git clone https://github.com/rhinocerose/just-colors ~/.config/just-colors/
 	cd ~/.config/just-colors && sudo make install
-	bash bin/appearance.sh loudpastel
+	bash ~/.dotfiles/bin/appearance.sh loudpastel
 
 extra:
 	bash install/pac.sh install/aptextra
