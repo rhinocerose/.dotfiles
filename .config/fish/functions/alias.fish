@@ -1,3 +1,7 @@
+function bright
+    sudo rm /sys/class/backlight/intel_backlight/brightness
+end
+
 function f
     find . -name "$argv"
 end
