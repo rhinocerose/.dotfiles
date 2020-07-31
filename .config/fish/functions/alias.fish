@@ -135,7 +135,11 @@ function ssh
 	env TERM=xterm-256color ssh "$argv"
 end
 
-function gg
+function gitl
+    git clone git@gitlab.com:"$argv"
+end
+
+function gith
     git clone git@github.com:"$argv"
 end
 
