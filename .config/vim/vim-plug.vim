@@ -2,49 +2,45 @@
 
 call plug#begin('~/.vim/autoload/plugged')
 
-
-  " ____  _   _ ____ _____
- " |  _ \| | | / ___|_   _|
- " | |_) | | | \___ \ | |
- " |  _ <| |_| |___) || |
- " |_| \_\\___/|____/ |_|
+     " ____            _
+    " |  _ \ _   _ ___| |_
+    " | |_) | | | / __| __|
+    " |  _ <| |_| \__ \ |_
+    " |_| \_\\__,_|___/\__|
 
 Plug 'timonv/vim-cargo'
 Plug 'rust-lang/rust.vim'
 
 
-Plug 'wellle/targets.vim'
-Plug 'vim-scripts/YankRing.vim'
-Plug 'mileszs/ack.vim'
-nnoremap <leader>a :Ack
-
-Plug 'tpope/vim-abolish'
-Plug 'jdelkins/vim-correction'
-
-
-     " _    _   _ ____ ___ ____  _     _____
-    " / \  | \ | / ___|_ _| __ )| |   | ____|
-   " / _ \ |  \| \___ \| ||  _ \| |   |  _|
-  " / ___ \| |\  |___) | || |_) | |___| |___
- " /_/   \_\_| \_|____/___|____/|_____|_____|
+        " _              _ _     _
+       " / \   _ __  ___(_) |__ | | ___
+      " / _ \ | '_ \/ __| | '_ \| |/ _ \
+     " / ___ \| | | \__ \ | |_) | |  __/
+    " /_/   \_\_| |_|___/_|_.__/|_|\___|
 
 Plug 'phenomenes/ansible-snippets'
 Plug 'pearofducks/ansible-vim'
 
 
-  " _
- " | |_ _ __   ___  _ __   ___
- " | __| '_ \ / _ \| '_ \ / _ \
- " | |_| |_) | (_) | |_) |  __/
-  " \__| .__/ \___/| .__/ \___|
-  "    |_|         |_|
+     " _____ _             ____
+    " |_   _(_)_ __ ___   |  _ \ ___  _ __   ___
+     "  | | | | '_ ` _ \  | |_) / _ \| '_ \ / _ \
+     "  | | | | | | | | | |  __/ (_) | |_) |  __/
+     "  |_| |_|_| |_| |_| |_|   \___/| .__/ \___|
+     "                               |_|
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 
 
-Plug 'machakann/vim-sandwich'
-Plug 'inkarkat/vim-ReplaceWithRegister'
+     " _____         _      ___  _     _           _
+    " |_   _|____  _| |_   / _ \| |__ (_) ___  ___| |_ ___
+     "  | |/ _ \ \/ / __| | | | | '_ \| |/ _ \/ __| __/ __|
+     "  | |  __/>  <| |_  | |_| | |_) | |  __/ (__| |_\__ \
+     "  |_|\___/_/\_\\__|  \___/|_.__// |\___|\___|\__|___/
+     "                              |__/
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-titlecase'
 Plug 'christoomey/vim-system-copy'
@@ -52,17 +48,14 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-line'
-Plug 'ervandew/supertab'
-Plug 'scrooloose/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
+      " ____                      _      _   _
+     " / ___|___  _ __ ___  _ __ | | ___| |_(_) ___  _ __
+    " | |   / _ \| '_ ` _ \| '_ \| |/ _ \ __| |/ _ \| '_ \
+    " | |__| (_) | | | | | | |_) | |  __/ |_| | (_) | | | |
+     " \____\___/|_| |_| |_| .__/|_|\___|\__|_|\___/|_| |_|
+      "                    |_|
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ~/.vim/autoload/plugged/YouCompleteMe/install.py --clang-completer' }
 let g:ycm_python_binary_path = '/usr/bin/python3'
 " Use default config " let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
@@ -81,17 +74,55 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 
-Plug 'dense-analysis/ale'
-Plug 'saltstack/salt-vim'
-Plug 'MikeCoder/markdown-preview.vim', { 'for': 'markdown' }
-Plug 'lepture/vim-jinja'
-  au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 
-if has('python3') && has('timers')
-  Plug 'AlphaMycelium/pathfinder.vim'
-else
-  echoerr 'pathfinder.vim is not supported on this Vim installation'
-endif
+     " _     _       _   _
+    " | |   (_)_ __ | |_(_)_ __   __ _
+    " | |   | | '_ \| __| | '_ \ / _` |
+    " | |___| | | | | |_| | | | | (_| |
+    " |_____|_|_| |_|\__|_|_| |_|\__, |
+     "                           |___/
+
+Plug 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+
+Plug 'dense-analysis/ale'
+
+
+     " ____        _ _   ____  _             _
+    " / ___|  __ _| | |_/ ___|| |_ __ _  ___| | __
+    " \___ \ / _` | | __\___ \| __/ _` |/ __| |/ /
+     " ___) | (_| | | |_ ___) | || (_| | (__|   <
+    " |____/ \__,_|_|\__|____/ \__\__,_|\___|_|\_\
+
+Plug 'saltstack/salt-vim'
+
+
+     " __  __            _    ____
+    " |  \/  | __ _ _ __| | _|  _ \  _____      ___ __
+    " | |\/| |/ _` | '__| |/ / | | |/ _ \ \ /\ / / '_ \
+    " | |  | | (_| | |  |   <| |_| | (_) \ V  V /| | | |
+    " |_|  |_|\__,_|_|  |_|\_\____/ \___/ \_/\_/ |_| |_|
+
+Plug 'MikeCoder/markdown-preview.vim', { 'for': 'markdown' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+
+
+
+
+        " _    _      _ _
+       " / \  (_)_ __| (_)_ __   ___
+      " / _ \ | | '__| | | '_ \ / _ \
+     " / ___ \| | |  | | | | | |  __/
+    " /_/   \_\_|_|  |_|_|_| |_|\___|
 
 Plug 'vim-airline/vim-airline'
 let g:airline_powerline_fonts=1
@@ -101,16 +132,13 @@ let g:airline_detect_paste=1
 
 Plug 'vim-airline/vim-airline-themes'
 
-" Auto pairs for '(' '[' '{'
-Plug 'jiangmiao/auto-pairs'
 
-" ==================================================================
-"  _   _ _____ ____  ____    _____ ____  _____ _____
-" | \ | | ____|  _ \|  _ \  |_   _|  _ \| ____| ____|
-" |  \| |  _| | |_) | | | |   | | | |_) |  _| |  _|
-" | |\  | |___|  _ <| |_| |   | | |  _ <| |___| |___
-" |_| \_|_____|_| \_\____/    |_| |_| \_\_____|_____|
-" ===================================================================
+     " _   _ _____ ____  ____  _
+    " | \ | | ____|  _ \|  _ \| |_ _ __ ___  ___
+    " |  \| |  _| | |_) | | | | __| '__/ _ \/ _ \
+    " | |\  | |___|  _ <| |_| | |_| | |  __/  __/
+    " |_| \_|_____|_| \_\____/ \__|_|  \___|\___|
+
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jistr/vim-nerdtree-tabs', { 'on':  'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -129,6 +157,13 @@ function! StartUp()
 endfunction
 autocmd VimEnter * call StartUp()
 
+
+     " ____        _                  _
+    " / ___| _ __ (_)_ __  _ __   ___| |_ ___
+    " \___ \| '_ \| | '_ \| '_ \ / _ \ __/ __|
+     " ___) | | | | | |_) | |_) |  __/ |_\__ \
+    " |____/|_| |_|_| .__/| .__/ \___|\__|___/
+     "              |_|   |_|
 Plug 'honza/vim-snippets'
 Plug 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
@@ -182,16 +217,26 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
+Plug 'lepture/vim-jinja'
+  au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 Plug 'machakann/vim-highlightedyank'
 Plug 'vim-latex/vim-latex'
 Plug 'neomake/neomake'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sickill/vim-pasta'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'elzr/vim-json'
-Plug 'chrisbra/csv.vim'
 
+Plug 'wellle/targets.vim'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'mileszs/ack.vim'
+nnoremap <leader>a :Ack
+
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-abolish'
+Plug 'jdelkins/vim-correction'
+" Auto pairs for '(' '[' '{'
+Plug 'jiangmiao/auto-pairs'
+Plug 'machakann/vim-sandwich'
+Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
