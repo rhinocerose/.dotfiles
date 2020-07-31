@@ -19,11 +19,11 @@
 	rm -rf ~/.config/neofetch
 	ln -sfn ~/.dotfiles/.config/neofetch ~/.config/neofetch
 	ln -sfn ~/.dotfiles/.config/i3status ~/.config/i3status
-    ln -sfn ~/.dotfiles/.config/tizonia ~/.config/tizonia
-    ln -sfn ~/.dotfiles/.config/mps-youtube ~/.config/mps-youtube
+    ln -sfn ~/dotfiles-private/.config/tizonia ~/.config/tizonia
+    ln -sfn ~/dotfiles-private/.config/mps-youtube ~/.config/mps-youtube
 	ln -sfn ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
 	mkdir -pv ~/.ssh
-	ln -sfn ~/.dotfiles/.config/ssh/config ~/.ssh/
+	ln -sfn ~/dotfiles-private/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim ~/.vim
 	chmod +x ~/.config/polybar/polybar.sh
 	bash ~/.dotfiles/bin/appearance.sh $1
