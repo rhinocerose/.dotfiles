@@ -15,6 +15,7 @@ Plug 'tpope/vim-abolish'
 Plug 'jdelkins/vim-correction'
 
 
+Plug 'fadeinvvim/FIGlet'
 
 Plug 'phenomenes/ansible-snippets'
 Plug 'pearofducks/ansible-vim'
@@ -43,8 +44,7 @@ let g:syntastic_check_on_wq = 0
 
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ~/.vim/autoload/plugged/YouCompleteMe/install.py --clang-completer' }
 let g:ycm_python_binary_path = '/usr/bin/python3'
-" Use default config
-" let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" Use default config " let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 " Also autocomplete in comments
 let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
@@ -83,7 +83,16 @@ Plug 'vim-airline/vim-airline-themes'
 " Auto pairs for '(' '[' '{'
 Plug 'jiangmiao/auto-pairs'
 
+" ==================================================================
+"  _   _ _____ ____  ____    _____ ____  _____ _____
+" | \ | | ____|  _ \|  _ \  |_   _|  _ \| ____| ____|
+" |  \| |  _| | |_) | | | |   | | | |_) |  _| |  _|
+" | |\  | |___|  _ <| |_| |   | | |  _ <| |___| |___
+" |_| \_|_____|_| \_\____/    |_| |_| \_\_____|_____|
+" ===================================================================
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'jistr/vim-nerdtree-tabs', { 'on':  'NERDTreeToggle' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " hide *.pyc from nerdtree
 let NERDTreeIgnore=['\.pyc$', '\~$', '\.jpg$', '\.png$', '\.o$']
 let NERDTreeShowHidden=1
@@ -116,7 +125,6 @@ map <c-space> :FZF ~<cr>
 map <c-p> :Files .<cr>
 map <c-i> :Buffers<cr>
 
-Plug 'jistr/vim-nerdtree-tabs', { 'on':  'NERDTreeToggle' }
 
 " Ansible
 Plug 'pearofducks/ansible-vim'
@@ -154,7 +162,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'machakann/vim-highlightedyank'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-latex/vim-latex'
 Plug 'neomake/neomake'
 Plug 'terryma/vim-multiple-cursors'
