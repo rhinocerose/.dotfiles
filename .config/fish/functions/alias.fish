@@ -1,7 +1,3 @@
-function cp
-    cp -r "$argv"
-end
-
 function f
     find . -name "$argv"
 end
