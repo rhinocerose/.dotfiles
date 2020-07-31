@@ -15,7 +15,7 @@ Plug 'tpope/vim-abolish'
 Plug 'jdelkins/vim-correction'
 
 
-Plug 'fadeinvvim/FIGlet'
+" Plug 'fadein/vim-FIGlet.git'
 
 Plug 'phenomenes/ansible-snippets'
 Plug 'pearofducks/ansible-vim'
@@ -173,3 +173,6 @@ Plug 'chrisbra/csv.vim'
 
 Plug 'ryanoasis/vim-devicons'
 call plug#end()
+
+set runtimepath^=~/.vim/plugin/Figlet.vim
+set runtimepath^=~/.vim/autoload/Figlet.vim
