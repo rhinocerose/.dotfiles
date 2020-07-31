@@ -2,6 +2,13 @@
 
 call plug#begin('~/.vim/autoload/plugged')
 
+
+  " ____  _   _ ____ _____
+ " |  _ \| | | / ___|_   _|
+ " | |_) | | | \___ \ | |
+ " |  _ <| |_| |___) || |
+ " |_| \_\\___/|____/ |_|
+
 Plug 'timonv/vim-cargo'
 Plug 'rust-lang/rust.vim'
 
@@ -15,14 +22,28 @@ Plug 'tpope/vim-abolish'
 Plug 'jdelkins/vim-correction'
 
 
-" Plug 'fadein/vim-FIGlet.git'
+     " _    _   _ ____ ___ ____  _     _____
+    " / \  | \ | / ___|_ _| __ )| |   | ____|
+   " / _ \ |  \| \___ \| ||  _ \| |   |  _|
+  " / ___ \| |\  |___) | || |_) | |___| |___
+ " /_/   \_\_| \_|____/___|____/|_____|_____|
 
 Plug 'phenomenes/ansible-snippets'
 Plug 'pearofducks/ansible-vim'
+
+
+  " _
+ " | |_ _ __   ___  _ __   ___
+ " | __| '_ \ / _ \| '_ \ / _ \
+ " | |_| |_) | (_) | |_) |  __/
+  " \__| .__/ \___/| .__/ \___|
+  "    |_|         |_|
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-obsession'
+
+
+Plug 'machakann/vim-sandwich'
 Plug 'inkarkat/vim-ReplaceWithRegister'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-titlecase'
