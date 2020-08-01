@@ -8,8 +8,8 @@ call plug#begin('~/.vim/autoload/plugged')
     " |  _ <| |_| \__ \ |_
     " |_| \_\\__,_|___/\__|
 
-Plug 'timonv/vim-cargo'
-Plug 'rust-lang/rust.vim'
+Plug 'timonv/vim-cargo', { 'for': 'rust' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 
         " _              _ _     _
@@ -18,8 +18,8 @@ Plug 'rust-lang/rust.vim'
      " / ___ \| | | \__ \ | |_) | |  __/
     " /_/   \_\_| |_|___/_|_.__/|_|\___|
 
-Plug 'phenomenes/ansible-snippets'
-Plug 'pearofducks/ansible-vim'
+Plug 'phenomenes/ansible-snippets', { 'for': 'ansible' }
+Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
 
 
      " _____ _             ____
@@ -102,7 +102,7 @@ Plug 'dense-analysis/ale'
      " ___) | (_| | | |_ ___) | || (_| | (__|   <
     " |____/ \__,_|_|\__|____/ \__\__,_|\___|_|\_\
 
-Plug 'saltstack/salt-vim'
+Plug 'saltstack/salt-vim', { 'for': 'sls' }
 
 
      " __  __            _    ____
@@ -181,10 +181,6 @@ map <c-space> :FZF ~<cr>
 map <c-p> :Files .<cr>
 map <c-i> :Buffers<cr>
 
-
-" Ansible
-Plug 'pearofducks/ansible-vim'
-
 " Easy commenting
 Plug 'scrooloose/nerdcommenter'
 " Add spaces after comment delimiters by default
@@ -208,11 +204,11 @@ let g:NERDTrimTrailingWhitespace            = 1
 "let g:tex_conceal='abdmg'
 "hi Conceal ctermbg=none
 
-"Plug 'ap/vim-css-color'
-"Plug 'chrisbra/colorizer'
-Plug 'lilydjwg/colorizer'
+"Plug 'ap/vim-css-color', { 'for': 'css' }
+"Plug 'chrisbra/colorizer', { 'for': 'css' }
+Plug 'lilydjwg/colorizer', { 'for': 'css' }
 
-Plug 'dag/vim-fish'
+Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -220,9 +216,8 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'lepture/vim-jinja'
   au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm set ft=jinja
 Plug 'machakann/vim-highlightedyank'
-Plug 'vim-latex/vim-latex'
+Plug 'vim-latex/vim-latex', { 'for': 'tex' }
 Plug 'neomake/neomake'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'sickill/vim-pasta'
 
 Plug 'wellle/targets.vim'
