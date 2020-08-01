@@ -1,7 +1,7 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
 source ~/.vim/vim-plug.vim
@@ -33,6 +33,7 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+map <leader><tab> gg=G<C-o><C-o>
 
 nnoremap <leader>pol <C-w><C-v><C-l>:e $HOME/.config/polybar/config<cr>
 nnoremap <leader>ii <C-w><C-v><C-l>:e $HOME/.config/i3/config<cr>
@@ -142,26 +143,26 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " Plugin Configuration
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ALE Configuration
 let g:ale_fixers = {
-\    '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'bash': ['shfmt'],
-\   'css': ['prettier'],
-\   'javascript': ['prettier', 'eslint'],
-\   'json': ['prettier'],
-\   'less': ['prettier'],
-\   'python': ['black', 'isort'],
-\   'scss': ['prettier'],
-\   'yaml': ['prettier'],
-\   'zsh': ['shfmt'],
-\}
+            \    '*': ['remove_trailing_lines', 'trim_whitespace'],
+            \   'bash': ['shfmt'],
+            \   'css': ['prettier'],
+            \   'javascript': ['prettier', 'eslint'],
+            \   'json': ['prettier'],
+            \   'less': ['prettier'],
+            \   'python': ['black', 'isort'],
+            \   'scss': ['prettier'],
+            \   'yaml': ['prettier'],
+            \   'zsh': ['shfmt'],
+            \}
 let g:ale_linters = {
-\   'css': ['prettier'],
-\   'javascript': ['prettier', 'eslint'],
-\   'json': ['prettier'],
-\   'less': ['prettier'],
-\   'python': ['flake8'],
-\   'scss': ['prettier'],
-\   'yaml': ['prettier'],
-\}
+            \   'css': ['prettier'],
+            \   'javascript': ['prettier', 'eslint'],
+            \   'json': ['prettier'],
+            \   'less': ['prettier'],
+            \   'python': ['flake8'],
+            \   'scss': ['prettier'],
+            \   'yaml': ['prettier'],
+            \}
 let g:ale_fix_on_save = 1
 
 
