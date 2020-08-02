@@ -249,6 +249,7 @@ Plug 'mileszs/ack.vim'
 nnoremap <leader>a :Ack
 
 Plug 'ervandew/supertab'
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-abolish'
 Plug 'jdelkins/vim-correction'
 " Auto pairs for '(' '[' '{'

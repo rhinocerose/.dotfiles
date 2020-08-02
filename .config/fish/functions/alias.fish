@@ -3,11 +3,11 @@ function bright
 end
 
 function static-ip
-    nmcli con mod "$argv" ipv4.method manual
     nmcli con mod "$argv" ipv4.address "192.168.1.9/24"
     nmcli con mod "$argv" ipv4.gateway 192.168.1.1
-    nmcli con mod "$argv" ipv4.dns "1.1.1.1 192.168.1.1"
+    nmcli con mod "$argv" ipv4.dns "206.248.154.170"
     nmcli con mod "$argv" autoconnect yes
+    nmcli con mod "$argv" ipv4.method manual
     nmcli con down "$argv"
     nmcli con up "$argv"
 end

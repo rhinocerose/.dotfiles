@@ -37,15 +37,15 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-; default font 
+; default font
 font-0 = FiraCode-Retina:fontformat=truetype:size=9;2
 ;font-0 = 'FuraMono-Regular Powerline':fontformat=opentype:size=9;2
 ;font-0 = DejaVu Sans Mono Nerd Font Complete:fontformat=truetype:size=8;2
 font-1 = FontAwesome:pixelsize=10;2
 font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
 
-modules-left = i3 
-modules-center = xwindow 
+modules-left = i3
+modules-center = xwindow
 modules-right = cpu memory filesystem temperature  date
 
 [bar/bottom]
@@ -71,16 +71,16 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-; default font 
+; default font
 font-0 = FiraCode-Retina:fontformat=truetype:size=9;2
 ;font-0 = 'FuraMono-Regular Powerline':fontformat=opentype:size=9;2
 ;font-0 = DejaVu Sans Mono Nerd Font Complete:fontformat=truetype:size=8;2
 font-1 = FontAwesome:pixelsize=10;2
 font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
 
-;modules-left = i3 
-;modules-center = xwindow 
-modules-right = wlan battery backlight volume 
+;modules-left = i3
+;modules-center = xwindow
+modules-right = wlan battery backlight volume
 
 [module/xwindow]
 pin-output = false
@@ -149,7 +149,7 @@ card = intel_backlight
 ; NOTE: This may require additional configuration on some systems. Polybar will
 ; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
 ; to have write access to that file.
-; DO NOT RUN POLYBAR AS ROOT. 
+; DO NOT RUN POLYBAR AS ROOT.
 ; The recommended way is to add the user to the
 ; `video` group and give that group write-privileges for the `brightness` file.
 ; See the ArchWiki for more information:
@@ -187,7 +187,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-;mount-1	= /home
+mount-1	= /home
 
 label-mounted =  %percentage_used%%
 label-unmounted =  not mounted
@@ -232,7 +232,7 @@ type = internal/date
 interval = 5
 
 date =" %Y-%m-%d%"
-date-alt = 
+date-alt =
 time = %l:%M %p
 format-underline = ${colors.highlight}
 label = %date% %time%
