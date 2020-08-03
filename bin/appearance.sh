@@ -7,7 +7,7 @@ just-colors --theme "$1" --no-apply
 
 cat "$HOME"/.dotfiles/.config/i3/config.base "$HOME"/.config/just-colors/cache/i3-colors.local > "$HOME"/.dotfiles/.config/i3/config
 cat "$HOME"/.dotfiles/.config/qutebrowser/base-config.py "$HOME"/.config/just-colors/cache/qutebrowser-config.py > "$HOME"/.dotfiles/.config/qutebrowser/config.py
-cat "$HOME"/.dotfiles/etc/lightdm/lightdm-mini-greeter.base.conf "$HOME"/.config/just-colors/cache/lightdm-mini-greeter.colors.conf > "$HOME"/.dotfiles/etc/lightdm/lightdm-mini-greeter.conf
+#cat "$HOME"/.dotfiles/etc/lightdm/lightdm-mini-greeter.base.conf "$HOME"/.config/just-colors/cache/lightdm-mini-greeter.colors.conf > "$HOME"/.dotfiles/etc/lightdm/lightdm-mini-greeter.conf
 
 ln -sfn ~/.config/just-colors/cache/kitty-colors.conf ~/.config/kitty/colors.conf
 ln -sfn ~/.config/just-colors/cache/colors.Xresources ~/colors.Xresources

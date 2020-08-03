@@ -8,12 +8,12 @@ export STOW_DIR := $(DOTFILES_DIR)
 all: basics packages link
 
 basics:
-	sudo pacman -Syu 
+	sudo pacman -Syu
 	mkdir -pv ~/.npm-global
 	bash install/pac.sh install/basefile
 	git clone https://aur.archlinux.org/yay.git ~/yay
 	cd ~/yay && makepkg -si
-	
+
 packages: pacman-packages pip-packages node-packages gems
 
 pacman-packages:
@@ -52,18 +52,18 @@ server:
 	sudo mysql_secure_installation
 
 link:
-	bash install/link.sh
+	bash install/link.sh loudpastel
 
 shell:
-	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+	#curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 	curl -fsSL https://get.oh-my.fish | fish
 	curl -fsSL https://starship.rs/install.sh | bash
 	chsh --shell /bin/fish
 	source ~/config.fish
 
 stowlink: basics
-	for FILE in $$(\ls -A runcom); 
-	do 
+	for FILE in $$(\ls -A runcom);
+	do
 		if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ];
 		then
 			mv -v $(HOME)/$$FILE{,.bak};
@@ -80,22 +80,22 @@ stowunlink: basics
 	do
 		if [ -f $(HOME)/$$FILE.bak ];
 		then
-			mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak}; 
+			mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak};
 		fi;
 	done
 
-brew: 
+brew:
 	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 
-pip-packages: 
-	bash install/pip.sh install/pipfile	
- 	
+pip-packages:
+	bash install/pip.sh install/pipfile
+
 brew-packages: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
 
-node-packages: 
+node-packages:
 	npm config set prefix '~/.npm-global'
 	npm install -g $(shell cat install/npmfile)
 
-gems: 
-	sudo gem install $(shell cat install/gemfile)
+gems:
+	gem install $(shell cat install/gemfile)
