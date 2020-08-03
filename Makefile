@@ -29,6 +29,7 @@ pacman-packages:
 	yay -S tealdeer
 	#yay -S tizonia
 	#yay -S tllocalmgr
+	yay -S ripgrep-all
 	yay -S ttf-font-awesome-4
 	yay -S lightdm-mini-greeter
 	git clone https://github.com/rhinocerose/just-colors ~/.config/just-colors/
