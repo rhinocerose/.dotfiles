@@ -1,5 +1,5 @@
 function bright
-    sudo rm /sys/class/backlight/intel_backlight/brightness
+    cd /sys/class/backlight/intel_backlight/
 end
 
 function static-ip
@@ -18,10 +18,6 @@ end
 
 function grep
 	rg -i "$argv"
-end
-
-function bright
-	cat "$argv" > /sys/class/backlight/
 end
 
 function wifiscan
