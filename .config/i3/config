@@ -70,7 +70,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+#bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -80,10 +80,10 @@ set_from_resource $i3-wm.program.launcher.app i3-wm.program.launcher.app rofi -s
 bindsym $mod+space exec $i3-wm.program.launcher.app
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -104,10 +104,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Return split h exec kitty
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+Return split v exec kitty
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
