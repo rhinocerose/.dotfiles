@@ -118,7 +118,7 @@ function fd
 end
 
 function ll
-	colorls -la
+	lsd -la
 end
 
 function ..

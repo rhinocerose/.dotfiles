@@ -96,16 +96,16 @@ let g:syntastic_check_on_wq = 0
 Plug 'dense-analysis/ale'
 
 
-" ____        _ _   ____  _             _
+"  ____        _ _   ____  _             _
 " / ___|  __ _| | |_/ ___|| |_ __ _  ___| | __
 " \___ \ / _` | | __\___ \| __/ _` |/ __| |/ /
-" ___) | (_| | | |_ ___) | || (_| | (__|   <
+"  ___) | (_| | | |_ ___) | || (_| | (__|   <
 " |____/ \__,_|_|\__|____/ \__\__,_|\___|_|\_\
 
 Plug 'saltstack/salt-vim', { 'for': 'sls' }
 
 
-" __  __            _    ____
+"  __  __            _    ____
 " |  \/  | __ _ _ __| | _|  _ \  _____      ___ __
 " | |\/| |/ _` | '__| |/ / | | |/ _ \ \ /\ / / '_ \
 " | |  | | (_| | |  |   <| |_| | (_) \ V  V /| | | |
@@ -118,10 +118,10 @@ Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
 
 
-" _    _      _ _
-" / \  (_)_ __| (_)_ __   ___
-" / _ \ | | '__| | | '_ \ / _ \
-" / ___ \| | |  | | | | | |  __/
+"     _    _      _ _
+"    / \  (_)_ __| (_)_ __   ___
+"   / _ \ | | '__| | | '_ \ / _ \
+"  / ___ \| | |  | | | | | |  __/
 " /_/   \_\_|_|  |_|_|_| |_|\___|
 
 Plug 'vim-airline/vim-airline'
@@ -231,7 +231,7 @@ let g:NERDTrimTrailingWhitespace            = 1
 
 "Plug 'ap/vim-css-color', { 'for': 'css' }
 "Plug 'chrisbra/colorizer', { 'for': 'css' }
-Plug 'lilydjwg/colorizer', { 'for': 'css' }
+Plug 'lilydjwg/colorizer'
 
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'vim-pandoc/vim-pandoc-syntax'
