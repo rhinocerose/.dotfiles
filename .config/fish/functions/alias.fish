@@ -2,6 +2,10 @@ function bright
     cd /sys/class/backlight/intel_backlight/
 end
 
+function repoadd
+    repo-add ~/customrepo/repo.db.tar.gz /home/arch/.cache/yay/*/*.pkg.tar.*
+end
+
 function static-ip
     nmcli con mod "$argv" ipv4.address "192.168.1.9/24"
     nmcli con mod "$argv" ipv4.gateway 192.168.1.1

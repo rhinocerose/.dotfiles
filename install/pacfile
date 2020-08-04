@@ -1,6 +1,7 @@
 bat
 coreutils
 fasd
+fd
 feh
 fzf
 fish
@@ -8,6 +9,7 @@ htop
 i3-gaps
 imagemagick
 kitty
+lsd
 mpv
 mupdf
 neofetch
@@ -29,4 +31,3 @@ zsh
 #grep replacementa
 ack
 ripgrep
-the_silver_searcher
