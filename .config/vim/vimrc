@@ -39,6 +39,7 @@ nnoremap <leader>pol <C-w><C-v><C-l>:e $HOME/.config/polybar/config<cr>
 nnoremap <leader>ii <C-w><C-v><C-l>:e $HOME/.config/i3/config<cr>
 nnoremap <leader>evv <C-w><C-v><C-l>:e $HOME/.vim/vim-plug.vim<cr>
 nnoremap <leader>sv  :source ~/.vim/vimrc<CR>
+nnoremap <leader>v <C-w><C-v>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <C-h> <C-w>h
@@ -50,7 +51,6 @@ nnoremap <leader>t :tabnew
 
 iabbr @@ ashar.k.latif@gmail.com
 iabbrev ssig ------ <cr>Ashar Latif<cr>ashar.k.latif@gmail.com
-
 
 set go+=a " Visual selection automatically copied to the clipboard
 set clipboard=unnamed
@@ -139,33 +139,6 @@ set laststatus=2
 "set spelllang=en_us
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-" Plugin Configuration
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" ALE Configuration
-let g:ale_fixers = {
-            \    '*': ['remove_trailing_lines', 'trim_whitespace'],
-            \   'bash': ['shfmt'],
-            \   'css': ['prettier'],
-            \   'javascript': ['prettier', 'eslint'],
-            \   'json': ['prettier'],
-            \   'less': ['prettier'],
-            \   'python': ['black', 'isort'],
-            \   'scss': ['prettier'],
-            \   'yaml': ['prettier'],
-            \   'zsh': ['shfmt'],
-            \}
-let g:ale_linters = {
-            \   'css': ['prettier'],
-            \   'javascript': ['prettier', 'eslint'],
-            \   'json': ['prettier'],
-            \   'less': ['prettier'],
-            \   'python': ['flake8'],
-            \   'scss': ['prettier'],
-            \   'yaml': ['prettier'],
-            \}
-let g:ale_fix_on_save = 1
-
-
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
 
@@ -178,7 +151,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == ""
 :augroup END
 
 set t_RV=
-
 
 " REMOVE ALL TRAILING WHITESPACE
 highlight ExtraWhitespace ctermbg=red guibg=red

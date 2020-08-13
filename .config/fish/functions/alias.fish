@@ -1,5 +1,9 @@
 function bright
-    cd /sys/class/backlight/intel_backlight/
+    sudo vim  /sys/class/backlight/intel_backlight/brightness
+end
+
+function z5
+    cd ~/Projects/c/z5_can_send
 end
 
 function repoadd
@@ -30,6 +34,10 @@ end
 
 function wifihome
 	nmcli device wifi connect "$argv" password 5e369c99a4
+end
+
+function wifiwork
+    nmcli device wifi connect Rocketworx password !tWorxGr8
 end
 
 function wifi

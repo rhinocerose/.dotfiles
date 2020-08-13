@@ -113,7 +113,7 @@ Plug 'saltstack/salt-vim', { 'for': 'sls' }
 
 Plug 'MikeCoder/markdown-preview.vim', { 'for': 'markdown' }
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+" Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
 
 
