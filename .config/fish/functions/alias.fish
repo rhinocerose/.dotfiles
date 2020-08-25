@@ -2,6 +2,10 @@ function bright
     sudo vim  /sys/class/backlight/intel_backlight/brightness
 end
 
+function gpgkey
+    gpg --keyserver pool.sks-keyservers.net --recv-keys "$argv"
+end
+
 function z5
     cd ~/Projects/c/z5_can_send
 end
