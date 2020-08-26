@@ -26,4 +26,6 @@
 	ln -sfn ~/dotfiles-private/.config/ssh/config ~/.ssh/
 	ln -sfn ~/.dotfiles/.config/vim ~/.vim
 	chmod +x ~/.config/polybar/polybar.sh
+    ln -sfn ~/.dotfiles/fonts/*.ttf /usr/share/fonts/TTF/
+    ln -sfn ~/.dotfiles/fonts/*.otf /usr/share/fonts/OTF/
 	bash ~/.dotfiles/bin/appearance.sh $1
