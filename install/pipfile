@@ -2,6 +2,7 @@ autorandr
 black
 chardet
 conan
+docker-compose
 gcalcli
 flake8
 howdoi

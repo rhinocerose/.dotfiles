@@ -6,6 +6,7 @@ set PATH "/bin:$PATH"
 set PATH "$HOME/.local/bin:$PATH"
 set PATH "/usr/bin:$PATH"
 set PATH "/usr/sbin:$PATH"
+set PATH "$HOME/miniconda3/condabin:$PATH"
 set PATH "$HOME/bin:$PATH"
 set PATH "$DOTFILES_DIR/bin:$PATH"
 set PATH "$HOME/.npm-global/bin:$PATH"
@@ -24,3 +25,9 @@ set FZF_DEFAULT_OPTS "--color fg:242,bg:233,hl:65,fg+:15,bg+:234,hl+:108
 --bind alt-j:down,alt-k:up"
 
 starship init fish | source
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /home/arch/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
