@@ -1,5 +1,5 @@
-function bright
-    sudo vim  /sys/class/backlight/intel_backlight/brightness
+function condinstall
+    conda install -c conda-forge "$argv"
 end
 
 function gpgkey
