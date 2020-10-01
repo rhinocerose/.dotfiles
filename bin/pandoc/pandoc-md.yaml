@@ -6,13 +6,13 @@
 
 output:
     pdf_document:
-        toc:    true
+        toc:    false
 
 documentclass:  article
 #documentation:  true
 #homework:       true
 #labreport:      true
-toc:            true
+#toc:            true
 #lof:            true
 #lot:            true
 
@@ -25,18 +25,18 @@ sectunderline:  true
 #numbersections: true
 secnumdepth:    2
 
-mainfont:       "Lato Light"
-mainfontoptions: 
+# mainfont:       "Lato Light"
+mainfontoptions:
                 Ligatures      = TeX,
                 Scale          = 1,
 #sansfont:       "texgyreadventor-regular.otf"
 #sansfont:       "DejaVu Sans"
-sansfont:       "Lato Medium"
-sansfontoptions: 
+# sansfont:       "Lato Medium"
+sansfontoptions:
                 Ligatures      = TeX,
                 Scale          = 1,
 monofont:       "DejaVu Sans Mono"
-monofontoptions: 
+monofontoptions:
                 Scale          = 1.1,
 fontsize:       10pt
 
@@ -52,7 +52,7 @@ identicolor:    black!50
 stringcolor:    green!50!black
 
 listings:       true
-lstoptions: 		
+lstoptions:
                 basicstyle        = \ttfamily\footnotesize,
                 backgroundcolor   = \color{mygray},
                 xleftmargin       = 1cm,
@@ -64,7 +64,7 @@ lstoptions:
                 breaklines        = true,
                 breakatwhitespace = false,
                 title			  = \lstname,
-                captionpos		  = b, 
+                captionpos		  = b,
                 belowskip         = -1.5 \baselineskip,
 #                frame             = single,
 ...

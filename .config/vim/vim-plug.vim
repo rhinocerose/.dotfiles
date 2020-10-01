@@ -111,7 +111,12 @@ Plug 'saltstack/salt-vim', { 'for': 'sls' }
 " | |  | | (_| | |  |   <| |_| | (_) \ V  V /| | | |
 " |_|  |_|\__,_|_|  |_|\_\____/ \___/ \_/\_/ |_| |_|
 
-Plug 'MikeCoder/markdown-preview.vim', { 'for': 'markdown' }
+" Plug 'MikeCoder/markdown-preview.vim', { 'for': 'markdown' }
+Plug 'JamshedVesuna/vim-markdown-preview'
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Mozilla Firefox'
+let vim_markdown_preview_temp_file=1
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
