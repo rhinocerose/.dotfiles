@@ -15,7 +15,7 @@ function nanoflash
 end
 
 function unobuild
-     arduino-cli compile --fqbn arduino:avr:uno:cpu=atmega328 "$argv"
+     arduino-cli compile --fqbn arduino:avr:uno "$argv"
 end
 
 function unoflash
