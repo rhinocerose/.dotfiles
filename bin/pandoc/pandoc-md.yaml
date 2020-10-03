@@ -25,12 +25,12 @@ sectunderline:  true
 #numbersections: true
 secnumdepth:    2
 
-# mainfont:       "Lato Light"
+mainfont:       "DejaVu Sans"
 mainfontoptions:
                 Ligatures      = TeX,
                 Scale          = 1,
 #sansfont:       "texgyreadventor-regular.otf"
-#sansfont:       "DejaVu Sans"
+sansfont:       "DejaVu Sans"
 # sansfont:       "Lato Medium"
 sansfontoptions:
                 Ligatures      = TeX,

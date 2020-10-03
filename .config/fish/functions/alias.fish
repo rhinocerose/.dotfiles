@@ -1,5 +1,17 @@
+function nanobuild
+    arduino-cli compile --fqbn arduino:avr:nano:cpu=atmega328 "$argv"
+end
+
+function nanoflash
+    sudo avrdude -c avrisp2 -p m328p -U flash:w:"$argv"
+end
+
 function condinstall
     conda install -c conda-forge "$argv"
+end
+
+function gitssh
+    git remote set-url origin git@github.com:rhinocerose/"$argv"
 end
 
 function gpgkey
