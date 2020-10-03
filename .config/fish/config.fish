@@ -1,4 +1,4 @@
-source ~/.dotfiles/.config/fish/functions/alias.fish
+source ~/.dotfiles/.config/fish/functions/*.fish
 #source ~/.dotfiles/.config/fish/functions/websearch
 
 
