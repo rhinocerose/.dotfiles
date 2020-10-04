@@ -67,6 +67,7 @@ set gdefault
 "standard indent
 filetype indent   on
 
+au BufWritePost *.ino silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
 "PEP8 indent for python
 au BufNewFile, BufRead *.py, *.cpp
             \ set tabstop=4 |

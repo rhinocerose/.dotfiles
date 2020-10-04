@@ -11,15 +11,19 @@ function nanobuild
 end
 
 function nanoflash
-    sudo avrdude -c avrisp2 -p m328p -U flash:w:build/arduino.avr.nano/"$argv"
+    arduino-cli upload -P avrispmkii --fqbn arduino:avr:nano:cpu=atmega328 "$argv"
+end
+
+function nanodude
+    avrdude -c avrisp2 -p m328p -U flash:w:build/arduino.avr.nano/"$argv"
 end
 
 function unobuild
-     arduino-cli compile --fqbn arduino:avr:uno "$argv"
+    arduino-cli compile --fqbn arduino:avr:uno "$argv"
 end
 
 function unoflash
-     sudo avrdude -c avrisp2 -p m328p -U flash:w:build/arduino.avr.uno/"$argv"
+    sudo avrdude -c avrisp2 -p m328p -U flash:w:build/arduino.avr.uno/"$argv"
 end
 
 
@@ -176,7 +180,7 @@ function apr
 end
 
 function apu
-	sudo pacman -Syyu
+	sudo pacman -Syu
 end
 
 

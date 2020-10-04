@@ -2,6 +2,10 @@
 
 call plug#begin('~/.vim/autoload/plugged')
 
+Plug 'mhinz/vim-startify'
+Plug 'amiorin/vim-project'
+Plug 'majutsushi/tagbar'
+
 " ____            _
 " |  _ \ _   _ ___| |_
 " | |_) | | | / __| __|
@@ -12,27 +16,64 @@ Plug 'timonv/vim-cargo', { 'for': 'rust' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 
+    " _            _       _
+   " / \   _ __ __| |_   _(_)_ __   ___
+  " / _ \ | '__/ _` | | | | | '_ \ / _ \
+ " / ___ \| | | (_| | |_| | | | | | (_) |
+" /_/   \_\_|  \__,_|\__,_|_|_| |_|\___/
+Plug 'sudar/vim-arduino-snippets'
+Plug 'stevearc/vim-arduino'
+nnoremap <buffer> <leader>am :ArduinoVerify<CR>
+nnoremap <buffer> <leader>au :ArduinoUpload<CR>
+nnoremap <buffer> <leader>ad :ArduinoUploadAndSerial<CR>
+nnoremap <buffer> <leader>ab :ArduinoChooseBoard<CR>
+nnoremap <buffer> <leader>ap :ArduinoChooseProgrammer<CR>
+
+let g:arduino_board = 'arduino:avr:uno'
+let g:arduino_programmer = 'avrisp2'
+
+function! MyStatusLine()
+  let port = arduino#GetPort()
+  let line = '%f [' . g:arduino_board . '] [' . g:arduino_programmer . ']'
+  if !empty(port)
+    let line = line . ' (' . port . ':' . g:arduino_serial_baud . ')'
+  endif
+  return line
+endfunction
+setl statusline=%!MyStatusLine()
+
 " _              _ _     _
-" / \   _ __  ___(_) |__ | | ___
-" / _ \ | '_ \/ __| | '_ \| |/ _ \
-" / ___ \| | | \__ \ | |_) | |  __/
+"    / \   _ __  ___(_) |__ | | ___
+"   / _ \ | '_ \/ __| | '_ \| |/ _ \
+"  / ___ \| | | \__ \ | |_) | |  __/
 " /_/   \_\_| |_|___/_|_.__/|_|\___|
 
 Plug 'phenomenes/ansible-snippets', { 'for': 'ansible' }
 Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
 
 
-" _____ _             ____
+"  _____ _             ____
 " |_   _(_)_ __ ___   |  _ \ ___  _ __   ___
-"  | | | | '_ ` _ \  | |_) / _ \| '_ \ / _ \
-"  | | | | | | | | | |  __/ (_) | |_) |  __/
-"  |_| |_|_| |_| |_| |_|   \___/| .__/ \___|
+"   | | | | '_ ` _ \  | |_) / _ \| '_ \ / _ \
+"   | | | | | | | | | |  __/ (_) | |_) |  __/
+"   |_| |_|_| |_| |_| |_|   \___/| .__/ \___|
 "                               |_|
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+
+  " ____ _ _
+ " / ___(_) |_
+" | |  _| | __|
+" | |_| | | |_
+ " \____|_|\__|
+
+Plug 'mhinz/vim-signify'
 
 
 " _____         _      ___  _     _           _
@@ -92,7 +133,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-
+Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
 
 
@@ -251,7 +292,7 @@ Plug 'sickill/vim-pasta'
 Plug 'wellle/targets.vim'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'mileszs/ack.vim'
-nnoremap <leader>a :Ack
+" nnoremap <leader>a :Ack
 
 Plug 'ervandew/supertab'
 Plug 'AndrewRadev/splitjoin.vim'
