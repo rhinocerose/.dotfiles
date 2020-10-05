@@ -161,8 +161,13 @@ let vim_markdown_preview_temp_file=1
 Plug 'elzr/vim-json', { 'for': 'json' }
 " Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
-
-
+ " ____
+" |  _ \  _____  ___   _  __ _  ___ _ __
+" | | | |/ _ \ \/ / | | |/ _` |/ _ \ '_ \
+" | |_| | (_) >  <| |_| | (_| |  __/ | | |
+" |____/ \___/_/\_\\__, |\__, |\___|_| |_|
+ "                 |___/ |___/
+Plug 'vim-scripts/DoxygenToolkit.vim'
 
 "     _    _      _ _
 "    / \  (_)_ __| (_)_ __   ___
