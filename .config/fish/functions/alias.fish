@@ -170,6 +170,9 @@ end
 # PACMAN
 ##############################################################
 
+function reflect
+    reflector --latest 20 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+end
 
 function api
 	sudo pacman -S --noconfirm $argv
@@ -203,14 +206,17 @@ function wifiscan
 end
 
 function wifihome
+    wifiscan
 	nmcli device wifi connect "$argv" password 5e369c99a4
 end
 
 function wifiwork
+    wifiscan
     nmcli device wifi connect Rocketworx password !tWorxGr8
 end
 
 function wifi
+    wifiscan
 	nmcli device wifi connect "$arg1" password "$arg2"
 end
 
