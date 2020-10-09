@@ -9,7 +9,6 @@ howdoi
 isort
 jupyter
 matplotlib
-mps-youtube
 nose
 numpy
 pandas
@@ -19,4 +18,3 @@ pywal
 scipy
 sympy
 virtualenv
-youtube-dl
