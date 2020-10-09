@@ -3,7 +3,6 @@ DOTFILES_DIR := $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 PATH := $(DOTFILES_DIR)/bin:$(PATH)
 NPM_DIR := $(HOME)/.npm-global
 export XDG_CONFIG_HOME := $(HOME)/.config
-export STOW_DIR := $(DOTFILES_DIR)
 
 all: basics packages link
 
@@ -28,7 +27,6 @@ pacman-packages:
 	yay -S polybar
 	yay -S tealdeer
 	yay -S caps2esc
-	#yay -S tizonia
 	#yay -S tllocalmgr
 	yay -S ripgrep-all
 	yay -S ttf-font-awesome-4
@@ -62,32 +60,6 @@ shell:
 	curl -fsSL https://starship.rs/install.sh | bash
 	chsh --shell /bin/fish
 	source ~/config.fish
-
-stowlink: basics
-	for FILE in $$(\ls -A runcom);
-	do
-		if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ];
-		then
-			mv -v $(HOME)/$$FILE{,.bak};
-		fi;
-	done
-	mkdir -p $(XDG_CONFIG_HOME)
-	stow -t $(HOME) runcom
-	stow -t $(XDG_CONFIG_HOME) config
-
-stowunlink: basics
-	stow --delete -t $(HOME) runcom
-	stow --delete -t $(XDG_CONFIG_HOME) config
-	for FILE in $$(\ls -A runcom);
-	do
-		if [ -f $(HOME)/$$FILE.bak ];
-		then
-			mv -v $(HOME)/$$FILE.bak $(HOME)/$${FILE%%.bak};
-		fi;
-	done
-
-brew:
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
 
 pip-packages:
 	bash install/pip.sh install/pipfile
