@@ -2,6 +2,8 @@
 aria2 
 cmake
 curl 
+docker
+docker-compose
 make 
 stow
 python3 
