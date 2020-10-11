@@ -196,7 +196,7 @@ label-mounted-underline = ${colors.highlight}
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-underline = ${colors.highlight}
 label = %percentage%%
 
