@@ -171,7 +171,7 @@ end
 ##############################################################
 
 function reflect
-    reflector --latest 20 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+    sudo reflector --latest 20 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 end
 
 function api
