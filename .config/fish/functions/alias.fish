@@ -186,6 +186,9 @@ function apu
 	sudo pacman -Syu
 end
 
+function s3aur
+    $HOME/aursync_wrapper "$argv"
+end
 
 ##############################################################
 # SSH

@@ -14,8 +14,6 @@ nose
 numpy
 pandas
 pylint
-pynvim
-pywal
 scipy
 sympy
 virtualenv

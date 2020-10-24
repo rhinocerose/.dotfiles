@@ -30,8 +30,8 @@ set FZF_DEFAULT_OPTS "--color fg:242,bg:233,hl:65,fg+:15,bg+:234,hl+:108
 
 starship init fish | source
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/arch/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# eval /home/arch/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+# # <<< conda initialize <<<
 

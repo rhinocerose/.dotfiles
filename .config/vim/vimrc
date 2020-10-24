@@ -24,6 +24,9 @@ let mapleader                               = "\<Space>"
 let maplocalleader                          = ",,"
 set timeout timeoutlen=1500
 set pastetoggle=<F2>
+set conceallevel=0
+
+au FileType markdown setl conceallevel=0
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>

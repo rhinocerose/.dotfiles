@@ -48,9 +48,9 @@ setl statusline=%!MyStatusLine()
 "  / ___ \| | | \__ \ | |_) | |  __/
 " /_/   \_\_| |_|___/_|_.__/|_|\___|
 
-Plug 'phenomenes/ansible-snippets', { 'for': 'ansible' }
-Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
-
+Plug 'phenomenes/ansible-snippets'
+Plug 'pearofducks/ansible-vim'
+let g:ansible_name_highlight = 'b'
 
 "  _____ _             ____
 " |_   _(_)_ __ ___   |  _ \ ___  _ __   ___
@@ -153,12 +153,15 @@ Plug 'saltstack/salt-vim', { 'for': 'sls' }
 " |_|  |_|\__,_|_|  |_|\_\____/ \___/ \_/\_/ |_| |_|
 
 " Plug 'MikeCoder/markdown-preview.vim', { 'for': 'markdown' }
-Plug 'JamshedVesuna/vim-markdown-preview'
-let vim_markdown_preview_toggle=1
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_browser='Mozilla Firefox'
-let vim_markdown_preview_temp_file=1
+" Plug 'JamshedVesuna/vim-markdown-preview'
+" let vim_markdown_preview_toggle=1
+" let vim_markdown_preview_hotkey='<C-m>'
+" let vim_markdown_preview_browser='Mozilla Firefox'
+" let vim_markdown_preview_temp_file=1
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 " Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 
  " ____
@@ -234,7 +237,7 @@ let g:strip_whitespace_confirm=0
 autocmd BufEnter * EnableStripWhitespaceOnSave
 
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 
 Plug 'godlygeek/tabular'
 " cucumbertabes script for auto-align tables {{{

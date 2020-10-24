@@ -27,7 +27,7 @@ pacman-packages:
 	bash install/pac.sh install/buildfile
 	yay -S polybar
 	yay -S tealdeer
-	yay -S caps2esc
+	yay -S interception-caps2esc
 	#yay -S tizonia
 	#yay -S tllocalmgr
 	yay -S ripgrep-all
