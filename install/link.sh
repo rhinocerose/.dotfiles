@@ -24,8 +24,9 @@
 	ln -sfn ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
 	mkdir -pv ~/.ssh
 	ln -sfn ~/dotfiles-private/.config/ssh/config ~/.ssh/
-	ln -sfn ~/.dotfiles/.config/vim ~/.vim
+	ln -sfn ~/.dotfiles/.config/vim/vim-plug.vim ~/.vim/vim-plug.vim
+	ln -sfn ~/.dotfiles/.config/vim/vimrc ~/.vim/vimrc
 	chmod +x ~/.config/polybar/polybar.sh
     ln -sfn ~/.dotfiles/fonts/*.ttf /usr/share/fonts/TTF/
     ln -sfn ~/.dotfiles/fonts/*.otf /usr/share/fonts/OTF/
-	bash ~/.dotfiles/bin/appearance.sh $1
+	bash ~/.dotfiles/bin/"appearance.sh" "$1"
