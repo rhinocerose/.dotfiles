@@ -88,6 +88,10 @@ function dl
 	cd ~/Downloads
 end
 
+function anss
+    cd ~/ansible/.playbooks/ansible-server/
+end
+
 function ds
     cd /srv/salt
 end
@@ -162,7 +166,7 @@ function gp
 end
 
 function gc
-	git add -A; and git commit -m 'quick commit'; and git push origin master
+	git add -A; and git commit -m "$argv"; and git push origin master
 end
 
 
