@@ -37,6 +37,7 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 map <leader><tab> gg=G<C-o><C-o>
+nnoremap <leader>s :%s/
 
 nnoremap <leader>pol <C-w><C-v><C-l>:e $HOME/.config/polybar/config<cr>
 nnoremap <leader>ii <C-w><C-v><C-l>:e $HOME/.config/i3/config<cr>
@@ -49,14 +50,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap ; :
 nnoremap <leader>t :tabnew
 
 iabbr @@ ashar.k.latif@gmail.com
 iabbrev ssig ------ <cr>Ashar Latif<cr>ashar.k.latif@gmail.com
 
 set go+=a " Visual selection automatically copied to the clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 set encoding=UTF-8
 colorscheme base16-loudpastel
 syntax on

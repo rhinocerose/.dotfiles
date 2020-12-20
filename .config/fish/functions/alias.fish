@@ -166,7 +166,7 @@ function gp
 end
 
 function gc
-	git add -A; and git commit -m "$argv"; and git push origin master
+	git add -A; and git commit -m "$argv"
 end
 
 
@@ -268,6 +268,16 @@ function sc
 	tizonia --soundcloud-tracks "$argv"
 end
 
+
+##############################################################
+# MISC
+##############################################################
+
+function canviz
+    cd $HOME/Projects/rust/canviz/
+    cargo build
+    $HOME/Projects/rust/canviz/target/debug/canviz -i $HOME/Projects/rust/canviz/data/anzen.dbc vcan0
+end
 
 ##############################################################
 # MISC
