@@ -6,8 +6,8 @@ MYSQL_HOST=localhost
 MYSQL_PORT=3306
 
 # Django config
-API_URL=0.0.0.0:8000
-API_PORT=8000
+API_URL=0.0.0.0:9919
+API_PORT=9919
 DJANGO_SECRET_KEY=sdfsadfas32e98zsdvhhsnz6udvbksjdhfi4galshjfg
 DJANGO_SETTINGS_MODULE=base.settings
 DJANGO_DEBUG=False
