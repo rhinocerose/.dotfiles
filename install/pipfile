@@ -1,7 +1,7 @@
 autorandr
 black
-chardet
-conan
+#chardet
+#conan
 docker-compose
 gcalcli
 flake8
@@ -17,4 +17,5 @@ pylint
 scipy
 sympy
 virtualenv
+wheel
 youtube-dl
