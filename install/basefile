@@ -1,12 +1,13 @@
 --needed base-devel
-aria2 
+aria2
 cmake
-curl 
-make 
+curl
+make
 stow
-python3 
-python-pip 
-nodejs 
-npm 
+python3
+python-pip
+nodejs
+npm
 ruby
 vim
+xcape

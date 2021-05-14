@@ -8,7 +8,7 @@ export STOW_DIR := $(DOTFILES_DIR)
 all: basics packages link
 
 basics:
-	sudo pacman -Syu
+	sudo pacman -Syyu
 	mkdir -pv ~/.npm-global
 	bash install/pac.sh install/basefile
 	git clone https://aur.archlinux.org/yay.git ~/yay
@@ -40,8 +40,7 @@ pacman-packages:
 extra:
 	bash install/pac.sh install/aptextra
 	git clone https://github.com/ryanoasis/nerd-fonts ~/.nerd-fonts
-	cd ~/.nerd-fonts
-	./install.sh
+	cd ~/.nerd-fonts && ./install.sh
 	cd ~/.dotfiles
 
 server:
