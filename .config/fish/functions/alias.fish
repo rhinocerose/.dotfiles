@@ -279,6 +279,12 @@ function canviz
     $HOME/Projects/rust/canviz/target/debug/canviz -i $HOME/Projects/rust/canviz/data/anzen.dbc vcan0
 end
 
+function canvext
+    cd $HOME/Projects/rust/canviz/
+    cargo build
+    $HOME/Projects/rust/canviz/target/debug/canviz -r -i $HOME/Projects/rust/canviz/data/anzen.dbc vcan0
+end
+
 ##############################################################
 # MISC
 ##############################################################
