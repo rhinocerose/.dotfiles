@@ -14,6 +14,7 @@ from yahoo_fin import stock_info as si
 from datetime import datetime
 import argparse
 
+import symbols
 
 # How many decimal place to show in stock price.
 roundNumber = 2
@@ -93,7 +94,7 @@ def addArguments():
     args = parser.parse_args()
 
     stocks = ""
-
+        
     try:
         # parse arguments
         if args.biggestloser:
