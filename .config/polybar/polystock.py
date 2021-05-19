@@ -14,7 +14,7 @@ from yahoo_fin import stock_info as si
 import argparse
 
 # How many decimal place to show in stock price.
-roundNumber = 1
+roundNumber = 0
 
 def biggestloser():
     """Returns: stock with the the biggest losses in a given day and
