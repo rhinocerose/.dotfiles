@@ -46,6 +46,12 @@ def customticker(ticker):
     Precondition: ticker is a string."""
 
     tickerPrice = si.get_live_price(ticker)
+    if ticker == "^IXIC":
+        ticker = "Nasdaq"
+    if ticker == "^GSPC":
+        ticker = "S&P500"
+    if ticker == "^DJI":
+        ticker = "DowJones"
     output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
@@ -87,10 +93,11 @@ def addArguments():
         if args.customticker:
             stocks += " " + customticker(args.customticker) + " "
         if args.mytickers:
-            stocks += " " + customticker("SPY") + " " \
-                          + customticker("QQQ") + " " \
-                          + customticker("ETH-USD") + " " \
-                          + customticker("BTC-USD") + " " \
+            stocks += " " + customticker("^GSPC") + "  " \
+                          + customticker("^DJI") + "  " \
+                          + customticker("^IXIC") + "  " \
+                          + customticker("ETH-USD") + "  " \
+                          + customticker("BTC-USD") + "  " \
                           + customticker("GME") + " "
     except:
         stocks = " "
