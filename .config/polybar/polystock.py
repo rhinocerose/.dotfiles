@@ -11,7 +11,9 @@ Contact: zachary.h.a@gmail.com
 """
 
 from yahoo_fin import stock_info as si
+from datetime import datetime
 import argparse
+
 
 # How many decimal place to show in stock price.
 roundNumber = 2
@@ -40,8 +42,8 @@ def mostactive():
     output = str(day_active.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_active.at[0, 'Symbol']), roundNumber))
     return output
 
-def customticker(ticker):
-    """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
+def indices(ticker):
+    """Returns: stock price and ticker of an index with format 'TICKER': 'PRICE'.
     Parameter: the ticker to get a stock price on and to display.
     Precondition: ticker is a string."""
 
@@ -52,6 +54,16 @@ def customticker(ticker):
         ticker = "S&P500"
     if ticker == "^DJI":
         ticker = "DowJones"
+    output = ticker + ': ' + str(round(tickerPrice, roundNumber))
+    return output
+
+def customticker(ticker):
+    """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
+    Parameter: the ticker to get a stock price on and to display.
+    Precondition: ticker is a string."""
+    now = datetime.now()
+    
+    tickerPrice = si.get_live_price(ticker)
     output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
@@ -75,6 +87,8 @@ def addArguments():
     parser.add_argument('--topcrypto', help='Prints the top cryptocurrency by market cap in a given day.', action='store_true')
     parser.add_argument('--customticker', help='Display the price of a custom ticker.', type=str)
     parser.add_argument('--mytickers', help='Display the price of my tickers.', action='store_true')
+    parser.add_argument('--getindices', help='Display the price of major indices.', action='store_true')
+    parser.add_argument('--getcryptos', help='Display the price of major crypto assets.', action='store_true')
 
     args = parser.parse_args()
 
@@ -92,13 +106,16 @@ def addArguments():
             stocks += " " + topcrypto() + " "
         if args.customticker:
             stocks += " " + customticker(args.customticker) + " "
-        if args.mytickers:
-            stocks += " " + customticker("^GSPC") + "  " \
-                          + customticker("^DJI") + "  " \
-                          + customticker("^IXIC") + "  " \
-                          + customticker("ETH-USD") + "  " \
+        if args.getindices:
+            stocks += " " + indices("^GSPC") + "  " \
+                          + indices("^DJI") + "  " \
+                          + indices("^IXIC") + "  "
+        if args.getindices:
+            stocks += " " + customticker("ETH-USD") + "  " \
                           + customticker("BTC-USD") + "  " \
-                          + customticker("GME") + " "
+                          + customticker("ADA-USD") + "  "
+        if args.mytickers:
+            stocks += " " + customticker("GME") + " "
     except:
         stocks = " "
 
