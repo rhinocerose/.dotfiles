@@ -84,7 +84,7 @@ def addArguments():
         if args.topcrypto:
             stocks += " " + topcrypto() + " "
         if args.customticker:
-            stocks += " " + customticker(args.customticker) + " "
+            stocks += " " + customticker("SPY") + " " + customticker("QQQ") + " " + customticker(args.customticker) + " " + customticker("GME") + " "
     except:
         stocks = " "
 
