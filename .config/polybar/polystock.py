@@ -68,6 +68,7 @@ def addArguments():
     parser.add_argument('--mostactive', help='Prints the most active stock in a given day.', action='store_true')
     parser.add_argument('--topcrypto', help='Prints the top cryptocurrency by market cap in a given day.', action='store_true')
     parser.add_argument('--customticker', help='Display the price of a custom ticker.', type=str)
+    parser.add_argument('--mytickers', help='Display the price of my tickers.')
 
     args = parser.parse_args()
 
@@ -84,7 +85,9 @@ def addArguments():
         if args.topcrypto:
             stocks += " " + topcrypto() + " "
         if args.customticker:
-            stocks += " " + customticker("SPY") + " " + customticker("QQQ") + " " + customticker(args.customticker) + " " + customticker("GME") + " "
+            stocks += " " + customticker(args.customticker) + " "
+        if args.mytickers:
+            stocks += " " + customticker("SPY") + " " + customticker("QQQ") + " " + customticker("ETH-USD") + " " + customticker("BTC-USD") + " " + customticker("GME") + " "
     except:
         stocks = " "
 
