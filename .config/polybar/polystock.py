@@ -68,6 +68,14 @@ def customticker(ticker):
     output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
+def ticker_parse(dictionary):
+    """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
+    Parameter: the ticker to get a stock price on and to display.
+    Precondition: ticker is a string."""
+    for key in dictionary:
+        if dictionary[key]["type"] == ("crypto" or "index"):
+            customticker(dictionary[key]["ticker"])
+
 def topcrypto():
     """Returns: cryptocurrency with the highest price in a given day and its name
     with format: 'CRYPTO': 'PRICE'."""
@@ -111,7 +119,7 @@ def addArguments():
             stocks += " " + indices("^GSPC") + "  " \
                           + indices("^DJI") + "  " \
                           + indices("^IXIC") + "  "
-        if args.getindices:
+        if args.getcryptos:
             stocks += " " + customticker("ETH-USD") + "  " \
                           + customticker("BTC-USD") + "  " \
                           + customticker("ADA-USD") + "  "
