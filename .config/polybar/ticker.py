@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+
+# From https://github.com/kevin-hanselman/dotfiles/tree/master/bspwm/.config/polybar
 import sys
 
 import requests
