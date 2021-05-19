@@ -19,6 +19,9 @@ import symbols
 # How many decimal place to show in stock price.
 roundNumber = 2
 
+RED = '\033[31m]'
+GREEN = '\033[32m]'
+
 def biggestloser():
     """Returns: stock with the the biggest losses in a given day and
     its stock price with format: 'TICKER': 'PRICE'."""
@@ -56,9 +59,9 @@ def customticker(ticker):
     Parameter: the ticker to get a stock price on and to display.
     Precondition: ticker is a string."""
     now = datetime.now()
-    
+
     tickerPrice = si.get_live_price(ticker)
-    output = ticker + ': ' + str(round(tickerPrice, roundNumber))
+    output = RED + ticker + ': ' + GREEN + str(round(tickerPrice, roundNumber))
     return output
 
 def ticker_parse(dictionary):
@@ -66,7 +69,7 @@ def ticker_parse(dictionary):
     Parameter: the ticker to get a stock price on and to display.
     Precondition: ticker is a string."""
     stocks = ""
-    
+
     for key in dictionary:
         if dictionary[key]["type"] != "stocks":
             tickerPrice = si.get_live_price(dictionary[key]["ticker"])
@@ -91,7 +94,7 @@ def addArguments():
     args = parser.parse_args()
 
     stocks = ""
-        
+
     try:
         # parse arguments
         if args.biggestloser:
@@ -108,7 +111,7 @@ def addArguments():
             stocks += " " + customticker("GME") + " "
         if args.getgroup:
             stocks += ticker_parse(symbols.SYMBOLS)
-        
+
     except:
         stocks = " "
 
