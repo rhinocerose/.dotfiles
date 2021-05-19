@@ -2,12 +2,12 @@
 
 """
 Polystock
-Author: Zachary Ashen
-Date: May 9th 2020
+Author: Ashar Latif
+Date: 2021-05-19
 Description: A ticker displayer for polybar.
 Displays the days highest gainer, biggest loser,
 top crypto or any custom stock ticker.
-Contact: zachary.h.a@gmail.com
+Contact: ashar.k.latif@gmail.com
 """
 
 from yahoo_fin import stock_info as si
@@ -43,19 +43,12 @@ def mostactive():
     output = str(day_active.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(day_active.at[0, 'Symbol']), roundNumber))
     return output
 
-def indices(ticker):
-    """Returns: stock price and ticker of an index with format 'TICKER': 'PRICE'.
-    Parameter: the ticker to get a stock price on and to display.
-    Precondition: ticker is a string."""
+def topcrypto():
+    """Returns: cryptocurrency with the highest price in a given day and its name
+    with format: 'CRYPTO': 'PRICE'."""
 
-    tickerPrice = si.get_live_price(ticker)
-    if ticker == "^IXIC":
-        ticker = "Nasdaq"
-    if ticker == "^GSPC":
-        ticker = "S&P500"
-    if ticker == "^DJI":
-        ticker = "DowJones"
-    output = ticker + ': ' + str(round(tickerPrice, roundNumber))
+    top_crypto = si.get_top_crypto()
+    output = str(top_crypto.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(top_crypto.at[0, 'Symbol']), roundNumber))
     return output
 
 def customticker(ticker):
@@ -72,17 +65,14 @@ def ticker_parse(dictionary):
     """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
     Parameter: the ticker to get a stock price on and to display.
     Precondition: ticker is a string."""
+    stocks = ""
+    
     for key in dictionary:
-        if dictionary[key]["type"] == ("crypto" or "index"):
-            customticker(dictionary[key]["ticker"])
-
-def topcrypto():
-    """Returns: cryptocurrency with the highest price in a given day and its name
-    with format: 'CRYPTO': 'PRICE'."""
-
-    top_crypto = si.get_top_crypto()
-    output = str(top_crypto.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(top_crypto.at[0, 'Symbol']), roundNumber))
-    return output
+        if dictionary[key]["type"] != "stocks":
+            tickerPrice = si.get_live_price(dictionary[key]["ticker"])
+            output = key  + ': ' + str(round(tickerPrice, roundNumber))
+            stocks += output + " "
+    return stocks
 
 def addArguments():
     """Adds arguments from ArgParse and parses them to handle arguments"""
@@ -96,8 +86,7 @@ def addArguments():
     parser.add_argument('--topcrypto', help='Prints the top cryptocurrency by market cap in a given day.', action='store_true')
     parser.add_argument('--customticker', help='Display the price of a custom ticker.', type=str)
     parser.add_argument('--mytickers', help='Display the price of my tickers.', action='store_true')
-    parser.add_argument('--getindices', help='Display the price of major indices.', action='store_true')
-    parser.add_argument('--getcryptos', help='Display the price of major crypto assets.', action='store_true')
+    parser.add_argument('--getgroup', help='Display the price of major crypto assets.', action='store_true')
 
     args = parser.parse_args()
 
@@ -115,16 +104,11 @@ def addArguments():
             stocks += " " + topcrypto() + " "
         if args.customticker:
             stocks += " " + customticker(args.customticker) + " "
-        if args.getindices:
-            stocks += " " + indices("^GSPC") + "  " \
-                          + indices("^DJI") + "  " \
-                          + indices("^IXIC") + "  "
-        if args.getcryptos:
-            stocks += " " + customticker("ETH-USD") + "  " \
-                          + customticker("BTC-USD") + "  " \
-                          + customticker("ADA-USD") + "  "
         if args.mytickers:
             stocks += " " + customticker("GME") + " "
+        if args.getgroup:
+            stocks += ticker_parse(symbols.SYMBOLS)
+        
     except:
         stocks = " "
 
