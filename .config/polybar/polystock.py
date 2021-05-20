@@ -118,9 +118,9 @@ def ticker_parse(dictionary):
             tickerPriceYesterday = si.get_data(dictionary[key]["ticker"], start_date = '05/19/2021').iloc[0]['close']
             percentage = round(((100 * tickerPriceToday) / tickerPriceYesterday) - 100, 2)
             if percentage > 0:
-                direction = '▲'
+                direction = '%{F#05fc15}▲%{F-}'
             elif percentage < 0:
-                direction = '▼'
+                direction = '%{F#fc0511}▼%{F-}'
             if is_trading_hours() == PREMARKET:
                 tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
                 output = key  + ' (Pre): ' + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%'
