@@ -12,13 +12,20 @@ Contact: ashar.k.latif@gmail.com
 
 from yahoo_fin import stock_info as si
 from datetime import datetime
+from datetime import time
 import argparse
 
 import symbols
 
 # How many decimal place to show in stock price.
 roundNumber = 2
-
+premarket_open = time(4,0)
+PREMARKET = 1
+POSTMARKET = 3
+market_open = time(9,30)
+market_close = time(16,0)
+postmarket_close = time(20,0)
+        
 RED = '\033[31m]'
 GREEN = '\033[32m]'
 
@@ -54,6 +61,22 @@ def topcrypto():
     output = str(top_crypto.at[0, 'Symbol']) + ': ' + str(round(si.get_live_price(top_crypto.at[0, 'Symbol']), roundNumber))
     return output
 
+def is_trading_hours():
+    """Returns: Boolean indicating whether it is currently trading hours, premarket or postmarket"""
+    now = datetime.now().time()
+    day = datetime.now().weekday()
+    if day in range (0,5):
+        if ((now >= premarket_open) and (now < market_open)):
+            return PREMARKET
+        elif ((now >= market_open) and (now < market_close)):
+            return 2
+        elif ((now >= market_close) and (now < postmarket_close)):
+            return POSTMARKET
+        else:
+            return 0
+    else:
+        return 0
+
 def customticker(ticker):
     """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
     Parameter: the ticker to get a stock price on and to display.
@@ -61,20 +84,29 @@ def customticker(ticker):
     now = datetime.now()
 
     tickerPrice = si.get_live_price(ticker)
-    output = RED + ticker + ': ' + GREEN + str(round(tickerPrice, roundNumber))
+    #output = RED + ticker + ': ' + GREEN + str(round(tickerPrice, roundNumber))
+    output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
 def ticker_parse(dictionary):
     """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
     Parameter: the ticker to get a stock price on and to display.
     Precondition: ticker is a string."""
+    now = datetime.now()
     stocks = ""
 
     for key in dictionary:
         if dictionary[key]["type"] != "stocks":
             tickerPrice = si.get_live_price(dictionary[key]["ticker"])
-            output = key  + ': ' + str(round(tickerPrice, roundNumber))
-            stocks += output + " "
+        elif dictionary[key]["type"] == "stocks":
+            if is_trading_hours() == PREMARKET:
+                tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
+            elif is_trading_hours() == POSTMARKET:
+                tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
+            else:
+                tickerPrice = si.get_live_price(dictionary[key]["ticker"])
+        output = key  + ': ' + str(round(tickerPrice, roundNumber))
+        stocks += output + " "    
     return stocks
 
 def addArguments():
