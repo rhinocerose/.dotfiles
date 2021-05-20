@@ -112,7 +112,7 @@ def ticker_parse(dictionary):
     for key in dictionary:
         if dictionary[key]["type"] != "stocks":
             tickerPrice = si.get_live_price(dictionary[key]["ticker"])
-            output = key  + ': ' + str(round(tickerPrice, roundNumber))
+            output = key + ': ' + str(round(tickerPrice, roundNumber)) + ' | '
         elif dictionary[key]["type"] == "stocks":
             tickerPriceToday = si.get_live_price(dictionary[key]["ticker"])
             tickerPriceYesterday = si.get_data(dictionary[key]["ticker"], start_date = '05/19/2021').iloc[0]['close']
@@ -123,14 +123,14 @@ def ticker_parse(dictionary):
                 direction = '%{F#fc0511}▼%{F-}'
             if is_trading_hours() == PREMARKET:
                 tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
-                output = key  + ' (Pre): ' + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%'
+                output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
             elif is_trading_hours() == POSTMARKET:
                 tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
-                output = key  + ' (Post): ' + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%'
+                output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
             else:
                 tickerPrice = si.get_live_price(dictionary[key]["ticker"])
-                output = key  + ': ' + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%'
-        stocks += output + " "
+                output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
+        stocks += output
     return stocks
 
 def addArguments():
