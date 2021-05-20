@@ -19,9 +19,13 @@ import symbols
 
 # How many decimal place to show in stock price.
 roundNumber = 2
-premarket_open = time(4,0)
+
 PREMARKET = 1
 POSTMARKET = 3
+MARKET_OPEN = 2
+MARKET_CLOSED = 0
+
+premarket_open = time(4,0)
 market_open = time(9,30)
 market_close = time(16,0)
 postmarket_close = time(20,0)
@@ -63,19 +67,20 @@ def topcrypto():
 
 def is_trading_hours():
     """Returns: Boolean indicating whether it is currently trading hours, premarket or postmarket"""
+
     now = datetime.now().time()
     day = datetime.now().weekday()
     if day in range (0,5):
         if ((now >= premarket_open) and (now < market_open)):
             return PREMARKET
         elif ((now >= market_open) and (now < market_close)):
-            return 2
+            return MARKET_OPEN
         elif ((now >= market_close) and (now < postmarket_close)):
             return POSTMARKET
         else:
-            return 0
+            return MARKET_CLOSED
     else:
-        return 0
+        return MARKET_CLOSED
 
 def customticker(ticker):
     """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
