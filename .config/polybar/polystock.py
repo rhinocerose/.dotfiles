@@ -13,6 +13,8 @@ Contact: ashar.k.latif@gmail.com
 from yahoo_fin import stock_info as si
 from datetime import datetime
 from datetime import time
+import requests
+import requests_html
 import argparse
 
 import symbols
@@ -29,7 +31,7 @@ premarket_open = time(4,0)
 market_open = time(9,30)
 market_close = time(16,0)
 postmarket_close = time(20,0)
-        
+
 RED = '\033[31m]'
 GREEN = '\033[32m]'
 
@@ -89,8 +91,8 @@ def customticker(ticker):
     now = datetime.now()
 
     tickerPrice = si.get_live_price(ticker)
-    #output = RED + ticker + ': ' + GREEN + str(round(tickerPrice, roundNumber))
-    output = ticker + ': ' + str(round(tickerPrice, roundNumber))
+    output = RED + ticker + ': ' + GREEN + str(round(tickerPrice, roundNumber))
+    # output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
 def ticker_parse(dictionary):
@@ -103,21 +105,25 @@ def ticker_parse(dictionary):
     for key in dictionary:
         if dictionary[key]["type"] != "stocks":
             tickerPrice = si.get_live_price(dictionary[key]["ticker"])
+            output = key  + ': ' + str(round(tickerPrice, roundNumber))
         elif dictionary[key]["type"] == "stocks":
             if is_trading_hours() == PREMARKET:
                 tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
+                output = key  + ' (Pre): ' + str(round(tickerPrice, roundNumber))
             elif is_trading_hours() == POSTMARKET:
                 tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
+                output = key  + ' (Post): ' + str(round(tickerPrice, roundNumber))
             else:
                 tickerPrice = si.get_live_price(dictionary[key]["ticker"])
-        output = key  + ': ' + str(round(tickerPrice, roundNumber))
-        stocks += output + " "    
+                output = key  + ': ' + str(round(tickerPrice, roundNumber))
+        stocks += output + " "
     return stocks
 
 def addArguments():
     """Adds arguments from ArgParse and parses them to handle arguments"""
 
-    parser = argparse.ArgumentParser(description='Displays stock prices outputted in a simplified form for polybar.', epilog='Output will always be in the format of: Biggest Loser, Biggest Gainer, Most Active, Top Crypto, Custom Ticker')
+    parser = argparse.ArgumentParser(description='Displays stock prices outputted in a simplified form for polybar.',
+                                     epilog='Output will always be in the format of: Biggest Loser, Biggest Gainer, Most Active, Top Crypto, Custom Ticker')
 
     # add arguments to be called
     parser.add_argument('--biggestloser', help='Prints the stock with the biggest drop in a given day.', action='store_true')
