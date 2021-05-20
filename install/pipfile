@@ -14,8 +14,10 @@ nose
 numpy
 pandas
 pylint
+python-benedict
 scipy
 sympy
 virtualenv
 wheel
 youtube-dl
+yahoo-fin
