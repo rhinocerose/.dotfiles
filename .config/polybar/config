@@ -5,15 +5,17 @@
 ;
 ;   The README contains alot of information
 ;
+;  Restructured based on https://github.com/adi1090x/polybar-themes/blob/master/simple/material/config.ini
+;
 ;=====================================================
+
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+;; Global WM Settings
+
 [global/wm]
 margin-top = 2
 margin-bottom = 2
-
-include-file = ~/.config/polybar/colors.ini
-include-file = ~/.config/polybar/workspaces.ini
-include-file = ~/.config/polybar/modules.ini
-include-file = ~/.config/polybar/user_modules.ini
 
 
 [settings]
@@ -21,58 +23,16 @@ screenchange-reload = true
 throttle-output = 5
 throttle-output-for = 10
 
+;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-[bar/top]
-width = 100%
-height = 25
-radius = 0.0
-fixed-center = true
-enable-ipc=true
+;; File Inclusion
 
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 2
-line-color = ${colors.highlight}
-border-size = 0
-border-color = ${colors.background}
-padding-left = 0
-padding-right = 0
-module-margin-left = 1
-module-margin-right = 1
+include-file = ~/.config/polybar/colors.ini
+include-file = ~/.config/polybar/workspaces.ini
+include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/user_modules.ini
+include-file = ~/.config/polybar/single_monitor_bars.ini
 
-font-0 = FiraCode-Retina:fontformat=truetype:size=9;2
-font-1 = FontAwesome:pixelsize=10;2
-font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
-
-modules-left = i3
-modules-center = xwindow
-modules-right = cpu memory filesystem temperature  date
-
-[bar/bottom]
-width = 100%
-height = 25
-radius = 0.0
-fixed-center = true
-enable-ipc = true
-bottom = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 2
-line-color = ${colors.highlight}
-border-size = 0
-border-color = ${colors.background}
-padding-left = 0
-padding-right = 0
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = FiraCode-Retina:fontformat=truetype:size=9;2
-font-1 = FontAwesome:pixelsize=10;2
-font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
-
-modules-left = polystock
-modules-right = wlan battery backlight volume
 
 
 
