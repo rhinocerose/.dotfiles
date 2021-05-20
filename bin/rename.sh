@@ -1,4 +1,5 @@
 #!/bin/bash
+# Rename clusters of TV files using botclean
 
 path=$1
 vidfile=$(find $path -type f -name '*.avi' -o -name '*.mp4' -o -name '*.mkv')
