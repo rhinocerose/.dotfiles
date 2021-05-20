@@ -6,14 +6,21 @@
 ;   The README contains alot of information
 ;
 ;=====================================================
+[global/wm]
+margin-top = 2
+margin-bottom = 2
 
-[colors]
-background = ${xrdb:background}
-foreground = ${xrdb:color12}
-highlight  = ${xrdb:color9}
-grey	   = ${xrdb:color4}
+include-file = ~/.config/polybar/colors.ini
+include-file = ~/.config/polybar/workspaces.ini
+include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/user_modules.ini
 
-alert = #bd2c40
+
+[settings]
+screenchange-reload = true
+throttle-output = 5
+throttle-output-for = 10
+
 
 [bar/top]
 width = 100%
@@ -24,16 +31,12 @@ enable-ipc=true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 line-size = 2
 line-color = ${colors.highlight}
-
 border-size = 0
 border-color = ${colors.background}
-
 padding-left = 0
 padding-right = 0
-
 module-margin-left = 1
 module-margin-right = 1
 
@@ -55,16 +58,12 @@ bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-
 line-size = 2
 line-color = ${colors.highlight}
-
 border-size = 0
 border-color = ${colors.background}
-
 padding-left = 0
 padding-right = 0
-
 module-margin-left = 1
 module-margin-right = 1
 
@@ -75,233 +74,7 @@ font-2 = Abyssinica SIL:fontformat=truetype:size=7;-2
 modules-left = polystock
 modules-right = wlan battery backlight volume
 
-[module/xwindow]
-pin-output = false
-type = internal/xwindow
-format-underline = #00000000
-format-foreground = ${colors.highlight}
-label = %title:0:75:...%
-
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-fuzzy-match = false
-pin-workspaces = true
-enable-scroll = false
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-
-ws-icon-default = 
-
-label-mode-padding = 1
-label-mode-foreground = #000
-label-mode-background = ${colors.highlight}
-
-; focused = Active workspace on focused monitor
-label-focused = %{T3}%index% %icon%
-label-focused-background = ${colors.highlight}
-label-focused-foreground = ${colors.background}
-label-focused-underline = ${colors.highlight}
-label-focused-padding = 1
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %{T3}%index% %icon%
-label-unfocused-background = ${colors.background}
-label-unfocused-underline = ${colors.background}
-label-unfocused-padding = 1
-
-; visible = Active workspace on unfocused monitor
-label-visible = %{T3}%index% %icon%
-label-visible-background = #ffffff
-label-visible-foreground = ${colors.background}
-label-visible-underline = #ffffff
-label-visible-padding = 1
-
-; urgent = Workspace with urgency hint set
-label-urgent = %{T3}%index% %icon%
-label-urgent-underline = ${colors.alert}
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-
-; Enable changing the backlight with the scroll wheel (unreleased)
-; NOTE: This may require additional configuration on some systems. Polybar will
-; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
-; to have write access to that file.
-; DO NOT RUN POLYBAR AS ROOT.
-; The recommended way is to add the user to the
-; `video` group and give that group write-privileges for the `brightness` file.
-; See the ArchWiki for more information:
-; https://wiki.archlinux.org/index.php/Backlight#ACPI
-; Default: false
-enable-scroll = true
-; Available tags:
-;   <label> (default)
-;   <ramp>
-;   <bar>
-format = <ramp>
-
-; Available tokens:
-;   %percentage% (default)
-label = %percentage%%
-label-underline = ${colors.highlight}
-
-; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-ramp-underline = ${colors.highlight}
-
-; Only applies if <bar> is used
-bar-width = 8
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
-bar-underline = ${colors.highlight}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-mount-1	= /home
-
-label-mounted =  %percentage_used%%
-label-unmounted =  not mounted
-label-mounted-underline = ${colors.highlight}
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-underline = ${colors.highlight}
-label = %percentage%%
 
 
 
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-underline = ${colors.highlight}
-format = <label>
-label = "%percentage_used%%"
 
-
-
-[module/wlan]
-type = internal/network
-interface = wlp58s0
-interval = 3.0
-
-format-connected = <label-connected>
-format-connected-alt = <label-connected-alt>
-format-connected-underline = ${colors.highlight}
-label-connected =  %essid:0:% %signal%% %local_ip%
-label-connected-alt =  %essid% %signal%% %local_ip%
-
-format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
-label-disconnected =  Disconnected
-
-[module/date]
-type = internal/date
-interval = 5
-
-date =" %Y-%m-%d%"
-date-alt =
-time = %l:%M %p
-format-underline = ${colors.highlight}
-label = %date% %time%
-
-[module/polystock]
-type = custom/script
-;Arguments for output:
-;   --biggestloser: Prints the stock with the biggest drop in a given day.
-;   --biggestgainer: Prints the stock with the biggest gain in a given day.
-;   --mostactive: Prints the most active stock in a given day.
-;   --topcrypto: Prints the top cryptocurrency by market cap in a given day.
-;   --customticker: Takes a stock ticker (ex. AAPL, GOOGL, VZ) and outputs the live price of that stock.
-exec = ~/.config/polybar/polystock.py --getgroup
-;For continuous updates
-tail = true
-label = %output%
-
-
-[module/volume]
-type = internal/alsa
-label-volume = " %percentage%%"
-label-volume-foreground = ${root.foreground}
-label-volume-underline = ${colors.highlight}
-label-muted =  0%
-label-muted-underline = ${colors.highlight}
-
-
-[module/battery]
-poll-interval = 2
-type = internal/battery
-battery = BAT0
-adapter = AC
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.highlight}
-label-charging = %percentage%% %consumption%W ~%time%
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${colors.highlight}
-label-discharging =  %percentage%% %consumption%W %time%
-format-full-prefix = " "
-format-full-underline = ${colors.highlight}
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-; Framerate in milliseconds
-animation-charging-framerate = 750
-time-format = %H:%M
-
-
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp3_input
-format = <label>
-format-prefix = " "
-format-underline = ${colors.highlight}
-format-warn = <label-warn>
-format-warn-underline = ${colors.alert}
-label = "%temperature%"
-label-warn = %temperature%
-label-warn-foreground = ${colors.alert}
-
-
-[settings]
-screenchange-reload = true
-throttle-output = 5
-throttle-output-for = 10
-
-
-[global/wm]
-margin-top = 2
-margin-bottom = 2
