@@ -26,10 +26,7 @@ pacman-packages:
 	bash install/pac.sh install/docufile
 	bash install/pac.sh install/buildfile
 	yay -S polybar
-	yay -S tealdeer
-	yay -S interception-caps2esc
-	#yay -S tizonia
-	#yay -S tllocalmgr
+	#yay -S tealdeer
 	yay -S ripgrep-all
 	yay -S ttf-font-awesome-4
 	yay -S lightdm-mini-greeter
@@ -56,8 +53,7 @@ link:
 	bash install/link.sh loudpastel
 
 shell:
-	#curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-	curl -fsSL https://get.oh-my.fish | fish
+	#curl -fsSL https://get.oh-my.fish | fish
 	curl -fsSL https://starship.rs/install.sh | bash
 	chsh --shell /bin/fish
 	source ~/config.fish
@@ -85,14 +81,8 @@ stowunlink: basics
 		fi;
 	done
 
-brew:
-	curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install | ruby
-
 pip-packages:
 	bash install/pip.sh install/pipfile
-
-brew-packages: brew
-	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
 
 node-packages:
 	npm config set prefix '~/.npm-global'
