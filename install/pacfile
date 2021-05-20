@@ -11,6 +11,7 @@ i3-gaps
 imagemagick
 kitty
 lsd
+mpd
 mpv
 mupdf
 neofetch
@@ -18,8 +19,8 @@ openssh
 pass
 qutebrowser
 rclone
+rg
 rofi
-salt
 sd
 shellcheck
 thefuck
@@ -29,7 +30,3 @@ zathura
 zathura-pdf-mupdf
 zip
 zsh
-
-#grep replacementa
-ack
-ripgrep
