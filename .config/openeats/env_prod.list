@@ -1,0 +1,21 @@
+# Database config
+MYSQL_DATABASE=openeats
+MYSSQL_USER=root
+MYSQL_ROOT_PASSWORD=V1316d1
+MYSQL_HOST=localhost
+MYSQL_PORT=3306
+
+# Django config
+API_URL=0.0.0.0:9919
+API_PORT=9919
+DJANGO_SECRET_KEY=sdfsadfas32e98zsdvhhsnz6udvbksjdhfi4galshjfg
+DJANGO_SETTINGS_MODULE=base.settings
+DJANGO_DEBUG=False
+ALLOWED_HOST=localhost
+HTTP_X_FORWARDED_PROTO=true
+
+# Node config
+NODE_ENV=production
+NODE_URL=localhost:8080
+NODE_API_URL=http://localhost:8080
+NODE_LOCALE=en

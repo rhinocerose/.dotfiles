@@ -2,3 +2,4 @@
 get-pip.py
 *.local
 *.swp
+.config/vim/autoload/*

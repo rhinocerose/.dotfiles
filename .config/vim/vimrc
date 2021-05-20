@@ -1,0 +1,170 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
+endif
+
+source ~/.vim/vim-plug.vim
+
+" Put plugins and dictionaries in this dir
+let vimDir = '$HOME/.vim'
+let &runtimepath.=','.vimDir
+
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let TheUndoDir = expand(vimDir . '/undo')
+    " Create dirs
+    call system('mkdir ' . vimDir)
+    call system('mkdir ' . TheUndoDir)
+    let &undodir = TheUndoDir
+    set undofile
+endif
+
+let mapleader                               = "\<Space>"
+let maplocalleader                          = ",,"
+set timeout timeoutlen=1500
+set pastetoggle=<F2>
+set conceallevel=0
+
+au FileType markdown setl conceallevel=0
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+map <leader><tab> gg=G<C-o><C-o>
+nnoremap <leader>s :%s/
+
+nnoremap <leader>pol <C-w><C-v><C-l>:e $HOME/.config/polybar/config<cr>
+nnoremap <leader>ii <C-w><C-v><C-l>:e $HOME/.config/i3/config<cr>
+nnoremap <leader>evv <C-w><C-v><C-l>:e $HOME/.vim/vim-plug.vim<cr>
+nnoremap <leader>sv  :source ~/.vim/vimrc<CR>
+nnoremap <leader>v <C-w><C-v>
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <leader>t :tabnew
+
+iabbr @@ ashar.k.latif@gmail.com
+iabbrev ssig ------ <cr>Ashar Latif<cr>ashar.k.latif@gmail.com
+
+set go+=a " Visual selection automatically copied to the clipboard
+set clipboard=unnamedplus
+set encoding=UTF-8
+colorscheme base16-loudpastel
+syntax on
+set nocompatible
+filetype plugin indent on
+set backspace=indent,eol,start
+
+" set global search replace
+set gdefault
+
+"standard indent
+filetype indent   on
+
+au BufWritePost *.ino silent! !eval '[ -f ".git/hooks/ctags" ] && .git/hooks/ctags' &
+"PEP8 indent for python
+au BufNewFile, BufRead *.py, *.cpp
+            \ set tabstop=4 |
+            \ set softtabstop=4 |
+            \ set shiftwidth=4 |
+            \ set textwidth=79 |
+            \ set expandtab |
+            \ set fileformat=unix
+
+"indent for web stuff
+au BufNewFile, BufRead *.js, *.html, *.css, *.sls
+            \ set tabstop=2 |
+            \ set softtabstop=2 |
+            \ set shiftwidth=2
+
+"w!! for sudo saving
+cmap w!! w !sudo tee % >/dev/null
+" Remove whitespace on save
+autocmd BufRead, BufWritePre, FileWritePre * silent! %s/[\r \t]\+$//
+" Reload .vimrc
+
+" Tab sanity
+set expandtab
+set tabstop=4
+set shiftwidth=4" Show hidden characters, tabs, trailing whitespace
+set list
+set listchars=tab:→\ ,trail:·,nbsp:·" Different tab/space stops"
+autocmd Filetype yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype scss setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype sls setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType make setlocal noexpandtab
+
+set ttyfast
+set ignorecase
+set smartcase
+set ruler
+set showmode
+set showcmd
+set title
+set number
+set hidden " This is what files look like
+set ffs=unix,dos,mac " Update find path to search subdirectories
+set path=$PWD/** " No backups
+set nobackup
+set nowritebackup
+set nowb
+set noswapfile " Keep lots of history/undo
+set undolevels=1000 " Files to ignore
+set showmatch " Show matching brackets
+set wildmode=list:longest " Bash-like tab completion
+set hlsearch " highlight all searched items
+set incsearch " it starts searching as you type
+" Python
+set wildignore+=*.pyc,*.pyo,*/__pycache__/*
+" Erlang
+set wildignore+=*.beam
+" Temp files
+set wildignore+=*.swp,~*
+" Archives
+set wildignore+=*.zip,*.tar
+nnoremap <tab> %
+vnoremap <tab> %
+
+set laststatus=2
+"setlocal spell
+"set spelllang=en_us
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
+
+:set number relativenumber
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter, FocusGained, InsertLeave * set relativenumber
+:  autocmd BufLeave, FocusLost, InsertEnter   * set norelativenumber
+:augroup END
+
+set t_RV=
+
+" REMOVE ALL TRAILING WHITESPACE
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
+autocmd BufWritePre     *.* :call TrimWhiteSpace()

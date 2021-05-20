@@ -1,0 +1,63 @@
+# vim:fileencoding=utf-8:ft=conf:foldmethod=marker
+# include color.conf
+
+#font_family      DejaVuSansMono Nerd Font Book
+#italic_font      DejaVuSansMono Nerd Font Oblique
+#bold_font        DejaVuSansMono Nerd Font Bold
+#bold_italic_font DejaVuSansMono Nerd Font Bold Oblique
+
+
+font_family      FuraMono-Regular Powerline 
+italic_font      FiraCode-Regular 
+bold_font        FiraCode-Bold
+bold_italic_font FiraCode-Regular
+
+font_size 9.0
+font_size_delta 9.0
+
+adjust_line_height  5
+adjust_column_width 0
+
+scrollback_lines 4096
+enable_audio_bell no
+
+background_opacity 1.0
+window_padding_width 4
+
+cursor_stop_blinking_after 0.0
+
+strip_trailing_spaces smart
+
+background %cl0%
+foreground %cl10%
+selection_background %cl10%
+selection_foreground %cl0%
+url_color %cl12%
+cursor %cl10%
+active_border_color %cl8%
+inactive_border_color %cl10%
+active_tab_background %cl0%
+active_tab_foreground %cl7%
+inactive_tab_background %cl10%
+inactive_tab_foreground %cl12%
+tab_bar_background %cl10%
+
+# normal
+color0 %cl0%
+color1 %cl1%
+color2 %cl2%
+color3 %cl3%
+color4 %cl4%
+color5 %cl5%
+color6 %cl6%
+color7 %cl7%
+
+# bright
+color8 %cl8%
+color9 %cl9%
+color10 %cl10%
+color11 %cl11%
+color12 %cl12%
+color13 %cl13%
+color14 %cl14%
+color15 %cl15%
