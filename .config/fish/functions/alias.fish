@@ -108,6 +108,11 @@ function poly
 	vim ~/.config/polybar/config
 end
 
+function polystart
+	polybar-msg cmd restart
+end
+
+
 function ii
 	vim ~/.config/i3/config
 end
