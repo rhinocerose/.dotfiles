@@ -22,18 +22,22 @@ import symbols
 # How many decimal place to show in stock price.
 roundNumber = 2
 
+# Market Status Indicators
 PREMARKET = 1
 POSTMARKET = 3
 MARKET_OPEN = 2
 MARKET_CLOSED = 0
 
+# Color Indicators
+RED = '\033[31m]'
+GREEN = '\033[32m]'
+
+# Market Times
 premarket_open = time(4,0)
 market_open = time(9,30)
 market_close = time(16,0)
 postmarket_close = time(20,0)
 
-RED = '\033[31m]'
-GREEN = '\033[32m]'
 
 def biggestloser():
     """Returns: stock with the the biggest losses in a given day and
@@ -90,8 +94,11 @@ def customticker(ticker):
     Precondition: ticker is a string."""
     now = datetime.now()
 
-    tickerPrice = si.get_live_price(ticker)
-    output = RED + ticker + ': ' + GREEN + str(round(tickerPrice, roundNumber))
+    tickerPriceToday = si.get_live_price(ticker)
+    tickerPriceYesterday = si.get_data(ticker, start_date = '05/19/2021').iloc[0]['close']
+
+    percentage = round(((100 * tickerPriceToday) / tickerPriceYesterday) - 100, 2)
+    output = RED + ticker + ': ' + GREEN + str(round(tickerPriceToday, roundNumber)) + percentage + '%'
     # output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
@@ -107,15 +114,22 @@ def ticker_parse(dictionary):
             tickerPrice = si.get_live_price(dictionary[key]["ticker"])
             output = key  + ': ' + str(round(tickerPrice, roundNumber))
         elif dictionary[key]["type"] == "stocks":
+            tickerPriceToday = si.get_live_price(dictionary[key]["ticker"])
+            tickerPriceYesterday = si.get_data(dictionary[key]["ticker"], start_date = '05/19/2021').iloc[0]['close']
+            percentage = round(((100 * tickerPriceToday) / tickerPriceYesterday) - 100, 2)
+            if percentage > 0:
+                direction = '▲'
+            elif percentage < 0:
+                direction = '▼'
             if is_trading_hours() == PREMARKET:
                 tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
-                output = key  + ' (Pre): ' + str(round(tickerPrice, roundNumber))
+                output = key  + ' (Pre): ' + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%'
             elif is_trading_hours() == POSTMARKET:
                 tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
-                output = key  + ' (Post): ' + str(round(tickerPrice, roundNumber))
+                output = key  + ' (Post): ' + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%'
             else:
                 tickerPrice = si.get_live_price(dictionary[key]["ticker"])
-                output = key  + ': ' + str(round(tickerPrice, roundNumber))
+                output = key  + ': ' + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%'
         stocks += output + " "
     return stocks
 
