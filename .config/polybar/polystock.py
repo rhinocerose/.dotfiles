@@ -118,22 +118,14 @@ def ticker_parse(dictionary):
     stocks = ""
 
     for key in dictionary:
-        if dictionary[key]["type"] != "stocks":
+        if is_trading_hours() == PREMARKET:
+            tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
+        elif is_trading_hours() == POSTMARKET:
+            tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
+        else:
             tickerPrice = si.get_live_price(dictionary[key]["ticker"])
-            output = key + ': ' + str(round(tickerPrice, roundNumber)) + ' | '
-        elif dictionary[key]["type"] == "stocks":
-            if is_trading_hours() == PREMARKET:
-                tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
-                direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
-                output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
-            elif is_trading_hours() == POSTMARKET:
-                tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
-                direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
-                output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
-            else:
-                tickerPrice = si.get_live_price(dictionary[key]["ticker"])
-                direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
-                output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
+        direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
+        output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
         stocks += output
     return stocks
 
@@ -169,7 +161,7 @@ def addArguments():
         if args.customticker:
             stocks += " " + customticker(args.customticker) + " "
         if args.mytickers:
-            stocks += " " + customticker("AAPL") + " "
+            stocks += " " + customticker("GME") + " "
         if args.getgroup:
             stocks += ticker_parse(symbols.SYMBOLS)
 
