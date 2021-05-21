@@ -88,18 +88,26 @@ def is_trading_hours():
     else:
         return MARKET_CLOSED
 
+def gain_loss(ticker, today):
+    now = datetime.now()
+    year = now.strftime("%Y")
+    month = now.strftime("%m")
+    day = str(int(now.strftime("%d")) - 1)
+    start = month + '/' + day + '/' + year
+    yesterday = si.get_data(ticker, start_date = start).iloc[0]['close']
+    percentage = round(((100 * today) / yesterday) - 100, 2)
+    if percentage > 0:
+        direction = '%{F#05fc15}▲%{F-}'
+    elif percentage < 0:
+        direction = '%{F#fc0511}▼%{F-}'
+    return direction, percentage
+
 def customticker(ticker):
     """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.
     Parameter: the ticker to get a stock price on and to display.
     Precondition: ticker is a string."""
     now = datetime.now()
-
-    tickerPriceToday = si.get_live_price(ticker)
-    tickerPriceYesterday = si.get_data(ticker, start_date = '05/19/2021').iloc[0]['close']
-
-    percentage = round(((100 * tickerPriceToday) / tickerPriceYesterday) - 100, 2)
     output = RED + ticker + ': ' + GREEN + str(round(tickerPriceToday, roundNumber)) + percentage + '%'
-    # output = ticker + ': ' + str(round(tickerPrice, roundNumber))
     return output
 
 def ticker_parse(dictionary):
@@ -114,21 +122,17 @@ def ticker_parse(dictionary):
             tickerPrice = si.get_live_price(dictionary[key]["ticker"])
             output = key + ': ' + str(round(tickerPrice, roundNumber)) + ' | '
         elif dictionary[key]["type"] == "stocks":
-            tickerPriceToday = si.get_live_price(dictionary[key]["ticker"])
-            tickerPriceYesterday = si.get_data(dictionary[key]["ticker"], start_date = '05/19/2021').iloc[0]['close']
-            percentage = round(((100 * tickerPriceToday) / tickerPriceYesterday) - 100, 2)
-            if percentage > 0:
-                direction = '%{F#05fc15}▲%{F-}'
-            elif percentage < 0:
-                direction = '%{F#fc0511}▼%{F-}'
             if is_trading_hours() == PREMARKET:
                 tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
+                direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
                 output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
             elif is_trading_hours() == POSTMARKET:
                 tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
+                direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
                 output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
             else:
                 tickerPrice = si.get_live_price(dictionary[key]["ticker"])
+                direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
                 output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
         stocks += output
     return stocks
@@ -165,7 +169,7 @@ def addArguments():
         if args.customticker:
             stocks += " " + customticker(args.customticker) + " "
         if args.mytickers:
-            stocks += " " + customticker("GME") + " "
+            stocks += " " + customticker("AAPL") + " "
         if args.getgroup:
             stocks += ticker_parse(symbols.SYMBOLS)
 
