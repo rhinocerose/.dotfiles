@@ -19,6 +19,8 @@ import argparse
 
 import symbols
 
+debug = False
+
 # How many decimal place to show in stock price.
 roundNumber = 2
 
@@ -78,22 +80,20 @@ def is_trading_hours():
     day = datetime.now().weekday()
     if day in range (0,5):
         if ((now >= premarket_open) and (now < market_open)):
-            return PREMARKET
+            market_status = PREMARKET
         elif ((now >= market_open) and (now < market_close)):
-            return MARKET_OPEN
+            market_status = MARKET_OPEN
         elif ((now >= market_close) and (now < postmarket_close)):
-            return POSTMARKET
+            market_status = POSTMARKET
         else:
-            return MARKET_CLOSED
+            market_status = MARKET_CLOSED
     else:
-        return MARKET_CLOSED
+        market_status = MARKET_CLOSED
+    return market_status
 
 def gain_loss(ticker, today):
     now = datetime.now()
-    year = now.strftime("%Y")
-    month = now.strftime("%m")
-    day = str(int(now.strftime("%d")) - 1)
-    start = month + '/' + day + '/' + year
+    start = now.strftime("%m") + '/' + str(int(now.strftime("%d")) - 1) + '/' + now.strftime("%Y")
     yesterday = si.get_data(ticker, start_date = start).iloc[0]['close']
     percentage = round(((100 * today) / yesterday) - 100, 2)
     if percentage > 0:
@@ -118,15 +118,22 @@ def ticker_parse(dictionary):
     stocks = ""
 
     for key in dictionary:
-        if is_trading_hours() == PREMARKET:
-            tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
-        elif is_trading_hours() == POSTMARKET:
-            tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
-        else:
+        if dictionary[key]["type"] != "stocks":
             tickerPrice = si.get_live_price(dictionary[key]["ticker"])
+        elif dictionary[key]["type"] == "stocks":
+            if is_trading_hours() == PREMARKET:
+                tickerPrice = si.get_premarket_price(dictionary[key]["ticker"])
+                market_status = "PRE"
+            elif is_trading_hours() == POSTMARKET:
+                tickerPrice = si.get_postmarket_price(dictionary[key]["ticker"])
+                market_status = "POST"
+            else:
+                tickerPrice = si.get_live_price(dictionary[key]["ticker"])
+                market_status = "OPEN"
         direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
         output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
         stocks += output
+    stocks += market_status
     return stocks
 
 def addArguments():
