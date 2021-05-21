@@ -96,8 +96,10 @@ def gain_loss(ticker, today):
     percentage = round(((100 * today) / yesterday) - 100, 2)
     if percentage > 0:
         direction = '%{F#05fc15}▲%{F-}'
+        percentage = str('%{F#05fc15}' + str(percentage) + '%' + '%{F-}')
     elif percentage < 0:
         direction = '%{F#fc0511}▼%{F-}'
+        percentage = str('%{F#fc0511}' + str(percentage) + '%' + '%{F-}')
     return direction, percentage
 
 def customticker(ticker):
@@ -129,8 +131,8 @@ def ticker_parse(dictionary):
                 tickerPrice = si.get_live_price(dictionary[key]["ticker"])
                 market_status = "OPEN"
         direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
-        key = str('%{F#05fc15}' + key + '%{F-}')
-        output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
+        key = str('%{F#fa83aa}' + key + '%{F-}')
+        output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + str(percentage) + ' | '
         stocks += output
     stocks += market_status
     return stocks
