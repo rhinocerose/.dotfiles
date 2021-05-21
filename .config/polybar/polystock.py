@@ -13,8 +13,6 @@ Contact: ashar.k.latif@gmail.com
 from yahoo_fin import stock_info as si
 from datetime import datetime
 from datetime import time
-import requests
-import requests_html
 import argparse
 
 import symbols
@@ -74,7 +72,7 @@ def topcrypto():
     return output
 
 def is_trading_hours():
-    """Returns: Boolean indicating whether it is currently trading hours, premarket or postmarket"""
+    """Returns: Status of North American markets"""
 
     now = datetime.now().time()
     day = datetime.now().weekday()
@@ -131,6 +129,7 @@ def ticker_parse(dictionary):
                 tickerPrice = si.get_live_price(dictionary[key]["ticker"])
                 market_status = "OPEN"
         direction, percentage = gain_loss(dictionary[key]["ticker"], tickerPrice)
+        key = str('%{F#05fc15}' + key + '%{F-}')
         output = key + ': '  + str(round(tickerPrice, roundNumber)) + ' ' + direction + str(percentage) + '%' + ' | '
         stocks += output
     stocks += market_status
