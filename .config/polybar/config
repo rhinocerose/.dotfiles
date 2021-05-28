@@ -32,9 +32,3 @@ include-file = ~/.config/polybar/workspaces.ini
 include-file = ~/.config/polybar/modules.ini
 include-file = ~/.config/polybar/user_modules.ini
 include-file = ~/.config/polybar/single_monitor_bars.ini
-
-
-
-
-
-
