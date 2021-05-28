@@ -1,29 +1,29 @@
 SYMBOLS = {
-    "DowJones": {
-        "ticker": "^DJI",
+    "DJI": {
+        "ticker": "DIA",
         "type": "index"
     },
-    "S&P500": {
-        "ticker": "^GSPC",
+    "SPY": {
+        "ticker": "SPY",
         "type": "index"
     },
-    "NASDAQ": {
-        "ticker": "^IXIC",
+    "QQQ": {
+        "ticker": "QQQ",
         "type": "index"
     },
-    "Cardano": {
+    "ADA": {
         "ticker": "ADA-USD",
         "type": "crypto"
     },
-    "Ethereum": {
+    "ETH": {
         "ticker": "ETH-USD",
         "type": "crypto"
     },
-    "Bitcoin": {
+    "BTC": {
         "ticker": "BTC-USD",
         "type": "crypto"
     },
-    "GameStop": {
+    "GME": {
         "ticker": "GME",
         "type": "stock"
     }

@@ -131,8 +131,6 @@ def ticker_parse(dictionary):
                 ticker_price = si.get_premarket_price(dictionary[key]["ticker"])
             elif market_status == "POSTMARKET":
                 ticker_price = si.get_postmarket_price(dictionary[key]["ticker"])
-            elif market_status == "MARKET_OPEN":
-                ticker_price = si.get_live_price(dictionary[key]["ticker"])
             else:
                 ticker_price = si.get_live_price(dictionary[key]["ticker"])
         if DEBUG:
@@ -179,7 +177,6 @@ def parse_arguments():
     parser.add_argument('--getgroup',
                         help='Display the price of selected equties.',
                         action='store_true')
-
     args = parser.parse_args()
 
     stocks = ""
@@ -199,7 +196,7 @@ def parse_arguments():
         if args.mytickers:
             stocks += " " + customticker("GME") + " "
         if args.getgroup:
-            stocks += ticker_parse(symbols.SYMBOLS)
+            stocks += " " + ticker_parse(symbols.SYMBOLS)
 
     except:
         stocks = " "
