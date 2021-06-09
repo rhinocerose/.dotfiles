@@ -82,13 +82,13 @@ def is_trading_hours():
         if MARKET_OPEN > now >= PREMARKET_OPEN:
             market_status = "PREMARKET"
         elif MARKET_CLOSE > now >= MARKET_OPEN:
-            market_status = "MARKET_OPEN"
+            market_status = "MARKET OPEN"
         elif POSTMARKET_CLOSE > now >= MARKET_CLOSE:
             market_status = "POSTMARKET"
         else:
-            market_status = "MARKET_CLOSED"
+            market_status = "MARKET CLOSED"
     else:
-        market_status = "MARKET_CLOSED"
+        market_status = "MARKET CLOSED"
     if DEBUG:
         print("Current time: " + str(now))
         print("Market status: " + str(market_status))
