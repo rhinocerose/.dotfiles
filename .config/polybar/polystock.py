@@ -3,13 +3,14 @@
 """
 Polystock
 Author: Ashar Latif
-Date: 2021-05-19
+Date: 2021-06-09
 Description: A ticker displayer for polybar.
 Contact: ashar.k.latif@gmail.com
 """
 
 from datetime import datetime
 from datetime import time
+from datetime import timedelta
 import argparse
 
 from yahoo_fin import stock_info as si
@@ -31,6 +32,8 @@ PREMARKET_OPEN = time(4,0)
 MARKET_OPEN = time(9,30)
 MARKET_CLOSE = time(16,0)
 POSTMARKET_CLOSE = time(20,0)
+
+closed_days = ['05/31/2021']
 
 
 def biggestloser():
@@ -71,7 +74,8 @@ def topcrypto():
 
 def is_trading_hours():
     """Returns: Status of North American markets"""
-
+    if DEBUG:
+        print("Checking trading hour status")
     now = datetime.now().time()
     day = datetime.now().weekday()
     if day in range (0,5):
@@ -86,18 +90,32 @@ def is_trading_hours():
     else:
         market_status = "MARKET_CLOSED"
     if DEBUG:
-        print(now)
+        print("Current time: " + str(now))
         print("Market status: " + str(market_status))
     return market_status
 
+def last_trading_day():
+    now = datetime.now()
+    now = now - timedelta(days = 1)
+    start = now.strftime("%m") + '/' + str(int(now.strftime("%d"))).zfill(2) + '/' + now.strftime("%Y")
+    while ((now.weekday() in range (5,7)) or (start in closed_days)):
+        now = now - timedelta(days = 1)
+        start = now.strftime("%m") + '/' + str(int(now.strftime("%d"))).zfill(2) + '/' + now.strftime("%Y")
+    if DEBUG:
+        print("Last trading day: " + start)
+    return str(start)
+
 def gain_loss(ticker, today):
     """Returns: Colorized directional percentage movement of the ticker"""
-    now = datetime.now()
-    start = now.strftime("%m") + '/' + str(int(now.strftime("%d")) - 1) + '/' + now.strftime("%Y")
+    if DEBUG:
+        print("Starting gain_loss function")
+    start = last_trading_day()
     yesterday = si.get_data(ticker, start_date = start).iloc[0]['close']
+    if DEBUG:
+        print("Last close: " + str(yesterday))
     percentage = round(((100 * today) / yesterday) - 100, 2)
     if DEBUG:
-        print("Percentage move:" + percentage)
+        print("Percentage move:" + str(percentage))
     if percentage >= 0:
         color = POSITIVE_PERCENTAGE_COLOR
     elif percentage < 0:
@@ -120,6 +138,8 @@ def ticker_parse(dictionary):
     Parameter: the ticker to get a stock price on and to display.
     Precondition: ticker is a string."""
     stocks = ""
+    if DEBUG:
+        print("Starting ticker_parse function")
 
     market_status = is_trading_hours()
 
@@ -134,7 +154,7 @@ def ticker_parse(dictionary):
             else:
                 ticker_price = si.get_live_price(dictionary[key]["ticker"])
         if DEBUG:
-            print(str(key) + str(ticker_price))
+            print(str(key) + ': ' + str(ticker_price))
         percentage = gain_loss(dictionary[key]["ticker"], ticker_price)
         formatted_key = str('%{F' + TICKER_NAME_COLOR + '}' + key + '%{F-}')
         output = formatted_key + ': '  + str(round(ticker_price, ROUND_NUMBER)) + \
