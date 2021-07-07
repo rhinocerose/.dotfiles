@@ -44,11 +44,17 @@ function grep
 end
 
 function mkd
-        mkdir -pv "$argv"; and cd "$argv"
+    mkdir -pv "$argv"; and cd "$argv"
 end
 
 function look
 	bash ~/.dotfiles/bin/appearance.sh "$argv"
+end
+
+function movebig
+    set temp "+""$argv[1]""M";
+    set destination "$argv[2]";
+    find . -type f -size "$temp" -exec sudo mv {} "$destination" \;
 end
 
 function cd
@@ -112,7 +118,6 @@ function polystart
 	polybar-msg cmd restart
 end
 
-
 function ii
 	vim ~/.config/i3/config
 end
@@ -122,7 +127,7 @@ function fd
 end
 
 function ll
-	lsd -la
+	lsd -lah
 end
 
 function ..
@@ -138,7 +143,7 @@ function clr
 end
 
 function rr
-	sudo rm -rf $argv
+	sudo rm -rf "$argv"
 end
 
 function kd
@@ -146,7 +151,7 @@ function kd
 end
 
 function rename
-	bash ~/.dotfiles/bin/rename.sh $argv
+	bash ~/.dotfiles/bin/rename.sh "$argv"
 end
 
 
@@ -171,7 +176,9 @@ function gp
 end
 
 function gc
-	git add -A; and git commit -m "$argv"
+	git add -A;
+    and git commit -m "$argv";
+    and git push origin
 end
 
 
@@ -184,11 +191,11 @@ function reflect
 end
 
 function api
-	sudo pacman -S --noconfirm $argv
+	sudo pacman -S --noconfirm "$argv"
 end
 
 function apr
-	sudo pacman -R $argv
+	sudo pacman -R "$argv"
 end
 
 function apu
@@ -308,4 +315,12 @@ end
 
 function pb
 	bash $HOME/.dotfiles/bin/pandoc/panbuild.sh $argv
+end
+
+function vact
+    source ./$argv/bin/activate.fish
+end
+
+function testcan
+    canplayer -I ~/Projects/rust/canbus-visualizer/can_test.log
 end

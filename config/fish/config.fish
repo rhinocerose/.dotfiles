@@ -12,6 +12,7 @@ set PATH "$HOME/.npm-global/bin:$PATH"
 set PATH "$HOME/npm-modules:$PATH"
 set PATH "/opt/gcc-arm/bin:$PATH"
 set PATH "$HOME/.gem/ruby/2.7.0/bin:$PATH"
+set PATH "$HOME/.local/lib/python3.9/site-packages:$PATH"
 
 set -gx EDITOR vim
 set -gx VISUAL "$EDITOR"

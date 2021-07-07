@@ -22,7 +22,7 @@ endif
 
 let mapleader                               = "\<Space>"
 let maplocalleader                          = ",,"
-set timeout timeoutlen=1500
+set timeout timeoutlen=500
 set pastetoggle=<F2>
 set conceallevel=0
 
@@ -46,6 +46,7 @@ nnoremap <leader>sv  :source ~/.vim/vimrc<CR>
 nnoremap <leader>v <C-w><C-v>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>i i<CR><esc>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
