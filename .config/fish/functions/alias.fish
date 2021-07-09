@@ -172,7 +172,7 @@ function gith
 end
 
 function gp
-	git push origin master
+	git pull origin
 end
 
 function gc
