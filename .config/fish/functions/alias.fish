@@ -176,9 +176,26 @@ function gp
 end
 
 function gc
-	git add -A;
+    git add -A;
     and git commit -m "$argv";
     and git push origin
+end
+
+function gitcheck
+     git checkout -t remotes/origin/"$argv"
+end
+
+function gitnewfrom
+    git checkout -b "$argv" (git branch | cut -d ' ' -f2);
+    and git push -u origin "$argv"
+end
+
+function gitnew
+    git add -A;
+    and git commit -m "First commit";
+    and git branch -M master;
+    and git remote add origin https://github.com/rhinocerose/"$argv".git;
+    and git push -u origin master
 end
 
 
