@@ -17,11 +17,8 @@ ln -sfn ~/.dotfiles/config/colorls ~/.config/colorls
 ln -sfn ~/.dotfiles/config/gtk-3.0 ~/.config/gtk-3.0
 rm -rf ~/.config/kitty
 ln -sfn ~/.dotfiles/config/kitty ~/.config/kitty
-rm -rf ~/.config/qutebrowser
-ln -sfn ~/.dotfiles/config/qutebrowser ~/.config/qutebrowser
 rm -rf ~/.config/neofetch
 ln -sfn ~/.dotfiles/config/neofetch ~/.config/neofetch
-ln -sfn ~/.dotfiles/config/i3status ~/.config/i3status
 ln -sfn ~/dotfiles-private/.config/tizonia ~/.config/tizonia
 ln -sfn ~/dotfiles-private/.config/mps-youtube ~/.config/mps-youtube
 ln -sfn ~/.dotfiles/config/starship.toml ~/.config/starship.toml
