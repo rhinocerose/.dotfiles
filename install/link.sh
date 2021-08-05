@@ -7,6 +7,7 @@ ln -sfn ~/.dotfiles/.Xresources ~/.Xresources
 ln -sfn ~/.dotfiles/config/npm/.npmrc ~/.npmrc
 ln -sfn ~/.dotfiles/config/fish/config.fish ~/config.fish
 ln -sfn ~/.dotfiles/config/git/.gitconfig ~/.gitconfig
+ln -sfn ~/.dotfiles/config/git/.gitignore ~/.gitignore
 rm -rf ~/.config/fish
 ln -sfn ~/.dotfiles/config/fish ~/.config/fish
 ln -sfn ~/.dotfiles/config/npm ~/.config/npm
