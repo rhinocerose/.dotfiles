@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-
+set $alt Mod1
 
 ###############################################################################
 # i3 Appearance and Behavior
@@ -71,6 +71,10 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec kitty
+
+bindsym $mod+$alt+F exec firefox
+bindsym $mod+$alt+E exec eagle
+bindsym $mod+$alt+K exec kicad
 
 # kill focused window
 bindsym $mod+Shift+q kill
