@@ -35,10 +35,6 @@ function repoadd
     repo-add ~/customrepo/repo.db.tar.gz /home/arch/.cache/yay/*/*.pkg.tar.*
 end
 
-function f
-    find . -name "$argv"
-end
-
 function grep
 	rg -i "$argv"
 end
@@ -96,10 +92,6 @@ end
 
 function anss
     cd ~/ansible/.playbooks/ansible-server/
-end
-
-function ds
-    cd /srv/salt
 end
 
 function dot
