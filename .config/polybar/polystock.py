@@ -120,7 +120,7 @@ def gain_loss(ticker, today):
         color = POSITIVE_PERCENTAGE_COLOR
     elif percentage < 0:
         color = NEGATIVE_PERCENTAGE_COLOR
-    return str('%{F' + color + '}' + str(percentage) + '%\%{F-}')
+    return str('%{F' + color + '}' + str(percentage) + '%{F-}')
 
 def customticker(ticker):
     """Returns: stock price and ticker of a stock with format 'TICKER': 'PRICE'.

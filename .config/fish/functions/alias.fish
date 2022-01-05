@@ -204,7 +204,7 @@ end
 ##############################################################
 
 function reflect
-    sudo reflector --latest 20 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+    sudo reflector --latest 20 --protocol http --protocol https --save /etc/pacman.d/mirrorlist
 end
 
 function api
@@ -242,17 +242,14 @@ function wifiscan
 end
 
 function wifihome
-    wifiscan
-	nmcli device wifi connect "$argv" password 5e369c99a4
+	nmcli device wifi connect ORBI81 password jollyroad600
 end
 
 function wifiwork
-    wifiscan
     nmcli device wifi connect Rocketworx password !tWorxGr8
 end
 
 function wifi
-    wifiscan
 	nmcli device wifi connect "$arg1" password "$arg2"
 end
 
@@ -341,3 +338,12 @@ end
 function testcan
     canplayer -I ~/Projects/rust/canbus-visualizer/can_test.log
 end
+
+function btcon
+    echo -e "connect 00:08:2A:F1:97:71" | bluetoothctl
+end
+
+function btdis
+    echo -e "disconnect" | bluetoothctl
+end
+
