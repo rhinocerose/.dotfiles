@@ -35,10 +35,6 @@ function repoadd
     repo-add ~/customrepo/repo.db.tar.gz /home/arch/.cache/yay/*/*.pkg.tar.*
 end
 
-function f
-    find . -name "$argv"
-end
-
 function grep
 	rg -i "$argv"
 end
@@ -96,10 +92,6 @@ end
 
 function anss
     cd ~/ansible/.playbooks/ansible-server/
-end
-
-function ds
-    cd /srv/salt
 end
 
 function dot
@@ -314,18 +306,14 @@ end
 ##############################################################
 # MISC
 ##############################################################
-
-function condinstall
-    conda install -c conda-forge "$argv"
+function ytdl
+	youtube-dl --add-metadata --embed-thumbnail "$argv"
 end
 
 function gpgkey
     gpg --keyserver pool.sks-keyservers.net --recv-keys "$argv"
 end
 
-function cal
-	gcalcli --cal ashar.k.latif@gmail.com  quick
-end
 
 function pb
 	bash $HOME/.dotfiles/bin/pandoc/panbuild.sh $argv
