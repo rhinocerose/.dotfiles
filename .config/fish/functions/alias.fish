@@ -335,3 +335,10 @@ function btdis
     echo -e "disconnect" | bluetoothctl
 end
 
+function school
+    cd ~/school-docs/2021-2022/w2022
+end
+
+function quartus
+    /home/arch/intelFPGA_lite/20.1/quartus/bin/quartus &
+end

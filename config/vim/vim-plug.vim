@@ -304,7 +304,6 @@ Plug 'mileszs/ack.vim'
 
 Plug 'ervandew/supertab'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'tpope/vim-abolish'
 Plug 'jdelkins/vim-correction'
 " Auto pairs for '(' '[' '{'
 Plug 'jiangmiao/auto-pairs'

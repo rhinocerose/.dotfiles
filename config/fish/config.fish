@@ -13,6 +13,7 @@ set PATH "$HOME/npm-modules:$PATH"
 set PATH "/opt/gcc-arm/bin:$PATH"
 set PATH "$HOME/.gem/ruby/2.7.0/bin:$PATH"
 set PATH "$HOME/.local/lib/python3.9/site-packages:$PATH"
+set PATH "$HOME/intelFPGA_lite/20.1/quartus/bin:$PATH"
 
 set -gx EDITOR vim
 set -gx VISUAL "$EDITOR"
@@ -22,6 +23,11 @@ set LANG "en_US.UTF-8"
 set ARDUINO_DIR "/usr/share/arduino"
 set ARDMK_DIR "/usr/share/arduino"
 set AVR_TOOLS_DIR "/usr"
+
+set PATH "$HOME/.pyenv/bin:$PATH"
+# eval (pyenv init - fish)
+# eval (pyenv init -)
+# eval (pyenv virtualenv-init -)
 
 set FZF_DEFAULT_COMMAND 'rg --hidden --ignore .git --nocolor -g ""'
 set FZF_DEFAULT_OPTS "--color fg:242,bg:233,hl:65,fg+:15,bg+:234,hl+:108
