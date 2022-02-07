@@ -114,10 +114,6 @@ function ii
 	vim ~/.config/i3/config
 end
 
-function fd
-	ls -lah | rg -i "$argv"
-end
-
 function ll
 	lsd -lah
 end
@@ -128,10 +124,6 @@ end
 
 function ...
 	cd ../..
-end
-
-function clr
-	clear
 end
 
 function rr
@@ -150,18 +142,6 @@ end
 ##############################################################
 # GIT
 ##############################################################
-
-function gitssh
-    git remote set-url origin git@github.com:rhinocerose/"$argv"
-end
-
-function gitl
-    git clone git@gitlab.com:"$argv"
-end
-
-function gith
-    git clone git@github.com:"$argv"
-end
 
 function gp
 	git pull origin
@@ -190,6 +170,10 @@ function gitnew
     and git push -u origin master
 end
 
+function ignore
+	git ls-files -z --ignored --exclude-standard | xargs -0 git rm -r --cached
+	git commit -am "Remove ignored files"
+end
 
 ##############################################################
 # PACMAN
@@ -219,16 +203,6 @@ end
 # SSH
 ##############################################################
 
-function static-ip
-    nmcli con mod "$argv" ipv4.address "192.168.1.9/24"
-    nmcli con mod "$argv" ipv4.gateway 192.168.1.1
-    nmcli con mod "$argv" ipv4.dns "206.248.154.170"
-    nmcli con mod "$argv" autoconnect yes
-    nmcli con mod "$argv" ipv4.method manual
-    nmcli con down "$argv"
-    nmcli con up "$argv"
-end
-
 function wifiscan
 	nmcli device wifi list
 end
@@ -245,45 +219,12 @@ function wifi
 	nmcli device wifi connect "$arg1" password "$arg2"
 end
 
-function topi
-	scp "$argv" rpi:~/Downloads/
-end
-
-function todesk
-	scp "$argv" desk:~/Downloads/
-end
-
-function tohtpc
-	scp "$argv" htpc:~/Downloads/
-end
-
 function tocse
 	scp "$argv" cse:~/Downloads/
 end
 
 function ssh
 	env TERM=xterm-256color ssh "$argv"
-end
-
-
-##############################################################
-# TIZONIA
-##############################################################
-
-function yt
-	tizonia --youtube-audio-search "$argv"
-end
-
-function gmtrack
-    tizonia --gmusic-tracks "$argv"
-end
-
-function gmamrtist
-    tizonia --gmusic-artist "$argv"
-end
-
-function sc
-	tizonia --soundcloud-tracks "$argv"
 end
 
 
