@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -pv ~/.ssh
+
 ln -sfn ~/.dotfiles/.bashrc ~/.bashrc
 ln -sfn ~/.dotfiles/.xprofile ~/.xprofile
 ln -sfn ~/.dotfiles/.zshrc ~/.zshrc
@@ -19,14 +21,14 @@ rm -rf ~/.config/kitty
 ln -sfn ~/.dotfiles/config/kitty ~/.config/kitty
 rm -rf ~/.config/neofetch
 ln -sfn ~/.dotfiles/config/neofetch ~/.config/neofetch
-ln -sfn ~/dotfiles-private/.config/tizonia ~/.config/tizonia
-ln -sfn ~/dotfiles-private/.config/mps-youtube ~/.config/mps-youtube
 ln -sfn ~/.dotfiles/config/starship.toml ~/.config/starship.toml
-mkdir -pv ~/.ssh
-ln -sfn ~/dotfiles-private/.config/ssh/config ~/.ssh/
 ln -sfn ~/.dotfiles/config/vim/vim-plug.vim ~/.vim/vim-plug.vim
 ln -sfn ~/.dotfiles/config/vim/vimrc ~/.vim/vimrc
 chmod +x ~/.config/polybar/polybar.sh
 ln -sfn ~/.dotfiles/fonts/*.ttf /usr/share/fonts/TTF/
 ln -sfn ~/.dotfiles/fonts/*.otf /usr/share/fonts/OTF/
 bash ~/.dotfiles/bin/"appearance.sh" "$1"
+
+ln -sfn ~/dotfiles-private/.config/tizonia ~/.config/tizonia
+ln -sfn ~/dotfiles-private/.config/mps-youtube ~/.config/mps-youtube
+ln -sfn ~/dotfiles-private/.config/ssh/config ~/.ssh/
