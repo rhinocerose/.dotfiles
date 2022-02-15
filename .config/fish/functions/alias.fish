@@ -208,11 +208,27 @@ function wifiscan
 end
 
 function wifihome
+    sudo killall wpa_supplicant
+    sudo systemctl start NetworkManager.service
 	nmcli device wifi connect ORBI81 password jollyroad600
 end
 
 function wifiwork
+    sudo killall wpa_supplicant
+    sudo systemctl start NetworkManager.service
     nmcli device wifi connect Rocketworx password !tWorxGr8
+end
+
+function wifiyork
+    sudo systemctl stop NetworkManager.service
+    sudo wpa_supplicant -i wlp58s0 -B -c /etc/wpa_supplicant/wpa_supplicant.conf
+    sudo dhcpcd wlp58s0
+end
+
+function wifiphone
+    sudo killall wpa_supplicant
+    sudo systemctl start NetworkManager.service
+    nmcli device wifi connect SM-G973W6617 password nbnq9563
 end
 
 function wifi
@@ -282,4 +298,8 @@ end
 
 function quartus
     /home/arch/intelFPGA_lite/20.1/quartus/bin/quartus &
+end
+
+function bright
+    sudo echo "$argv" >  /sys/class/backlight/intel_backlight/brightness
 end

@@ -8,3 +8,5 @@
 	email = ashar.k.latif@gmail.com
 [init]
 	templatedir = ~/.git_template
+[pull]
+	rebase = false
