@@ -53,6 +53,12 @@ function movebig
     find . -type f -size "$temp" -exec sudo mv {} "$destination" \;
 end
 
+function movesmall
+    set temp "-""$argv[1]""M";
+    set destination "$argv[2]";
+    find . -type f -size "$temp" -exec sudo mv {} "$destination" \;
+end
+
 function cd
         if count $argv > /dev/null
                 builtin cd "$argv"; and ll
@@ -147,6 +153,10 @@ function gp
 	git pull origin
 end
 
+function clone
+    git clone "$argv"
+end
+
 function gc
     git add -A;
     and git commit -m "$argv";
@@ -207,32 +217,23 @@ function wifiscan
 	nmcli device wifi list
 end
 
-function wifihome
+function wificon
     sudo killall wpa_supplicant
-    sudo systemctl start NetworkManager.service
-	nmcli device wifi connect ORBI81 password jollyroad600
-end
-
-function wifiwork
-    sudo killall wpa_supplicant
-    sudo systemctl start NetworkManager.service
-    nmcli device wifi connect Rocketworx password !tWorxGr8
-end
-
-function wifiyork
     sudo systemctl stop NetworkManager.service
     sudo wpa_supplicant -i wlp58s0 -B -c /etc/wpa_supplicant/wpa_supplicant.conf
     sudo dhcpcd wlp58s0
 end
 
-function wifiphone
-    sudo killall wpa_supplicant
-    sudo systemctl start NetworkManager.service
-    nmcli device wifi connect SM-G973W6617 password nbnq9563
+function wifidis
+    wpa_cli disconnect
 end
 
 function wifi
 	nmcli device wifi connect "$arg1" password "$arg2"
+end
+
+function wifil
+    nmcli device wifi connect "Launchpad" password "L@unch!T"
 end
 
 function tocse
@@ -285,15 +286,13 @@ function testcan
 end
 
 function btcon
+    echo -e "power on" | bluetoothctl
     echo -e "connect 00:08:2A:F1:97:71" | bluetoothctl
 end
 
 function btdis
     echo -e "disconnect" | bluetoothctl
-end
-
-function school
-    cd ~/school-docs/2021-2022/w2022
+    echo -e "power off" | bluetoothctl
 end
 
 function quartus
@@ -302,4 +301,8 @@ end
 
 function bright
     sudo echo "$argv" >  /sys/class/backlight/intel_backlight/brightness
+end
+
+function ddrc
+    cd ~/Downloads/.ddrc
 end

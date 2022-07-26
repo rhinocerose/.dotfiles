@@ -46,7 +46,9 @@ nnoremap <leader>sv  :source ~/.vim/vimrc<CR>
 nnoremap <leader>v <C-w><C-v>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader>w <C-w>v<C-w>l
-nnoremap <leader>i i<CR><esc>
+nnoremap <leader>I i<CR><esc>
+nnoremap <leader>i a <esc>
+nnoremap <leader>b :set buftype=<cr> :wq <cr>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -169,3 +171,23 @@ function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
 autocmd BufWritePre     *.* :call TrimWhiteSpace()
+
+augroup LargeFile
+        let g:large_file = 10485760 " 10MB
+
+        " Set options:
+        "   eventignore+=FileType (no syntax highlighting etc
+        "   assumes FileType always on)
+        "   noswapfile (save copy of file)
+        "   bufhidden=unload (save memory when other file is viewed)
+        "   buftype=nowritefile (is read-only)
+        "   undolevels=-1 (no undo possible)
+        au BufReadPre *
+                \ let f=expand("<afile>") |
+                \ if getfsize(f) > g:large_file |
+                        \ set eventignore+=FileType |
+                        \ setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 |
+                \ else |
+                        \ set eventignore-=FileType |
+                \ endif
+augroup END
