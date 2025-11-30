@@ -1,0 +1,9 @@
+[user]
+        email = ashar.k.latif@gmail.com
+        name = rhinocerose
+[core]
+    editor = vim
+[submodule]
+    branch = main
+[alias]
+    sadd = "!f() { git submodule add -b main \"$@\"; }; f"
