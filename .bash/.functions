@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+GIT_NAME="git-rhino"
 function mkd () {
 	if [ $# != 1 ]; then
 		echo "Usage: mkd <dir>"
@@ -15,13 +17,13 @@ function cd () {
 }
 
 function gclone () {
-    git clone --recurse-submodules --remote-submodules -j8 git@git-rhino:rhinocerose/"$1"
+    git clone --recurse-submodules --remote-submodules -j8 git@$GIT_NAME:rhinocerose/"$1"
 }
 
 function grhino () {
-    git clone git@git-rhino:rhinocerose/"$1"
+    git clone git@$GIT_NAME:rhinocerose/"$1"
 }
 
 function gadd () {
-    git submodule add git@git-rhino:rhinocerose/"$1"
+    git submodule add git@$GIT_NAME:rhinocerose/"$1"
 }
