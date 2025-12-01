@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+function ard-newsketch () {
+    arduino-cli sketch new "$1"
+}
+
+function nanobuild () {
+    arduino-cli compile --fqbn arduino:avr:nano:cpu=atmega328 "$1"
+}
+
+function nanoflash () {
+    arduino-cli upload -P avrispmkii --fqbn arduino:avr:nano:cpu=atmega328 "$1"
+}
+
+function nanodude () {
+        avrdude -c avrisp2 -p m328p -U flash:w:build/arduino.avr.nano/"$1"
+}
+
+function unobuild () {
+    arduino-cli compile --fqbn arduino:avr:uno "$1"
+}
+
+function unoflash () {
+    sudo avrdude -c avrisp2 -p m328p -U flash:w:build/arduino.avr.uno/"$1"
+}
