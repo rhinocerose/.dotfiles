@@ -13,3 +13,15 @@ function cd () {
 		builtin cd ~ && ll
 	fi
 }
+
+function gclone () {
+    git clone --recurse-submodules --remote-submodules -j8 git@git-rhino:rhinocerose/"$1"
+}
+
+function grhino () {
+    git clone git@git-rhino:rhinocerose/"$1"
+}
+
+function gadd () {
+    git submodule add git@git-rhino:rhinocerose/"$1"
+}
