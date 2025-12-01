@@ -1,11 +1,20 @@
+
+alias reload='source ~/.bashrc'
+alias bedit='vim ~/.bash_aliases'
 alias ..="cd .."
 alias ...="cd ../.."
 alias _="sudo"
 alias g="git"
 
+alias gitmod='git submodule update --init --recursive'
+
 alias rr="rm -rf"
+alias ll='ls -lah'
 
 alias df = "cd ~/.dotfiles"
+
+alias vedit='vim ~/.vim/vimrc'
+alias vp='vim ~/.vim/vim-plug.vim'
 
 alias pi="sudo pacman -Syu --noconfirm"
 alias pr="sudo pacman -R"
