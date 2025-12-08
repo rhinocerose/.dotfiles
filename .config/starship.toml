@@ -8,17 +8,10 @@ error_symbol = "✗"
 ssh_only = false
 # format = "⟪[$hostname]($style)⟫ "
 format = "⟪[Ashar]($style)⟫ "
+style = "fg:#5c6370"
 trim_at = ".companyname.com"
 disabled = false
 ssh_symbol = " "
-
-[battery]
-full_symbol = ""
-charging_symbol = ""
-discharging_symbol = ""
-
-[memory_usage]
-symbol = " "
 
 [directory]
 read_only = " 󰌾"
@@ -89,9 +82,6 @@ symbol = " "
 
 [conda]
 symbol = " "
-
-[docker]
-symbol = " "
 
 [docker_context]
 symbol = " "
@@ -182,4 +172,3 @@ symbol = " "
 
 [zig]
 symbol = " "
-
